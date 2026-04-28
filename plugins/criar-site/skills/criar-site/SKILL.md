@@ -28,7 +28,7 @@ Usuário:
 ## Pré-requisitos (verificar antes de iniciar)
 
 1. `.env` na raiz do projeto contém `FREEPIK_API_KEY` válida
-2. Dependências Python instaladas (`pip install -r .claude/skills/criar-site/requirements.txt`)
+2. Dependências Python instaladas (`pip install -r requirements.txt` a partir da raiz da skill)
 3. Todos os 8 arquivos de `prompts/principios/` existem (index + 01-07)
 4. Os 3 kits existem em `templates/`:
    - `templates/portfolio-editorial/` (kit 1 — grotesque condensada + 1 accent saturada + ritmo declarativo)
@@ -159,7 +159,7 @@ Sugerir padrão sensato por tipo de asset, mas sempre confirmar com usuário.
 
 ### Etapa 5 — Gerar prompts técnicos via módulo `prompt-engineer`
 
-Prompts **não** são mais montados inline nesta etapa. Toda geração passa pelo módulo `.claude/skills/criar-site/prompts/prompt-engineer/` — ver `prompts/prompt-engineer/README.md`.
+Prompts **não** são mais montados inline nesta etapa. Toda geração passa pelo módulo `prompts/prompt-engineer/` (relativo à raiz da skill) — ver `prompts/prompt-engineer/README.md`.
 
 **Pipeline obrigatório por asset:**
 

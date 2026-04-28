@@ -26,7 +26,7 @@ if sys.platform == "win32":
         pass
 
 
-load_dotenv(Path(__file__).resolve().parents[3] / ".env")
+load_dotenv(Path.cwd() / ".env")
 
 API_KEY = os.getenv("FREEPIK_API_KEY")
 BASE_URL = "https://api.freepik.com/v1/ai"

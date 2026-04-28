@@ -86,7 +86,7 @@ Ambas cospem `(str, str)` — prontas pra entrar literal na chamada HTTP da API 
 A etapa 8 do SKILL.md ("compor index.astro + validação anti-drift") precisa adicionar substep 8.2:
 
 > **8.2 — Pipeline de geração de assets.** Antes de cada chamada à Freepik API:
-> 1. Carregar kit preset de `.claude/skills/criar-site/prompts/prompt-engineer/kit-presets/{kit.id}.md`.
+> 1. Carregar kit preset de `prompts/prompt-engineer/kit-presets/{kit.id}.md` (relativo à raiz da skill).
 > 2. Destilar ficha estética da Fase 2.5 do briefing (paleta HEX + mood + refs visuais).
 > 3. Invocar `render_image()` ou `render_motion()` do módulo prompt-engineer.
 > 4. Passar output direto pra `hub.py` → Freepik API.

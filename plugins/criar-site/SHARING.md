@@ -8,7 +8,7 @@ Guia operacional de como entregar essa skill pra outras pessoas testarem e o que
 
 **Pacote completo** = `criar-site-skill-v1.zip`. Tem dentro:
 
-- `.claude/skills/criar-site/` — a skill em si (workflow + composer + prompt-engineer + 3 matrizes + LESSONS.md)
+- `plugins/criar-site/skills/criar-site/` — a skill em si (workflow + composer + prompt-engineer + 3 matrizes + LESSONS.md)
 - `ref-prompt-engeneer/` — pasta de calibração interna (vazia + README orientando o usuário a popular)
 - `sites/` — vazia, será preenchida pelo uso
 - `README.md` — visão geral
@@ -43,7 +43,7 @@ Cole/adapte o texto abaixo no canal de envio (WhatsApp, email, Telegram):
 
 > **Olá!** Esta é uma skill do Claude Code que gera sites estáticos completos a partir de um briefing conversado. Você invoca `/criar-site` no Claude Code e ela conduz: identidade da marca → estrutura+refs → modo de geração+orçamento → produz o site.
 >
-> **Pra rodar:** descompacta o ZIP num projeto novo (ou move `.claude/skills/criar-site/` pra `~/.claude/skills/` pra deixar global), segue o `INSTALL.md`, abre o Claude Code dentro do projeto e digita `/criar-site`.
+> **Pra rodar:** descompacta o ZIP num projeto novo (ou copia `plugins/criar-site/skills/criar-site/` pra `~/.claude/skills/` pra deixar global), segue o `INSTALL.md`, abre o Claude Code dentro do projeto e digita `/criar-site`.
 >
 > **O que eu queria que você testasse:**
 > 1. Faça **um site real seu** (projeto pessoal, freelancer, conceito) — não site fictício.

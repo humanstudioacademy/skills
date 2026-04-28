@@ -23,7 +23,20 @@ Opcional (compartilhar preview pública):
 
 ---
 
-## 1. Clonar o repo
+## Modo recomendado — instalar via marketplace
+
+Dentro do Claude Code:
+
+```
+/plugin marketplace add humanstudioacademy/skills
+/plugin install criar-site@human-studio
+```
+
+A skill fica disponível em qualquer projeto. Pula direto pro passo 3 (deps Python).
+
+---
+
+## Modo alternativo — instalar manual via clone
 
 ```bash
 git clone <url-do-repo>
@@ -34,51 +47,43 @@ Estrutura que você terá:
 
 ```
 .
-├── .claude/skills/criar-site/      ← a skill
-├── ref-prompt-engeneer/            ← calibração interna do sistema
-├── sites/                          ← outputs serão criados aqui
-├── README.md
-└── INSTALL.md  (este arquivo)
+├── .claude-plugin/marketplace.json
+└── plugins/criar-site/
+    ├── .claude-plugin/plugin.json
+    ├── skills/criar-site/         ← a skill em si
+    ├── README.md
+    └── INSTALL.md  (este arquivo)
 ```
 
----
-
-## 2. (Opcional) Instalar a skill globalmente
-
-Se quiser usar `/criar-site` em qualquer projeto sem ter que clonar de novo:
+Para usar `/criar-site` em qualquer projeto sem clonar de novo, faça symlink (ou copie) a pasta da skill pro diretório global:
 
 ```bash
 # macOS / Linux
 mkdir -p ~/.claude/skills
-cp -r .claude/skills/criar-site ~/.claude/skills/
+ln -s "$(pwd)/plugins/criar-site/skills/criar-site" ~/.claude/skills/criar-site
 
 # Windows (PowerShell)
 mkdir -Force "$env:USERPROFILE\.claude\skills"
-Copy-Item -Recurse .claude\skills\criar-site "$env:USERPROFILE\.claude\skills\"
-```
-
-A skill também precisa da pasta `ref-prompt-engeneer/` no diretório onde for usada (calibração interna). Copie junto:
-
-```bash
-cp -r ref-prompt-engeneer ~/.claude/skills/criar-site/
-# ou deixe na raiz do projeto onde vai rodar
+Copy-Item -Recurse plugins\criar-site\skills\criar-site "$env:USERPROFILE\.claude\skills\"
 ```
 
 ---
 
 ## 3. Instalar deps Python
 
-```bash
-pip install -r .claude/skills/criar-site/requirements.txt
-```
+A skill precisa de `requests` e `python-dotenv`. Do diretório da skill:
 
-Isso instala `requests` + `python-dotenv` (deps mínimas do `hub.py` e `composer.py`).
+```bash
+pip install -r ~/.claude/skills/criar-site/requirements.txt
+# ou, se ainda no clone:
+pip install -r plugins/criar-site/skills/criar-site/requirements.txt
+```
 
 ---
 
 ## 4. Configurar `.env` (opcional — só se for usar modo API)
 
-Crie `.env` na **raiz do projeto** (não dentro da skill):
+Crie `.env` na **raiz do projeto onde vai gerar o site** (não dentro da skill):
 
 ```bash
 # .env
@@ -139,11 +144,12 @@ Output em `dist/`. Pra publicar:
 
 ## Onde aprender mais
 
-- **`README.md`** — visão geral do projeto
-- **`.claude/skills/criar-site/SKILL.md`** — workflow completo das 9 etapas
-- **`.claude/skills/criar-site/LESSONS.md`** — constituição operacional (24 lições aprendidas)
-- **`.claude/skills/criar-site/prompts/prompt-engineer/README.md`** — taxonomy de 11 eixos pra prompts cinematográficos
-- **`.claude/skills/criar-site/prompts/principios/`** — Camada 1 (princípios universais inviolaveis)
+Caminhos relativos à raiz da skill (`skills/criar-site/`):
+
+- **`SKILL.md`** — workflow completo das 9 etapas
+- **`LESSONS.md`** — constituição operacional (24 lições aprendidas)
+- **`prompts/prompt-engineer/README.md`** — taxonomy de 11 eixos pra prompts cinematográficos
+- **`prompts/principios/`** — Camada 1 (princípios universais inviolaveis)
 
 ---
 

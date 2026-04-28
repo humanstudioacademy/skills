@@ -25,14 +25,15 @@ Uma skill do [Claude Code](https://docs.claude.com/claude-code) que orquestra:
 
 - ✅ Skill end-to-end funcional
 - ✅ Composer testado (validação de matrizes + cópia + mix de tokens + signatures cross-matrix)
-- ✅ 24 lições consolidadas em `.claude/skills/criar-site/LESSONS.md` (constituição operacional)
+- ✅ 24 lições consolidadas em `skills/criar-site/LESSONS.md` (constituição operacional)
 - ⚠️ Validação visual com `npm run build` requer espaço em disco (lembrar de checar antes do primeiro uso)
 
-## Estrutura do repo
+## Estrutura do plugin
 
 ```
-.
-├── .claude/skills/criar-site/         ← a skill em si
+plugins/criar-site/
+├── .claude-plugin/plugin.json
+├── skills/criar-site/                   ← a skill em si
 │   ├── SKILL.md                         ← workflow das 9 etapas
 │   ├── LESSONS.md                       ← constituição operacional (regras universais)
 │   ├── composer.py                      ← sintetizador de templates
@@ -46,10 +47,10 @@ Uma skill do [Claude Code](https://docs.claude.com/claude-code) que orquestra:
 │   │   ├── portfolio-editorial/         ← matriz 1
 │   │   ├── clinica-estetica/            ← matriz 2
 │   │   └── tech-apple/                  ← matriz 3
-│   └── archive/                         ← runners e testes históricos
-├── ref-prompt-engeneer/                 ← calibração interna (NUNCA é input de API)
-├── sites/                               ← outputs gerados
-└── INSTALL.md                           ← setup
+│   └── ref-prompt-engeneer/             ← calibração interna (NUNCA é input de API)
+├── README.md
+├── INSTALL.md                           ← setup
+└── SHARING.md
 ```
 
 ## Quick start
@@ -59,7 +60,7 @@ Uma skill do [Claude Code](https://docs.claude.com/claude-code) que orquestra:
 Dentro do Claude Code (CLI ou Desktop):
 
 ```
-/plugin marketplace add SEU-USER/SEU-REPO
+/plugin marketplace add humanstudioacademy/skills
 /plugin install criar-site@human-studio
 ```
 
@@ -81,7 +82,7 @@ Invocar no Claude Code:
 
 ### Opção B — Instalação manual
 
-Veja **[INSTALL.md](INSTALL.md)** pra clone direto da pasta `.claude/skills/criar-site/`.
+Veja **[INSTALL.md](INSTALL.md)** pra clone direto e symlink em `~/.claude/skills/`.
 
 ## Filosofia da skill
 
@@ -92,7 +93,7 @@ Veja **[INSTALL.md](INSTALL.md)** pra clone direto da pasta `.claude/skills/cria
 5. **Régua técnica inviolavel.** 11 eixos da taxonomy preenchidos em todo prompt. Zero adjetivo vazio. Inglês técnico cinematográfico.
 6. **Modo agnóstico.** Freepik é engine preferido, não obrigatório. Modo manual entrega prompts pra qualquer plataforma de geração.
 
-Detalhes completos em `.claude/skills/criar-site/LESSONS.md`.
+Detalhes completos em `skills/criar-site/LESSONS.md`.
 
 ## Licença / uso
 

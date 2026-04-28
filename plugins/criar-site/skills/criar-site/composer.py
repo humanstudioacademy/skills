@@ -166,7 +166,7 @@ def compose_site(briefing_path: str | Path, force: bool = False) -> Path:
     primary = briefing["matrix"]["primary"]
     slug = briefing["meta"]["slug"]
 
-    out_dir = BASE.parents[2] / "sites" / slug
+    out_dir = Path.cwd() / "sites" / slug
     if out_dir.exists() and not force:
         raise FileExistsError(f"sites/{slug} já existe. Use force=True pra sobrescrever.")
     out_dir.mkdir(parents=True, exist_ok=True)

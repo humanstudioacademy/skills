@@ -1,0 +1,128 @@
+---
+/*
+  Hero — 3 variants (signature Clínica):
+
+    variant="split-portrait"   (default)
+      Split 2-col: retrato cropado em um lado + título serif expressivo + CTA pill.
+      Ornament opcional decorativo.
+
+    variant="fullbleed-blur"
+      Retrato fullbleed com blur sutil + título sobreposto centralizado.
+
+    variant="collage-polaroid"
+      Título principal + polaroids de fotos sobrepostas com copy.
+*/
+import Button from '@components/base/Button.astro';
+import Marker from '@components/base/Marker.astro';
+import Ornament from '@components/base/Ornament.astro';
+
+interface Props {
+  variant?: 'split-portrait' | 'fullbleed-blur' | 'collage-polaroid';
+  marker?: string;         // "WELCOME" | "SINCE 2018"
+  titleRoman: string;      // "Tailored treatments"
+  titleItalic?: string;    // "for radiant skin" — vira italic emphasis
+  lead?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  portraitSrc?: string;
+  portraitAlt?: string;
+  ornament?: 'wave' | 'leaf' | 'circles' | 'dots' | 'none';
+}
+const {
+  variant = 'split-portrait',
+  marker,
+  titleRoman,
+  titleItalic,
+  lead,
+  ctaLabel,
+  ctaHref,
+  portraitSrc,
+  portraitAlt = 'Portrait',
+  ornament = 'wave',
+} = Astro.props;
+---
+<section class="relative overflow-hidden bg-[var(--color-bg)]">
+  {variant === 'split-portrait' ? (
+    <div class="relative mx-auto grid min-h-[86vh] max-w-[var(--content-max)] grid-cols-1 items-center gap-[var(--space-10)] px-[var(--gutter)] py-[var(--space-16)] md:grid-cols-12">
+      <div class="reveal relative md:col-span-6 md:order-2">
+        {portraitSrc && (
+          <figure class="relative aspect-[4/5] w-full overflow-hidden bg-[var(--color-mid)]">
+            <img src={portraitSrc} alt={portraitAlt} class="h-full w-full object-cover" data-parallax="0.12" />
+          </figure>
+        )}
+        {ornament !== 'none' && (
+          <div class="absolute -right-6 -top-6 z-10">
+            <Ornament variant={ornament} width="180px" />
+          </div>
+        )}
+      </div>
+
+      <div class="reveal md:col-span-6 md:order-1 md:pr-[var(--space-8)]">
+        {marker && <div class="mb-6"><Marker label={marker} rule /></div>}
+        <h1 class="type-serif-display text-[var(--color-deep)]" data-italic-reveal>
+          {titleRoman}
+          {titleItalic && <> <span class="italic-emphasis">{titleItalic}</span></>}
+        </h1>
+        {lead && (
+          <p class="mt-6 max-w-md text-[length:var(--text-md)] leading-[var(--leading-body)] text-[var(--color-ink-dim)]">
+            {lead}
+          </p>
+        )}
+        {ctaLabel && ctaHref && (
+          <div class="mt-10"><Button href={ctaHref} label={ctaLabel} variant="primary" size="md" /></div>
+        )}
+      </div>
+    </div>
+  ) : variant === 'fullbleed-blur' ? (
+    <div class="relative min-h-[86vh]">
+      {portraitSrc && (
+        <div class="absolute inset-0 z-0">
+          <img src={portraitSrc} alt={portraitAlt} class="h-full w-full object-cover" data-parallax="0.1" />
+          <div class="absolute inset-0 bg-[var(--color-bg)]/40 backdrop-blur-[2px]"></div>
+        </div>
+      )}
+      <div class="relative z-10 mx-auto flex min-h-[86vh] max-w-3xl flex-col items-center justify-center px-[var(--gutter)] py-[var(--space-16)] text-center">
+        {marker && <div class="reveal mb-6"><Marker label={marker} align="center" rule /></div>}
+        <h1 class="type-serif-display text-[var(--color-deep)]" data-italic-reveal>
+          {titleRoman}
+          {titleItalic && <> <span class="italic-emphasis">{titleItalic}</span></>}
+        </h1>
+        {lead && (
+          <p class="reveal mx-auto mt-6 max-w-md text-[length:var(--text-md)] leading-[var(--leading-body)] text-[var(--color-ink-dim)]">
+            {lead}
+          </p>
+        )}
+        {ctaLabel && ctaHref && (
+          <div class="reveal mt-10"><Button href={ctaHref} label={ctaLabel} variant="primary" size="md" /></div>
+        )}
+      </div>
+    </div>
+  ) : (
+    <div class="relative mx-auto min-h-[86vh] max-w-[var(--content-max)] px-[var(--gutter)] py-[var(--space-16)]">
+      <div class="text-center">
+        {marker && <div class="reveal mb-6"><Marker label={marker} align="center" rule /></div>}
+        <h1 class="type-serif-display text-[var(--color-deep)]" data-italic-reveal>
+          {titleRoman}
+          {titleItalic && <> <span class="italic-emphasis">{titleItalic}</span></>}
+        </h1>
+      </div>
+      {portraitSrc && (
+        <div class="relative mt-[var(--space-10)] mx-auto grid max-w-3xl grid-cols-12 gap-4">
+          <figure class="reveal col-span-7 aspect-[4/5] overflow-hidden bg-[var(--color-mid)] rotate-[-2deg]">
+            <img src={portraitSrc} alt={portraitAlt} class="h-full w-full object-cover" />
+          </figure>
+          {lead && (
+            <div class="reveal col-span-5 mt-16 rotate-[2deg] bg-[var(--color-surface)] p-6 shadow-sm">
+              <p class="italic-emphasis text-[length:var(--text-md)] leading-[var(--leading-body)] text-[var(--color-ink-dim)]">
+                {lead}
+              </p>
+            </div>
+          )}
+        </div>
+      )}
+      {ctaLabel && ctaHref && (
+        <div class="reveal mt-[var(--space-10)] text-center"><Button href={ctaHref} label={ctaLabel} variant="primary" size="md" /></div>
+      )}
+    </div>
+  )}
+</section>

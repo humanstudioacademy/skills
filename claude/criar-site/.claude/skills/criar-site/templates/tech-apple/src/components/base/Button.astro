@@ -1,0 +1,51 @@
+---
+/*
+  Button — PILL Apple-style signature do kit.
+  Variants:
+    - 'primary-ink'    : fill ink, text bg
+    - 'primary-accent' : fill accent, text white
+    - 'secondary'      : border ink sutil
+    - 'text'           : só texto + seta, tipo link Apple
+*/
+interface Props {
+  href?: string;
+  variant?: 'primary-ink' | 'primary-accent' | 'secondary' | 'text';
+  label: string;
+  as?: 'a' | 'button';
+  size?: 'sm' | 'md' | 'lg';
+  arrow?: boolean;
+}
+const { href, variant = 'primary-ink', label, as = 'a', size = 'md', arrow = false } = Astro.props;
+
+const sizeMap = {
+  sm: 'px-4 py-1.5 text-[length:var(--text-xs)]',
+  md: 'px-6 py-2.5 text-[length:var(--text-sm)]',
+  lg: 'px-7 py-3 text-[length:var(--text-base)]',
+}[size];
+
+const variantMap = {
+  'primary-ink':
+    'bg-[var(--color-ink)] text-[var(--color-bg)] hover:bg-[#000]',
+  'primary-accent':
+    'bg-[var(--color-accent)] text-white hover:bg-[var(--color-accent-hover)]',
+  'secondary':
+    'border border-[var(--color-rule)] text-[var(--color-ink)] hover:border-[var(--color-ink)] bg-transparent',
+  'text':
+    'text-[var(--color-accent)] px-0 py-0 hover:underline',
+}[variant];
+
+const shared = variant === 'text'
+  ? `inline-flex items-center gap-1.5 font-medium text-[length:var(--text-sm)] ${variantMap}`
+  : `pill-apple ${sizeMap} ${variantMap}`;
+---
+{as === 'a' && href ? (
+  <a href={href} class={shared}>
+    <span>{label}</span>
+    {arrow && <span aria-hidden="true">→</span>}
+  </a>
+) : (
+  <button type="button" class={shared}>
+    <span>{label}</span>
+    {arrow && <span aria-hidden="true">→</span>}
+  </button>
+)}

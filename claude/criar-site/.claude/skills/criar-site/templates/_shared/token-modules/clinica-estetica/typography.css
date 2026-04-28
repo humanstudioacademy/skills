@@ -1,0 +1,28 @@
+/* TYPOGRAPHY — Clínica Estética
+   Display: serif expressiva (Fraunces / Recoleta / Canela). Italic é recurso narrativo.
+   Body: sans humanista neutra. Ratio 1.25 — magazine editorial, menos contraste que Portfolio. */
+
+--font-display: 'Fraunces', 'Recoleta', 'Bodoni Moda', 'Playfair Display', Georgia, serif;
+--font-sans:    'Inter Tight', 'Inter', system-ui, -apple-system, sans-serif;
+--font-mono:    'JetBrains Mono', ui-monospace, monospace;
+
+--text-xs:   0.75rem;
+--text-sm:   0.875rem;
+--text-base: 1rem;
+--text-md:   1.25rem;
+--text-lg:   1.5625rem;
+--text-xl:   1.953rem;
+--text-2xl:  2.441rem;
+--text-3xl:  3.052rem;
+--text-4xl:  3.815rem;
+--text-5xl:  4.768rem;
+
+--tracking-tight:  -0.015em;
+--tracking-snug:   -0.005em;
+--tracking-normal:  0;
+--tracking-wide:    0.08em;
+--tracking-wider:   0.14em;
+
+--leading-display: 1.08;
+--leading-heading: 1.18;
+--leading-body:    1.6;

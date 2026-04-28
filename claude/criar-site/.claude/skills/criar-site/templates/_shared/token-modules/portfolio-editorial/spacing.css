@@ -1,0 +1,21 @@
+/* SPACING — Portfolio Editorial
+   Baseline 8pt. Container generoso 1440px. Grid assimétrico 12-col. */
+
+--space-0:  0;
+--space-1:  0.5rem;
+--space-2:  1rem;
+--space-3:  1.5rem;
+--space-4:  2rem;
+--space-5:  2.5rem;
+--space-6:  3rem;
+--space-8:  4rem;
+--space-10: 5rem;
+--space-12: 6rem;
+--space-16: 8rem;
+--space-20: 10rem;
+--space-24: 12rem;
+--space-32: 16rem;
+
+--content-max: 90rem;     /* 1440px */
+--measure:     62ch;
+--gutter:      var(--space-5);

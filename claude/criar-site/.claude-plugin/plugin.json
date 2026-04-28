@@ -1,0 +1,20 @@
+{
+  "name": "criar-site",
+  "version": "0.1.0",
+  "description": "Skill que gera sites estáticos completos (Astro + Tailwind) com imagens e vídeos de IA via Freepik (Nano Banana + Seedance 2.0) ou modo manual. Briefing conversado em 3 fases, 3 matrizes estéticas hibridáveis (Portfolio Editorial / Clínica Estética / Tech Apple-ish).",
+  "author": {
+    "name": "Human Studio",
+    "email": "humanstudio.ai@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "site-generator",
+    "ai-images",
+    "freepik",
+    "nano-banana",
+    "seedance",
+    "astro",
+    "tailwind"
+  ],
+  "skills": "./.claude/skills/"
+}

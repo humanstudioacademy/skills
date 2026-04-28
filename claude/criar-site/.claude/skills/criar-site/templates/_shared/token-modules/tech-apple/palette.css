@@ -1,0 +1,25 @@
+/* PALETTE — Tech Apple-ish
+   Light + Dark mode nativo. Apple blue accent default (briefing troca pra outros). */
+
+/* Light mode */
+--color-bg:         #F5F5F7;       /* Apple canonical light */
+--color-bg-alt:     #FAFAFA;
+--color-surface:    #FFFFFF;
+--color-ink:        #1D1D1F;
+--color-ink-dim:    #424245;
+--color-ink-mute:   #86868B;
+--color-accent:     #0071E3;       /* Apple blue, briefing troca */
+--color-accent-hover:#0077ED;
+--color-rule:       #D2D2D7;
+--color-success:    #30D158;
+--color-warning:    #FF9F0A;
+--color-error:      #FF453A;
+
+/* Dark mode (variante via .dark em body/section) */
+--color-bg-dark:         #0A0A0A;
+--color-bg-alt-dark:     #1D1D1F;
+--color-surface-dark:    #1D1D1F;
+--color-ink-dark:        #F5F5F7;
+--color-ink-dim-dark:    #A1A1A6;
+--color-ink-mute-dark:   #6E6E73;
+--color-rule-dark:       #2D2D2F;

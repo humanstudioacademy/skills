@@ -1,0 +1,43 @@
+---
+/*
+  Contact CTA — fechamento monumental tipográfico.
+  Signature Portfolio: palavra enorme + email/link em ghost.
+*/
+import Marker from '@components/base/Marker.astro';
+
+interface Props {
+  marker?: string;
+  markerLabel?: string;
+  heading: string;         // "Let's talk." ou "Start something."
+  email?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  id?: string;
+}
+const { marker = '04', markerLabel = 'Contact', heading, email, ctaLabel, ctaHref, id } = Astro.props;
+---
+<section id={id} class="relative bg-[var(--color-bg)]">
+  <div class="mx-auto max-w-[var(--content-max)] px-[var(--gutter)] pb-[var(--space-16)] pt-[var(--space-12)]">
+    <div class="reveal mb-[var(--space-8)] grid grid-cols-12 items-center gap-[var(--gutter)] border-t border-[var(--color-rule)] pt-[var(--space-6)]">
+      <div class="col-span-12 md:col-span-6"><Marker value={marker} variant="paren" label={markerLabel} /></div>
+      {email && (
+        <a href={`mailto:${email}`} class="col-span-12 md:col-span-6 label-caps text-[var(--color-ink-dim)] link-ink justify-self-start md:justify-self-end">
+          {email}
+        </a>
+      )}
+    </div>
+
+    <h2 class="type-monumental reveal text-[var(--color-ink)]">
+      {heading}
+    </h2>
+
+    {ctaLabel && ctaHref && (
+      <div class="reveal mt-[var(--space-8)] border-t border-[var(--color-rule)] pt-[var(--space-6)]">
+        <a href={ctaHref} class="inline-flex items-baseline gap-4 font-[family-name:var(--font-display)] text-[length:var(--text-lg)] font-bold text-[var(--color-ink)] transition-colors duration-[var(--duration-base)] hover:text-[var(--color-accent)]">
+          <span>{ctaLabel}</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    )}
+  </div>
+</section>

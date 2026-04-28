@@ -1,0 +1,72 @@
+---
+/*
+  Buy CTA — fechamento Apple-style.
+  Signature: produto pequeno + título + price + financing + pill primary.
+*/
+import Button from '@components/base/Button.astro';
+
+interface Props {
+  heading: string;
+  price?: string;
+  financing?: string;        // "or $49.91/mo. for 12 mo.†"
+  mainCtaLabel: string;
+  mainCtaHref: string;
+  secondaryCtaLabel?: string;
+  secondaryCtaHref?: string;
+  badges?: string[];         // ["Free delivery", "Trade-in available"]
+  productSrc?: string;
+  productAlt?: string;
+}
+const {
+  heading,
+  price,
+  financing,
+  mainCtaLabel,
+  mainCtaHref,
+  secondaryCtaLabel,
+  secondaryCtaHref,
+  badges = [],
+  productSrc,
+  productAlt = '',
+} = Astro.props;
+---
+<section class="bg-[var(--color-bg)]">
+  <div class="mx-auto max-w-[var(--content-max)] px-[var(--gutter)] py-[var(--space-20)]">
+    <div class="rounded-[var(--radius-xl)] bg-[var(--color-surface)] px-8 py-[var(--space-12)] text-center">
+      {productSrc && (
+        <div class="reveal mx-auto mb-8 h-32 w-auto">
+          <img src={productSrc} alt={productAlt} class="mx-auto h-full w-auto object-contain" />
+        </div>
+      )}
+
+      <h2 class="title-apple reveal mx-auto max-w-2xl text-[var(--color-ink)]">
+        {heading}
+      </h2>
+
+      <div class="reveal mt-6 flex flex-col items-center gap-1">
+        {price && <p class="font-[family-name:var(--font-display)] text-[length:var(--text-lg)] font-semibold text-[var(--color-ink)]">From {price}</p>}
+        {financing && <p class="text-[length:var(--text-sm)] text-[var(--color-ink-mute)]">{financing}</p>}
+      </div>
+
+      <div class="reveal mt-8 flex flex-wrap items-center justify-center gap-3">
+        <Button href={mainCtaHref} label={mainCtaLabel} variant="primary-accent" size="lg" />
+        {secondaryCtaLabel && secondaryCtaHref && (
+          <Button href={secondaryCtaHref} label={secondaryCtaLabel} variant="secondary" size="lg" />
+        )}
+      </div>
+
+      {badges.length > 0 && (
+        <ul class="reveal mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+          {badges.map((b) => (
+            <li class="flex items-center gap-2 text-[length:var(--text-sm)] text-[var(--color-ink-dim)]">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M2 7 L 5 10 L 12 3" stroke="var(--color-success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+              <span>{b}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </div>
+</section>

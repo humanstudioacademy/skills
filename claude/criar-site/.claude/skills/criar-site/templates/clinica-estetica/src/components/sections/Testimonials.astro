@@ -1,0 +1,58 @@
+---
+/*
+  Testimonials — carrossel sóbrio com avatar circular, quote e autor.
+  Signature: mood wellness/luxo contido. Controle via scroll horizontal (CSS-only).
+*/
+import Marker from '@components/base/Marker.astro';
+
+export interface Testimonial {
+  quote: string;
+  author: string;
+  role?: string;
+  avatarSrc?: string;
+}
+
+interface Props {
+  id?: string;
+  marker?: string;
+  heading: string;
+  items: Testimonial[];
+}
+const { id, marker = 'WHAT OUR CLIENTS SAY', heading, items } = Astro.props;
+---
+<section id={id} class="bg-[var(--color-deep)] text-[var(--color-bg)]">
+  <div class="mx-auto max-w-[var(--content-max)] px-[var(--gutter)] py-[var(--space-20)]">
+    <div class="reveal mb-[var(--space-12)] text-center">
+      <div class="mb-5 flex justify-center">
+        <Marker label={marker} align="center" rule />
+      </div>
+      <h2 class="font-[family-name:var(--font-display)] text-[length:var(--text-xl)] md:text-[length:var(--text-2xl)] font-normal italic-emphasis text-[var(--color-bg)]">
+        {heading}
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 gap-[var(--space-8)] md:grid-cols-3">
+      {items.map((t) => (
+        <blockquote class="reveal text-center md:text-left">
+          <span class="mb-4 block font-[family-name:var(--font-display)] text-[length:var(--text-4xl)] leading-none text-[var(--color-mid)]">“</span>
+          <p class="mb-6 text-[length:var(--text-md)] leading-[var(--leading-body)] text-[var(--color-bg)]/90">
+            {t.quote}
+          </p>
+          <footer class="flex items-center gap-4 justify-center md:justify-start">
+            {t.avatarSrc && (
+              <div class="avatar-circle h-12 w-12 shrink-0">
+                <img src={t.avatarSrc} alt={t.author} class="h-full w-full object-cover" />
+              </div>
+            )}
+            <div>
+              <p class="font-[family-name:var(--font-display)] text-[length:var(--text-base)] italic text-[var(--color-bg)]">
+                {t.author}
+              </p>
+              {t.role && <p class="label-small-caps text-[var(--color-mid)]">{t.role}</p>}
+            </div>
+          </footer>
+        </blockquote>
+      ))}
+    </div>
+  </div>
+</section>

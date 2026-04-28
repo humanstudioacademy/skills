@@ -1,0 +1,63 @@
+---
+/*
+  Feature Cards — grid 2x2 de features principais (performance/AI/battery/display).
+  Signature Apple: cards grandes com ícone/visual + title bold + description curta.
+*/
+
+export interface FeatureCard {
+  icon?: 'performance' | 'ai' | 'battery' | 'display' | 'connectivity' | 'design';
+  label: string;      // "PERFORMANCE"
+  title: string;      // "M5 Max. Fastest Mac chip ever."
+  description: string;
+  stat?: string;      // "Up to 14x faster"
+  mode?: 'light' | 'dark';
+}
+
+interface Props {
+  heading?: string;
+  cards: FeatureCard[];
+}
+const { heading, cards } = Astro.props;
+
+const icons: Record<NonNullable<FeatureCard['icon']>, string> = {
+  performance:  `<circle cx='24' cy='24' r='14' stroke='currentColor' stroke-width='2' fill='none'/><path d='M24 14 L 24 24 L 32 28' stroke='currentColor' stroke-width='2' fill='none' stroke-linecap='round'/>`,
+  ai:           `<circle cx='24' cy='24' r='4' fill='currentColor'/><circle cx='24' cy='24' r='10' stroke='currentColor' stroke-width='2' fill='none'/><circle cx='24' cy='24' r='18' stroke='currentColor' stroke-width='2' fill='none' opacity='0.5'/>`,
+  battery:      `<rect x='6' y='14' width='32' height='20' rx='4' stroke='currentColor' stroke-width='2' fill='none'/><rect x='38' y='20' width='4' height='8' rx='1' fill='currentColor'/><rect x='10' y='18' width='18' height='12' rx='2' fill='currentColor'/>`,
+  display:      `<rect x='6' y='10' width='36' height='24' rx='3' stroke='currentColor' stroke-width='2' fill='none'/><path d='M18 38 L 30 38' stroke='currentColor' stroke-width='2' stroke-linecap='round'/>`,
+  connectivity: `<circle cx='24' cy='32' r='3' fill='currentColor'/><path d='M14 24 Q 24 16, 34 24' stroke='currentColor' stroke-width='2' fill='none'/><path d='M10 18 Q 24 6, 38 18' stroke='currentColor' stroke-width='2' fill='none' opacity='0.6'/>`,
+  design:       `<path d='M24 8 L 40 20 L 24 40 L 8 20 Z' stroke='currentColor' stroke-width='2' fill='none'/>`,
+};
+---
+<section class="bg-[var(--color-bg)]">
+  <div class="mx-auto max-w-[var(--content-wide)] px-[var(--gutter)] py-[var(--space-20)]">
+    {heading && <h2 class="title-apple reveal mb-[var(--space-12)] text-[var(--color-ink)]">{heading}</h2>}
+
+    <div class="stagger-children grid grid-cols-1 gap-5 md:grid-cols-2">
+      {cards.map((c) => (
+        <article class={`relative flex flex-col justify-between overflow-hidden rounded-[var(--radius-lg)] p-8 min-h-[22rem] ${c.mode === 'dark' ? 'bg-[var(--color-bg-dark)] text-[var(--color-ink-dark)]' : 'bg-[var(--color-surface)] text-[var(--color-ink)]'}`}>
+          <div>
+            <p class="label-tech mb-4">{c.label}</p>
+            <h3 class="font-[family-name:var(--font-display)] text-[length:var(--text-lg)] md:text-[length:var(--text-xl)] font-bold leading-[var(--leading-heading)] tracking-[var(--tracking-tight)]">
+              {c.title}
+            </h3>
+            <p class="mt-3 max-w-md text-[length:var(--text-base)] leading-[var(--leading-body)] opacity-75">
+              {c.description}
+            </p>
+          </div>
+          {c.stat && (
+            <div class="mt-6 flex items-baseline gap-3">
+              <span class="font-[family-name:var(--font-display)] text-[length:var(--text-2xl)] font-bold leading-none tracking-[var(--tracking-tight)] text-[var(--color-accent)]" data-stat-counter>
+                {c.stat}
+              </span>
+            </div>
+          )}
+          {c.icon && (
+            <div class="pointer-events-none absolute -right-4 -top-4 opacity-10" style="width:140px;height:140px;color:currentColor">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" set:html={icons[c.icon]}></svg>
+            </div>
+          )}
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

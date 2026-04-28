@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+/*
+  Clínica Estética — design tokens.
+  DNA: serif expressiva + muted quente + retrato humano + ornamentos orgânicos + ritmo respirado.
+
+  Paleta default = SAGE. Briefing pode trocar pra rose-taupe/sand/warm-nude (ver kit.config.ts).
+  Ratio tipográfico 1.25 (menor contraste display/body — sensação magazine editorial, não escultural).
+*/
+
+@theme {
+  /* ── CORES — paleta SAGE (default) ── */
+  --color-bg:         #F5EEE6;   /* cream foundation */
+  --color-bg-alt:     #EDE5DA;   /* warmer surface pra bloco de "mission" */
+  --color-surface:    #FFFFFF;   /* white pro card contrast */
+  --color-deep:       #2E3A2E;   /* sage deep — dominante */
+  --color-mid:        #E5D5C8;   /* blush/mid tone */
+  --color-ink:        #2A2520;   /* texto body (near-black warm, nunca puro preto) */
+  --color-ink-dim:    #5B524A;   /* secondary text */
+  --color-ink-mute:   #8A7E72;   /* caption/meta */
+  --color-accent:     #B8923D;   /* gold/bronze — SÓ em ornamentos e linhas finas */
+  --color-rule:       #C9BFB2;   /* rule muted */
+  --color-rule-deep:  #2E3A2E;   /* rule em deep quando precisar contraste */
+
+  /* ── TIPOGRAFIA ──
+     Display: serif expressiva (Fraunces default). Italic é recurso.
+     Body: sans humanista neutra (Inter).
+  */
+  --font-display: 'Fraunces', 'Bodoni Moda', 'Playfair Display', Georgia, serif;
+  --font-sans:    'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+
+  /* Escala modular — ratio 1.25 (major third). Mais editorial magazine, menos escultural. */
+  --text-xs:   0.75rem;     /* 12px — labels small caps */
+  --text-sm:   0.875rem;    /* 14px — caption */
+  --text-base: 1rem;        /* 16px — body */
+  --text-md:   1.25rem;     /* 20px — lead */
+  --text-lg:   1.5625rem;   /* 25px — subsection */
+  --text-xl:   1.953rem;    /* 31.25px */
+  --text-2xl:  2.441rem;    /* 39px */
+  --text-3xl:  3.052rem;    /* 48.8px */
+  --text-4xl:  3.815rem;    /* 61px — hero serif */
+  --text-5xl:  4.768rem;    /* 76px — hero grande */
+
+  /* Tracking — serif expressiva prefere tracking normal/snug, nunca extreme */
+  --tracking-tight:  -0.015em;
+  --tracking-snug:   -0.005em;
+  --tracking-normal:  0;
+  --tracking-wide:    0.08em;
+  --tracking-wider:   0.14em;   /* small caps labels */
+
+  /* Leading — serif expressiva pede leading mais alto que grotesque */
+  --leading-display: 1.08;
+  --leading-heading: 1.18;
+  --leading-body:    1.6;
+
+  /* ── ESPAÇAMENTO ── (baseline 8pt, ainda mais generoso que Portfolio) */
+  --space-0:  0;
+  --space-1:  0.5rem;
+  --space-2:  1rem;
+  --space-3:  1.5rem;
+  --space-4:  2rem;
+  --space-5:  2.5rem;
+  --space-6:  3rem;
+  --space-8:  4rem;
+  --space-10: 5rem;
+  --space-12: 6rem;
+  --space-16: 8rem;
+  --space-20: 10rem;
+  --space-24: 12rem;
+  --space-32: 16rem;
+
+  /* ── GRID ── */
+  --content-max: 78rem;  /* 1248px — menor que Portfolio pra "caber" na margem respirada */
+  --measure:     58ch;
+  --gutter:      var(--space-5);
+
+  /* ── MOTION ── (mais lento que Portfolio, respirado) */
+  --duration-fast:   200ms;
+  --duration-base:   400ms;
+  --duration-ui:     600ms;
+  --duration-reveal: 900ms;
+  --duration-long:   1200ms;
+  --duration-epic:   1600ms;
+
+  --ease-out-expo:   cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-cubic:  cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-gentle:     cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ── RADIUS ── pill é default do kit  */
+  --radius-none: 0;
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-pill: 9999px;
+
+  /* ── ORNAMENTO ── */
+  --ornament-stroke: 1px;
+  --ornament-opacity: 0.35;
+}

@@ -1,0 +1,128 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Header from '@components/sections/Header.astro';
+import Hero from '@components/sections/Hero.astro';
+import EditorialPitch from '@components/sections/EditorialPitch.astro';
+import WorkGrid from '@components/sections/WorkGrid.astro';
+import Marquee from '@components/sections/Marquee.astro';
+import ContactCTA from '@components/sections/ContactCTA.astro';
+import Footer from '@components/sections/Footer.astro';
+
+/*
+  Showcase do kit Portfolio Editorial — DNA matriz v1.
+  Briefing real substitui este arquivo. Placeholders são SVG data-URIs locais
+  pra não depender de rede e não gastar API durante dev.
+*/
+
+const ph4x5 = (label: string, bg = 'EFEDE6', fg = '8A8884') =>
+  `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'><rect width='400' height='500' fill='%23${bg}'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23${fg}' font-family='monospace' font-size='16'>${label}</text></svg>`;
+
+const projects = [
+  { marker: '01', title: 'Ross Mason', client: 'London', year: '2026', services: ['3D', 'Motion', 'Art direction'], mediaSrc: ph4x5('ROSS%20MASON'), mediaAlt: 'Ross Mason — showcase', href: '#' },
+  { marker: '02', title: 'Kuya', client: 'LA · Everywhere', year: '2026', services: ['Brand identity', 'Advertising'], mediaSrc: ph4x5('KUYA'), mediaAlt: 'Kuya — showcase', href: '#' },
+  { marker: '03', title: 'Glided Stride', client: 'Milan', year: '2025', services: ['Editorial', 'Web'], mediaSrc: ph4x5('GLIDED'), mediaAlt: 'Glided — showcase', href: '#' },
+  { marker: '04', title: 'Flow Studio', client: 'Production House', year: '2025', services: ['Strategy', 'Production'], mediaSrc: ph4x5('FLOW'), mediaAlt: 'Flow — showcase', href: '#' },
+  { marker: '05', title: 'Ockham', client: 'San Diego', year: '2024', services: ['Broadcast', 'Lifestyle'], mediaSrc: ph4x5('OCKHAM'), mediaAlt: 'Ockham — showcase', href: '#' },
+  { marker: '06', title: 'Biabum', client: 'Independent', year: '2024', services: ['Editorial', 'Brand'], mediaSrc: ph4x5('BIABUM'), mediaAlt: 'Biabum — showcase', href: '#' },
+];
+---
+<BaseLayout
+  title="Portfolio Editorial — Kit showcase"
+  description="Kit 1 do sistema /criar-site. DNA: grotesque condensada + 1 accent saturada + ritmo declarativo."
+>
+  <Header
+    brand="Portfolio Editorial"
+    nav={[
+      { label: 'Work', href: '#work' },
+      { label: 'About', href: '#about' },
+      { label: 'Journal', href: '#journal' },
+    ]}
+    cta={{ label: 'Start a project', href: '#contact' }}
+  />
+
+  <Hero
+    variant="monumental-word"
+    marker="01"
+    markerLabel="Index / Work / About / Lab"
+    word="ROSS MASON"
+    lead="Studio de art direction, motion e 3D operando entre Londres e o resto do mundo. Projetos guiados por tipografia e material cinematográfico."
+    ctaLabel="Ver trabalhos"
+    ctaHref="#work"
+  />
+
+  <Marquee
+    items={[
+      '3D',
+      'Motion',
+      'Art direction',
+      'Editorial systems',
+      'Typography-first',
+      'Brand identity',
+    ]}
+    separator="◇"
+  />
+
+  <EditorialPitch
+    id="about"
+    marker="02"
+    markerLabel="About"
+    heading="Tipografia é a atração principal. Fotografia e vídeo são o prop. Cor saturada é a pontuação."
+    body="Cada projeto é tratado como sistema editorial — hierarquia radical, grid assimétrico, marcadores alfanuméricos como elemento estético. Nada de decoração gratuita."
+    bodyRight="O DNA do kit impõe o vocabulário; o briefing escolhe a cor-accent, a tipografia display e a densidade. Mas o ritmo declarativo é inegociável."
+  />
+
+  <WorkGrid
+    id="work"
+    marker="03"
+    markerLabel="Selected work"
+    heading="Um recorte recente."
+    projects={projects}
+    layout="3-col"
+  />
+
+  <Marquee
+    items={[
+      'Available Q3 · 2026',
+      'Open for commissions',
+      'Remote + London',
+    ]}
+    separator="/"
+    tone="accent"
+  />
+
+  <ContactCTA
+    id="contact"
+    marker="04"
+    markerLabel="Contact"
+    heading="LET'S TALK."
+    email="hello@portfolioeditorial.com"
+    ctaLabel="Start a brief"
+    ctaHref="mailto:hello@portfolioeditorial.com"
+  />
+
+  <Footer
+    brand="Portfolio Editorial"
+    tagline="Kit 1 do sistema /criar-site — grotesque condensada, 1 accent saturada, ritmo declarativo. DNA matriz v1."
+    navGroups={[
+      { label: 'Kit', links: [
+        { label: 'DNA', href: '#' },
+        { label: 'Tokens', href: '#' },
+        { label: 'Components', href: '#' },
+      ]},
+      { label: 'System', links: [
+        { label: 'Skill /criar-site', href: '#' },
+        { label: 'Princípios universais', href: '#' },
+      ]},
+      { label: 'Contact', links: [
+        { label: 'hello@portfolioeditorial.com', href: 'mailto:hello@portfolioeditorial.com' },
+        { label: 'Instagram', href: '#' },
+      ]},
+    ]}
+    meta={[
+      { key: 'Kit', value: 'Portfolio Editorial v0.1' },
+      { key: 'Stack', value: 'Astro 5 + Tailwind 4' },
+      { key: 'Motion', value: 'GSAP + Lenis' },
+    ]}
+    colophon="Built on universal principles."
+  />
+</BaseLayout>

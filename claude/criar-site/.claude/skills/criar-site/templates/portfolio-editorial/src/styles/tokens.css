@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+/*
+  Portfolio Editorial — design tokens.
+  DNA: grotesque condensada + 1 accent saturada + ritmo declarativo + light mode.
+  Este arquivo expõe CSS vars editáveis via kit.config.ts pelo briefing.
+
+  Ordem dos valores = defaults. Variações injetadas pela Skill sobrescrevem apenas
+  os tokens listados em editableTokens.
+*/
+
+@theme {
+  /* ── CORES ──
+     Base: off-white + ink + UMA accent saturada.
+     Accent é editable — o briefing escolhe entre os presets ou custom.
+  */
+  --color-bg:         #F5F4F0;   /* off-white foundation */
+  --color-bg-alt:     #EFEDE6;   /* card/surface slight warmer */
+  --color-surface:    #FFFFFF;   /* white pure — cards em contraste */
+  --color-ink:        #0E0E0E;   /* near-black for text */
+  --color-ink-dim:    #4A4A47;   /* secondary text */
+  --color-ink-mute:   #8A8884;   /* caption/meta/hover-lead */
+  --color-rule:       #0E0E0E;   /* rules são ink puro, não cinza — signature editorial */
+  --color-rule-soft:  #D8D5CD;   /* rule suave quando precisar */
+  --color-accent:     #1E2BFF;   /* default: royal blue. Editable via briefing */
+  --color-accent-ink: #FFFFFF;   /* texto sobre accent */
+
+  /* ── TIPOGRAFIA ──
+     Display default: Anton (grotesque condensada ultra-bold, Google Fonts).
+     Serif variant: Fraunces (expressiva contemporânea, Google Fonts).
+     Body: Inter (sans neutra, Google Fonts).
+     Todas as famílias são trocáveis via briefing (ver kit.config.ts → editableTokens.displayFont/bodyFont).
+  */
+  --font-display:  'Anton', 'Archivo Black', 'Bebas Neue', 'Impact', system-ui, sans-serif;
+  --font-sans:     'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono:     'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+  --font-serif:    'Fraunces', 'Bodoni Moda', 'Playfair Display', Georgia, serif;  /* reserva p/ variant */
+
+  /* Escala modular — ratio 1.414 (mais agressivo que ratio 1.333 do astro antigo).
+     Ritmo declarativo pede contraste display grande. */
+  --text-xs:   0.75rem;     /* 12px — marker/meta */
+  --text-sm:   0.875rem;    /* 14px — caption */
+  --text-base: 1rem;        /* 16px — body */
+  --text-md:   1.414rem;    /* 22.6px — lead */
+  --text-lg:   2rem;        /* 32px — subsection */
+  --text-xl:   2.828rem;    /* 45.2px — section heading */
+  --text-2xl:  4rem;        /* 64px — hero small */
+  --text-3xl:  5.656rem;    /* 90.5px — hero medium */
+  --text-4xl:  8rem;        /* 128px — hero large */
+  --text-5xl:  11.313rem;   /* 181px — monumental */
+
+  /* Tracking calibrado — display com tracking negativo (grotesque condensada).
+     Small caps com tracking wide pra marcadores. */
+  --tracking-tightest: -0.04em;  /* hero/display */
+  --tracking-tight:    -0.02em;  /* subheads */
+  --tracking-snug:     -0.01em;
+  --tracking-normal:    0;
+  --tracking-wide:      0.05em;
+  --tracking-wider:     0.12em;   /* markers/labels caps */
+
+  /* Leading */
+  --leading-display: 0.92;   /* display grotesque quer leading curto */
+  --leading-heading: 1.05;
+  --leading-body:    1.5;
+
+  /* ── ESPAÇAMENTO ── (baseline 8pt) */
+  --space-0:  0;
+  --space-1:  0.5rem;   /* 8px */
+  --space-2:  1rem;     /* 16px */
+  --space-3:  1.5rem;   /* 24px */
+  --space-4:  2rem;     /* 32px */
+  --space-5:  2.5rem;   /* 40px */
+  --space-6:  3rem;     /* 48px */
+  --space-8:  4rem;     /* 64px */
+  --space-10: 5rem;     /* 80px */
+  --space-12: 6rem;     /* 96px */
+  --space-16: 8rem;     /* 128px */
+  --space-20: 10rem;    /* 160px */
+  --space-24: 12rem;    /* 192px */
+  --space-32: 16rem;    /* 256px */
+
+  /* ── GRID ── */
+  --content-max: 90rem;  /* 1440px — editorial pede container grande */
+  --measure:     62ch;
+  --gutter:      var(--space-5);
+
+  /* ── MOTION ── (múltiplos de 200ms + easings curvados) */
+  --duration-fast:   150ms;
+  --duration-base:   300ms;
+  --duration-ui:     450ms;
+  --duration-reveal: 700ms;
+  --duration-long:   900ms;
+  --duration-epic:   1400ms;
+
+  --ease-out-expo:     cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-swift:        cubic-bezier(0.34, 1.56, 0.64, 1);  /* overshoot leve pra split-words */
+
+  /* ── RADIUS ──
+     Portfolio Editorial: botão retangular, 0 radius em containers (signature).
+     Radius só em pills muito ocasionais. */
+  --radius-none: 0;
+  --radius-sm:   2px;
+  --radius-md:   4px;
+  --radius-pill: 9999px;
+}

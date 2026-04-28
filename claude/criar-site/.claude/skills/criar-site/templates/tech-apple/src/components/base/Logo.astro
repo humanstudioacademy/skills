@@ -1,0 +1,22 @@
+---
+/*
+  Logo — wordmark sans bold, simple.
+  Apple-ish: discreto, baixo contraste com o resto.
+*/
+interface Props {
+  brand: string;
+  href?: string;
+  src?: string;
+  alt?: string;
+}
+const { brand, href = '/', src, alt = brand } = Astro.props;
+---
+<a href={href} class="inline-flex items-center" aria-label={brand}>
+  {src ? (
+    <img src={src} alt={alt} class="h-6 w-auto" />
+  ) : (
+    <span class="font-[family-name:var(--font-display)] text-[length:var(--text-md)] font-semibold tracking-[var(--tracking-tight)] text-[var(--color-ink)]">
+      {brand}
+    </span>
+  )}
+</a>

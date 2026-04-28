@@ -1,0 +1,52 @@
+---
+/*
+  Header — tri-partido (signature Portfolio Editorial):
+  logo esquerda + nav centralizada + CTA direita.
+  Sticky com backdrop.
+*/
+import Logo from '@components/base/Logo.astro';
+import Button from '@components/base/Button.astro';
+
+interface Props {
+  brand: string;
+  logoHref?: string;
+  logoSrc?: string;
+  nav?: { label: string; href: string }[];
+  cta?: { label: string; href: string };
+  sticky?: boolean;
+}
+const {
+  brand,
+  logoHref = '/',
+  logoSrc,
+  nav = [],
+  cta,
+  sticky = true,
+} = Astro.props;
+---
+<header
+  class={`${sticky ? 'sticky top-0 z-50' : ''} border-b border-[var(--color-rule-soft)] bg-[var(--color-bg)]/85 backdrop-blur-md`}
+>
+  <div class="mx-auto grid max-w-[var(--content-max)] grid-cols-3 items-center gap-[var(--gutter)] px-[var(--gutter)] py-4">
+    <div class="justify-self-start">
+      <Logo brand={brand} href={logoHref} src={logoSrc} alt={brand} />
+    </div>
+
+    {nav.length > 0 && (
+      <nav class="hidden md:flex items-center justify-center gap-8" aria-label="Primary">
+        {nav.map((item) => (
+          <a
+            href={item.href}
+            class="label-caps text-[var(--color-ink-dim)] transition-colors duration-[var(--duration-base)] hover:text-[var(--color-accent)]"
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
+    )}
+
+    <div class="justify-self-end">
+      {cta && <Button href={cta.href} label={cta.label} variant="ghost" size="sm" />}
+    </div>
+  </div>
+</header>

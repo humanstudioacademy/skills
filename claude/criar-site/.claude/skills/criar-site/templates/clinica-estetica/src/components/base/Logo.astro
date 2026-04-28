@@ -1,0 +1,36 @@
+---
+/*
+  Logo — wordmark serif signature da Clínica.
+  Default: nome em serif expressiva com italic parcial opcional.
+*/
+interface Props {
+  brand: string;
+  italic?: string;    // parte em italic, ex: brand="Nicola Poskitt" italic="Aesthetics"
+  href?: string;
+  src?: string;
+  alt?: string;
+  size?: 'sm' | 'md' | 'lg';
+}
+const { brand, italic, href = '/', src, alt = brand, size = 'md' } = Astro.props;
+const sizeClass = {
+  sm: 'text-[length:var(--text-base)]',
+  md: 'text-[length:var(--text-md)]',
+  lg: 'text-[length:var(--text-lg)]',
+}[size];
+---
+<a href={href} class="inline-flex items-baseline gap-2" aria-label={`${brand}${italic ? ' ' + italic : ''}`}>
+  {src ? (
+    <img src={src} alt={alt} class="h-7 w-auto" />
+  ) : (
+    <>
+      <span class={`font-[family-name:var(--font-display)] ${sizeClass} font-normal tracking-[var(--tracking-snug)] text-[var(--color-deep)]`}>
+        {brand}
+      </span>
+      {italic && (
+        <span class={`italic-emphasis ${sizeClass} text-[var(--color-deep)]`}>
+          {italic}
+        </span>
+      )}
+    </>
+  )}
+</a>

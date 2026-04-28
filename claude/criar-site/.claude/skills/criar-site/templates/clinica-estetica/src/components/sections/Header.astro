@@ -1,0 +1,73 @@
+---
+/*
+  Header — signature Clínica: logo centralizado estilo editorial magazine.
+  Variant 'logo-left-simple' disponível via prop.
+*/
+import Logo from '@components/base/Logo.astro';
+import Button from '@components/base/Button.astro';
+
+interface Props {
+  brand: string;
+  italic?: string;
+  logoHref?: string;
+  logoSrc?: string;
+  nav?: { label: string; href: string }[];
+  cta?: { label: string; href: string };
+  layout?: 'logo-center' | 'logo-left-simple';
+  sticky?: boolean;
+}
+const {
+  brand,
+  italic,
+  logoHref = '/',
+  logoSrc,
+  nav = [],
+  cta,
+  layout = 'logo-center',
+  sticky = true,
+} = Astro.props;
+---
+<header
+  class={`${sticky ? 'sticky top-0 z-50' : ''} border-b border-[var(--color-rule)] bg-[var(--color-bg)]/92 backdrop-blur-md`}
+>
+  {layout === 'logo-center' ? (
+    <div class="mx-auto max-w-[var(--content-max)] px-[var(--gutter)] py-5">
+      <div class="grid grid-cols-3 items-center gap-4">
+        <nav class="hidden md:flex items-center gap-6 justify-self-start" aria-label="Primary">
+          {nav.slice(0, 3).map((item) => (
+            <a href={item.href} class="label-small-caps hover:text-[var(--color-deep)] transition-colors duration-[var(--duration-base)]">
+              {item.label}
+            </a>
+          ))}
+        </nav>
+
+        <div class="justify-self-center text-center">
+          <Logo brand={brand} italic={italic} href={logoHref} src={logoSrc} size="md" />
+        </div>
+
+        <div class="flex items-center gap-4 justify-self-end">
+          {nav.slice(3).map((item) => (
+            <a href={item.href} class="hidden md:inline label-small-caps hover:text-[var(--color-deep)] transition-colors duration-[var(--duration-base)]">
+              {item.label}
+            </a>
+          ))}
+          {cta && <Button href={cta.href} label={cta.label} variant="primary" size="sm" arrow={false} />}
+        </div>
+      </div>
+    </div>
+  ) : (
+    <div class="mx-auto flex max-w-[var(--content-max)] items-center justify-between px-[var(--gutter)] py-5">
+      <Logo brand={brand} italic={italic} href={logoHref} src={logoSrc} size="md" />
+      {nav.length > 0 && (
+        <nav class="hidden md:flex items-center gap-8" aria-label="Primary">
+          {nav.map((item) => (
+            <a href={item.href} class="label-small-caps hover:text-[var(--color-deep)] transition-colors duration-[var(--duration-base)]">
+              {item.label}
+            </a>
+          ))}
+        </nav>
+      )}
+      {cta && <Button href={cta.href} label={cta.label} variant="primary" size="sm" arrow={false} />}
+    </div>
+  )}
+</header>

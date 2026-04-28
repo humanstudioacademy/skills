@@ -1,0 +1,47 @@
+---
+/*
+  Button — PILL signature da Clínica Estética.
+  Nunca retangular (isso é Portfolio Editorial).
+  Variants:
+    - 'primary' : fill deep, text bg
+    - 'outline' : border deep, transparent
+    - 'ghost'   : só texto + underline suave
+*/
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'outline' | 'ghost';
+  label: string;
+  as?: 'a' | 'button';
+  size?: 'sm' | 'md' | 'lg';
+  arrow?: boolean;
+}
+const { href, variant = 'primary', label, as = 'a', size = 'md', arrow = true } = Astro.props;
+
+const sizeMap = {
+  sm: 'px-5 py-2 text-[length:var(--text-xs)]',
+  md: 'px-7 py-3 text-[length:var(--text-sm)]',
+  lg: 'px-9 py-4 text-[length:var(--text-base)]',
+}[size];
+
+const variantMap = {
+  primary:
+    'bg-[var(--color-deep)] text-[var(--color-bg)] hover:bg-[var(--color-ink)] hover:-translate-y-0.5',
+  outline:
+    'border border-[var(--color-deep)] text-[var(--color-deep)] hover:bg-[var(--color-deep)] hover:text-[var(--color-bg)]',
+  ghost:
+    'text-[var(--color-deep)] link-soft',
+}[variant];
+
+const shared = `pill-base ${sizeMap} ${variantMap}`;
+---
+{as === 'a' && href ? (
+  <a href={href} class={shared}>
+    <span>{label}</span>
+    {arrow && <span aria-hidden="true" class="ml-1">→</span>}
+  </a>
+) : (
+  <button type="button" class={shared}>
+    <span>{label}</span>
+    {arrow && <span aria-hidden="true" class="ml-1">→</span>}
+  </button>
+)}

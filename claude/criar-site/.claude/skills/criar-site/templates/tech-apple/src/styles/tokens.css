@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+/*
+  Tech Apple-ish — design tokens.
+  DNA: sans geométrica bold + produto flutuante + paleta fria neutra + period nos títulos.
+  Light mode default + dark mode variant nativa.
+  Briefing troca accent. Monospace é opt-in.
+*/
+
+@theme {
+  /* ── CORES — LIGHT MODE (default) ── */
+  --color-bg:         #F5F5F7;   /* Apple canonical light */
+  --color-bg-alt:     #FAFAFA;   /* surface mais claro */
+  --color-surface:    #FFFFFF;   /* cards white pure */
+  --color-ink:        #1D1D1F;   /* Apple near-black */
+  --color-ink-dim:    #424245;   /* secondary text */
+  --color-ink-mute:   #86868B;   /* caption/meta Apple grey */
+  --color-accent:     #0071E3;   /* Apple blue default — trocável via briefing */
+  --color-accent-hover:#0077ED;
+  --color-rule:       #D2D2D7;   /* Apple rule light */
+  --color-success:    #30D158;
+  --color-warning:    #FF9F0A;
+  --color-error:      #FF453A;
+
+  /* ── CORES — DARK MODE (variante via .dark em body/section) ── */
+  --color-bg-dark:         #0A0A0A;
+  --color-bg-alt-dark:     #1D1D1F;
+  --color-surface-dark:    #1D1D1F;
+  --color-ink-dark:        #F5F5F7;
+  --color-ink-dim-dark:    #A1A1A6;
+  --color-ink-mute-dark:   #6E6E73;
+  --color-rule-dark:       #2D2D2F;
+
+  /* ── TIPOGRAFIA ──
+     Display = Body = Inter (Apple-like: uma família, pesos variados).
+     Monospace opt-in. Nunca light weight.
+  */
+  --font-display: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-sans:    'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono:    'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+
+  /* Escala modular — ratio 1.333 (Apple-friendly, menos agressiva que Portfolio) */
+  --text-xs:   0.75rem;     /* 12px — label small */
+  --text-sm:   0.875rem;    /* 14px — caption */
+  --text-base: 1rem;        /* 17px Apple, nós usamos 16 default */
+  --text-md:   1.21rem;     /* 19.4px */
+  --text-lg:   1.611rem;    /* 25.8px — subsection */
+  --text-xl:   2.147rem;    /* 34.3px — section heading */
+  --text-2xl:  2.862rem;    /* 45.8px — hero small */
+  --text-3xl:  3.816rem;    /* 61px — hero medium */
+  --text-4xl:  5.086rem;    /* 81.4px — hero large */
+  --text-5xl:  6.779rem;    /* 108.5px — monumental */
+
+  /* Tracking — Apple usa tracking ajustado por tamanho */
+  --tracking-tight:    -0.022em;    /* display grande Apple */
+  --tracking-snug:     -0.014em;
+  --tracking-normal:    0;
+  --tracking-wide:      0.02em;
+  --tracking-wider:     0.04em;
+
+  /* Leading Apple */
+  --leading-display: 1.05;
+  --leading-heading: 1.125;
+  --leading-body:    1.47;
+
+  /* ── ESPAÇAMENTO ── */
+  --space-0:  0;
+  --space-1:  0.5rem;
+  --space-2:  1rem;
+  --space-3:  1.5rem;
+  --space-4:  2rem;
+  --space-5:  2.5rem;
+  --space-6:  3rem;
+  --space-8:  4rem;
+  --space-10: 5rem;
+  --space-12: 6rem;
+  --space-16: 8rem;
+  --space-20: 10rem;
+  --space-24: 12rem;
+  --space-32: 16rem;
+
+  /* ── GRID ── */
+  --content-max: 72rem;    /* 1152px — Apple usa 980-1440 dependendo seção; default 1152 */
+  --content-wide: 90rem;   /* 1440px pra heros e lifestyle */
+  --measure:     62ch;
+  --gutter:      var(--space-5);
+
+  /* ── MOTION ── (Apple usa durations ~0.5-1s com easing cubic) */
+  --duration-fast:   200ms;
+  --duration-base:   400ms;
+  --duration-ui:     500ms;
+  --duration-reveal: 700ms;
+  --duration-long:   1000ms;
+  --duration-epic:   1400ms;
+
+  --ease-apple:        cubic-bezier(0.42, 0, 0.58, 1);   /* default Apple curve */
+  --ease-out-expo:     cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-cubic:    cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ── RADIUS ── Apple ama radius médios */
+  --radius-none: 0;
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   18px;      /* card radius Apple */
+  --radius-xl:   28px;
+  --radius-pill: 9999px;
+}

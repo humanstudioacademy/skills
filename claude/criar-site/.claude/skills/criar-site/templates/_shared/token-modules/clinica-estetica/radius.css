@@ -1,0 +1,9 @@
+/* RADIUS — Clínica Estética
+   Pill é signature. Cards têm radius médio. Nunca 0 absoluto. */
+
+--radius-none: 0;
+--radius-sm:   4px;
+--radius-md:   8px;
+--radius-lg:   16px;
+--radius-xl:   24px;
+--radius-pill: 9999px;

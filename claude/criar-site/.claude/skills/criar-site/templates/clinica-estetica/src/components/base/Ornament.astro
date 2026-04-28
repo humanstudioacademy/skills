@@ -1,0 +1,45 @@
+---
+/*
+  Ornament — SVG decorativo signature do kit.
+  Variants conforme kit.config.ts → editableTokens.ornamentStyle:
+    - 'wave'            : linha ondulada botânica
+    - 'leaf'            : folha abstrata orgânica
+    - 'circles'         : círculos concêntricos (leveza/paz)
+    - 'dots'            : reticências espaçadas
+  O briefing escolhe qual estilo usar. Posicionamento via classes absolutas do parent.
+*/
+interface Props {
+  variant?: 'wave' | 'leaf' | 'circles' | 'dots';
+  width?: string;    // ex: '200px', '30%'
+  class?: string;
+  stroke?: string;
+}
+const { variant = 'wave', width = '240px', class: className = '', stroke } = Astro.props;
+const strokeStyle = stroke ? `color: ${stroke};` : '';
+---
+{variant === 'wave' && (
+  <svg class={`ornament ${className}`} style={`width:${width}; ${strokeStyle}`} data-breathing data-breathing-scale="1.04" data-breathing-duration="4" viewBox="0 0 400 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M0 40 Q 50 0, 100 40 T 200 40 T 300 40 T 400 40" stroke="currentColor" stroke-width="var(--ornament-stroke)" fill="none"/>
+    <path d="M0 55 Q 50 15, 100 55 T 200 55 T 300 55 T 400 55" stroke="currentColor" stroke-width="var(--ornament-stroke)" fill="none" opacity="0.6"/>
+  </svg>
+)}
+{variant === 'leaf' && (
+  <svg class={`ornament ${className}`} style={`width:${width}; ${strokeStyle}`} data-breathing data-breathing-scale="1.04" data-breathing-duration="4" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M100 20 C 140 60, 160 120, 100 180 C 40 120, 60 60, 100 20 Z" stroke="currentColor" stroke-width="var(--ornament-stroke)" fill="none"/>
+    <path d="M100 20 L 100 180" stroke="currentColor" stroke-width="var(--ornament-stroke)" fill="none" opacity="0.5"/>
+    <path d="M100 70 Q 130 85, 130 110" stroke="currentColor" stroke-width="var(--ornament-stroke)" fill="none" opacity="0.4"/>
+    <path d="M100 70 Q 70 85, 70 110" stroke="currentColor" stroke-width="var(--ornament-stroke)" fill="none" opacity="0.4"/>
+  </svg>
+)}
+{variant === 'circles' && (
+  <svg class={`ornament ${className}`} style={`width:${width}; ${strokeStyle}`} data-breathing data-breathing-scale="1.04" data-breathing-duration="4" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="100" cy="100" r="30" stroke="currentColor" stroke-width="var(--ornament-stroke)" fill="none"/>
+    <circle cx="100" cy="100" r="55" stroke="currentColor" stroke-width="var(--ornament-stroke)" fill="none" opacity="0.7"/>
+    <circle cx="100" cy="100" r="80" stroke="currentColor" stroke-width="var(--ornament-stroke)" fill="none" opacity="0.4"/>
+  </svg>
+)}
+{variant === 'dots' && (
+  <svg class={`ornament ${className}`} style={`width:${width}; ${strokeStyle}`} data-breathing data-breathing-scale="1.04" data-breathing-duration="4" viewBox="0 0 400 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    {[...Array(20)].map((_, i) => <circle cx={10 + i * 20} cy="10" r="1.5"/>)}
+  </svg>
+)}

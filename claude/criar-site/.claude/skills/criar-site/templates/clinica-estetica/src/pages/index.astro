@@ -1,0 +1,134 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Header from '@components/sections/Header.astro';
+import Hero from '@components/sections/Hero.astro';
+import Mission from '@components/sections/Mission.astro';
+import ServicesGrid from '@components/sections/ServicesGrid.astro';
+import SpaceGallery from '@components/sections/SpaceGallery.astro';
+import Testimonials from '@components/sections/Testimonials.astro';
+import BookingCTA from '@components/sections/BookingCTA.astro';
+import Footer from '@components/sections/Footer.astro';
+
+/*
+  Showcase do kit Clínica Estética — DNA matriz v1.
+  Placeholder portraits: SVG data-URI com gradient warm nude (insinua retrato/pele).
+*/
+
+/* Portrait placeholder — gradient warm nude + "face oval" signal */
+const portrait = (label: string, seed = 0) => {
+  const w = 400 + seed, h = 500 + seed;
+  return `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 ${w} ${h}'><defs><radialGradient id='g${seed}' cx='50%25' cy='40%25'><stop offset='0%25' stop-color='%23EFDCC9'/><stop offset='60%25' stop-color='%23D4BFA8'/><stop offset='100%25' stop-color='%23A88F78'/></radialGradient></defs><rect width='${w}' height='${h}' fill='%23EFDCC9'/><ellipse cx='${w/2}' cy='${h*0.42}' rx='${w*0.28}' ry='${h*0.32}' fill='url(%23g${seed})'/><text x='50%25' y='90%25' dominant-baseline='middle' text-anchor='middle' fill='%238A7E72' font-family='Georgia' font-size='14' font-style='italic'>${label}</text></svg>`;
+};
+
+const space = (label: string) =>
+  `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'><rect width='400' height='300' fill='%23EDE5DA'/><rect x='20' y='60' width='360' height='180' fill='%23D9C9B6' opacity='0.5'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%238A7E72' font-family='Georgia' font-size='16' font-style='italic'>${label}</text></svg>`;
+
+const avatar = (label: string, seed = 0) =>
+  `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><radialGradient id='a${seed}'><stop offset='0%25' stop-color='%23EFDCC9'/><stop offset='100%25' stop-color='%23D4BFA8'/></radialGradient></defs><rect width='100' height='100' fill='%23E5D5C8'/><circle cx='50' cy='45' r='22' fill='url(%23a${seed})'/><text x='50%25' y='88%25' dominant-baseline='middle' text-anchor='middle' fill='%238A7E72' font-family='Georgia' font-size='9'>${label}</text></svg>`;
+
+const services = [
+  { icon: 'skin' as const,       title: 'Skin',       caption: 'dermal care',    description: 'Limpeza profunda, peelings e protocolos customizados.' },
+  { icon: 'brow' as const,       title: 'Brows',      caption: 'microblading',   description: 'Design natural de sobrancelhas com técnica de fio a fio.' },
+  { icon: 'injectable' as const, title: 'Injectables',caption: 'botox + fillers',description: 'Protocolos minimamente invasivos, resultados naturais.' },
+  { icon: 'lash' as const,       title: 'Lashes',     caption: 'extensions',     description: 'Extensões seda 3D, manutenção quinzenal inclusa.' },
+];
+
+const testimonials = [
+  { quote: 'Saí da primeira consulta já entendendo exatamente o que ia funcionar pra minha pele. Atendimento cuidadoso, tempo pra explicar cada coisa.',    author: 'Nicole L.', role: 'Cliente desde 2023', avatarSrc: avatar('N', 1) },
+  { quote: 'O espaço é um spa. O cuidado é médico. É essa combinação que nos faz voltar toda estação.',                                                     author: 'Lara T.',   role: 'Cliente desde 2021', avatarSrc: avatar('L', 2) },
+  { quote: 'Já passei por três clínicas antes. Aqui foi a primeira vez que entendi de verdade a minha rotina de skincare.',                                  author: 'Bela M.',   role: 'Cliente desde 2024', avatarSrc: avatar('B', 3) },
+];
+
+const gallery = [
+  { src: space('Reception'),          alt: 'Recepção — mood warm wood',   aspect: 'portrait' as const },
+  { src: space('Treatment Room'),     alt: 'Sala de tratamento',          aspect: 'portrait' as const },
+  { src: space('Product Shelf'),      alt: 'Prateleira de produtos',      aspect: 'portrait' as const },
+  { src: space('Spa Corner'),         alt: 'Corner de relaxamento',       aspect: 'portrait' as const },
+];
+---
+<BaseLayout
+  title="Clínica Estética — Kit showcase"
+  description="Kit 2 do sistema /criar-site. DNA: serif expressiva + muted quente + retratos humanos + ornamentos orgânicos."
+>
+  <Header
+    brand="Maison"
+    italic="Skin + Beauty"
+    layout="logo-center"
+    nav={[
+      { label: 'Services', href: '#services' },
+      { label: 'Our Story', href: '#mission' },
+      { label: 'Journal', href: '#' },
+      { label: 'Contact', href: '#booking' },
+    ]}
+    cta={{ label: 'Book', href: '#booking' }}
+  />
+
+  <Hero
+    variant="split-portrait"
+    marker="SINCE 2018"
+    titleRoman="Tailored treatments"
+    titleItalic="for radiant skin."
+    lead="Clínica estética focada em resultado natural, tecnologia médica e cuidado artesanal. Tratamentos personalizados em um espaço criado pra você respirar."
+    ctaLabel="Book a consultation"
+    ctaHref="#booking"
+    portraitSrc={portrait('Hero portrait', 0)}
+    portraitAlt="Hero portrait"
+    ornament="leaf"
+  />
+
+  <Mission
+    id="mission"
+    marker="OUR PHILOSOPHY"
+    heading="Beauty is a conversation."
+    headingItalic="Ours is listening first."
+    body="Cada tratamento começa com uma avaliação honesta — da sua pele, do seu tempo, dos seus resultados esperados. Nada padronizado, nada invasivo sem necessidade."
+  />
+
+  <ServicesGrid
+    id="services"
+    marker="OUR SERVICES"
+    heading="Para cada cuidado, um protocolo."
+    services={services}
+    layout="4-col"
+  />
+
+  <SpaceGallery
+    id="space"
+    marker="OUR SPACE"
+    heading="Um lugar pra respirar."
+    subtitle="Projetado por Studio Calma em 2023 — luz natural, madeira clara, plantas vivas."
+    items={gallery}
+  />
+
+  <Testimonials
+    id="testimonials"
+    marker="WHAT OUR CLIENTS SAY"
+    heading="Histórias que a gente guarda."
+    items={testimonials}
+  />
+
+  <BookingCTA
+    id="booking"
+    heading="Let's meet."
+    headingItalic="Your skin starts here."
+    body="Primeira consulta sem custo. Avaliação completa + recomendação personalizada."
+    ctaLabel="Book now"
+    ctaHref="#"
+    ornament="circles"
+  />
+
+  <Footer
+    brand="Maison"
+    italic="Skin + Beauty"
+    tagline="Clínica estética artesanal em São Paulo — cuidado que começa pela escuta."
+    address={`Rua das Palmeiras, 245\nJardins, São Paulo\n01401-100`}
+    hours={`Terça a sexta 9h–19h\nSábado 9h–14h\nDomingo e segunda fechado`}
+    phone="+55 11 3000 0000"
+    email="hello@maison.clinic"
+    socials={[
+      { label: 'Instagram', href: '#' },
+      { label: 'WhatsApp', href: '#' },
+    ]}
+    colophon="Kit Clínica Estética v0.1 · DNA matriz v1"
+  />
+</BaseLayout>

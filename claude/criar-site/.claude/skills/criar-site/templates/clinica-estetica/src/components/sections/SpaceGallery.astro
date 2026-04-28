@@ -1,0 +1,62 @@
+---
+/*
+  Space Gallery — grid de fotos do interior/ambiente da clínica.
+  Signature: 2-4 col com aspect ratios variados, tom warm lighting.
+*/
+import Marker from '@components/base/Marker.astro';
+
+export interface GalleryItem {
+  src: string;
+  alt: string;
+  aspect?: 'square' | 'portrait' | 'landscape';
+}
+
+interface Props {
+  id?: string;
+  marker?: string;
+  heading: string;
+  subtitle?: string;
+  items: GalleryItem[];
+}
+const { id, marker = 'OUR SPACE', heading, subtitle, items } = Astro.props;
+
+const aspectClass = (a?: GalleryItem['aspect']) =>
+  a === 'square' ? 'aspect-square' :
+  a === 'portrait' ? 'aspect-[4/5]' : 'aspect-[4/3]';
+---
+<section id={id} class="bg-[var(--color-bg)]">
+  <div class="mx-auto max-w-[var(--content-max)] px-[var(--gutter)] pb-[var(--space-20)] pt-[var(--space-8)]">
+    <div class="reveal mb-[var(--space-10)] grid grid-cols-12 items-end gap-6">
+      <div class="col-span-12 md:col-span-4">
+        <Marker label={marker} rule />
+      </div>
+      <div class="col-span-12 md:col-span-8">
+        <h2 class="font-[family-name:var(--font-display)] text-[length:var(--text-xl)] md:text-[length:var(--text-2xl)] font-normal leading-[var(--leading-heading)] text-[var(--color-deep)]">
+          {heading}
+        </h2>
+        {subtitle && (
+          <p class="mt-3 max-w-xl text-[length:var(--text-base)] text-[var(--color-ink-dim)]">
+            {subtitle}
+          </p>
+        )}
+      </div>
+    </div>
+
+    <div class="stagger-children grid grid-cols-2 gap-4 md:grid-cols-4">
+      {items.map((it, idx) => (
+        <figure class={`overflow-hidden bg-[var(--color-mid)] ${aspectClass(it.aspect)}`}>
+          <img
+            src={it.src}
+            alt={it.alt}
+            class="h-full w-full object-cover transition-transform duration-[var(--duration-epic)] ease-[var(--ease-out-expo)] hover:scale-105"
+            data-breathing
+            data-breathing-scale="1.035"
+            data-breathing-duration="5"
+            data-breathing-brightness="1.05"
+            data-breathing-delay={(idx * 0.6).toString()}
+          />
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>

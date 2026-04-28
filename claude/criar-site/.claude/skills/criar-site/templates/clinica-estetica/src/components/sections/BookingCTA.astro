@@ -1,0 +1,40 @@
+---
+/*
+  Booking CTA — centralizado respirado. Signature: serif display + pill.
+*/
+import Button from '@components/base/Button.astro';
+import Ornament from '@components/base/Ornament.astro';
+
+interface Props {
+  heading: string;
+  headingItalic?: string;
+  body?: string;
+  ctaLabel: string;
+  ctaHref: string;
+  ornament?: 'wave' | 'leaf' | 'circles' | 'dots' | 'none';
+  id?: string;
+}
+const { heading, headingItalic, body, ctaLabel, ctaHref, ornament = 'circles', id } = Astro.props;
+---
+<section id={id} class="relative bg-[var(--color-bg)] overflow-hidden">
+  {ornament !== 'none' && (
+    <div class="pointer-events-none absolute -top-10 left-1/2 -translate-x-1/2" style="color: var(--color-deep)">
+      <Ornament variant={ornament} width="320px" />
+    </div>
+  )}
+
+  <div class="relative mx-auto max-w-2xl px-[var(--gutter)] py-[var(--space-24)] text-center">
+    <h2 class="type-serif-display text-[var(--color-deep)]" data-italic-reveal>
+      {heading}
+      {headingItalic && <> <span class="italic-emphasis">{headingItalic}</span></>}
+    </h2>
+    {body && (
+      <p class="reveal mx-auto mt-6 max-w-md text-[length:var(--text-md)] leading-[var(--leading-body)] text-[var(--color-ink-dim)]">
+        {body}
+      </p>
+    )}
+    <div class="reveal mt-10">
+      <Button href={ctaHref} label={ctaLabel} variant="primary" size="lg" />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,14 @@
+/* PALETTE — Portfolio Editorial
+   Off-white + ink + UMA accent saturada (briefing escolhe). Nunca cream/pewter/muted.
+   Aplicar via composer concatenando dentro de @theme { ... } no tokens.css final. */
+
+--color-bg:         #F5F4F0;
+--color-bg-alt:     #EFEDE6;
+--color-surface:    #FFFFFF;
+--color-ink:        #0E0E0E;
+--color-ink-dim:    #4A4A47;
+--color-ink-mute:   #8A8884;
+--color-rule:       #0E0E0E;       /* rules são ink puro — signature */
+--color-rule-soft:  #D8D5CD;
+--color-accent:     #1E2BFF;       /* default royal blue, briefing sobrescreve */
+--color-accent-ink: #FFFFFF;

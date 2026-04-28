@@ -1,0 +1,58 @@
+---
+/*
+  Highlights — "Get the highlights." seção Apple-signature.
+  Carrossel de cards de features. Controles pill.
+*/
+import CarouselControls from '@components/base/CarouselControls.astro';
+
+export interface Highlight {
+  label: string;     // "Living AI"
+  title: string;     // "An intelligence that learns your air."
+  mediaSrc: string;
+  mediaAlt?: string;
+  mode?: 'light' | 'dark';
+}
+
+interface Props {
+  heading?: string;
+  highlights: Highlight[];
+  secondaryLink?: { label: string; href: string };
+}
+const { heading = 'Get the highlights.', highlights, secondaryLink } = Astro.props;
+---
+<section class="bg-[var(--color-bg)]">
+  <div class="mx-auto max-w-[var(--content-wide)] px-[var(--gutter)] py-[var(--space-20)]">
+    <div class="mb-[var(--space-10)] flex items-end justify-between gap-4">
+      <h2 class="title-apple reveal text-[var(--color-ink)]">{heading}</h2>
+      {secondaryLink && (
+        <a href={secondaryLink.href} class="reveal text-[length:var(--text-sm)] font-medium text-[var(--color-accent)] hover:underline">
+          {secondaryLink.label} →
+        </a>
+      )}
+    </div>
+
+    <div class="stagger-children grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+      {highlights.map((h) => (
+        <article class={`group relative flex aspect-[4/5] flex-col overflow-hidden rounded-[var(--radius-lg)] ${h.mode === 'dark' ? 'bg-[var(--color-bg-dark)] text-[var(--color-ink-dark)]' : 'bg-[var(--color-surface)] text-[var(--color-ink)]'} p-7 transition-transform duration-[var(--duration-epic)] ease-[var(--ease-apple)] hover:-translate-y-1`}>
+          <div class="relative z-10">
+            <p class="label-tech mb-3">{h.label}</p>
+            <h3 class="font-[family-name:var(--font-display)] text-[length:var(--text-lg)] font-bold leading-[var(--leading-heading)] tracking-[var(--tracking-tight)]">
+              {h.title}
+            </h3>
+          </div>
+          {h.mediaSrc && (
+            <img
+              src={h.mediaSrc}
+              alt={h.mediaAlt ?? h.title}
+              class="pointer-events-none absolute bottom-0 left-0 right-0 mx-auto h-2/3 w-auto object-contain transition-transform duration-[var(--duration-epic)] group-hover:scale-105"
+            />
+          )}
+        </article>
+      ))}
+    </div>
+
+    <div class="mt-[var(--space-10)] flex justify-center">
+      <CarouselControls count={highlights.length} activeIndex={0} />
+    </div>
+  </div>
+</section>

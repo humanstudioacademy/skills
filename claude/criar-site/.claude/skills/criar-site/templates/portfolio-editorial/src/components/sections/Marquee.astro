@@ -1,0 +1,28 @@
+---
+/*
+  Marquee — scroll horizontal contínuo de tags/clients/words.
+  Signature: bold display font com separadores.
+*/
+interface Props {
+  items: string[];
+  separator?: string;
+  tone?: 'ink' | 'accent';
+}
+const { items, separator = '◇', tone = 'ink' } = Astro.props;
+
+// Duplicar pra scroll contínuo sem gap
+const doubled = [...items, ...items];
+const colorClass = tone === 'accent' ? 'text-[var(--color-accent)]' : 'text-[var(--color-ink)]';
+---
+<section class="border-y border-[var(--color-rule)] bg-[var(--color-bg)] py-[var(--space-6)]">
+  <div class="marquee">
+    <div class="marquee__track">
+      {doubled.map((item) => (
+        <span class={`flex shrink-0 items-center gap-[var(--space-8)] font-[family-name:var(--font-display)] text-[length:var(--text-xl)] font-bold tracking-[var(--tracking-tight)] ${colorClass}`}>
+          <span>{item}</span>
+          <span aria-hidden="true" class="text-[var(--color-ink-mute)]">{separator}</span>
+        </span>
+      ))}
+    </div>
+  </div>
+</section>

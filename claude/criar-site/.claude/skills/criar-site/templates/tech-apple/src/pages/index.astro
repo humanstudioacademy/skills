@@ -1,0 +1,155 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Header from '@components/sections/Header.astro';
+import Hero from '@components/sections/Hero.astro';
+import Highlights from '@components/sections/Highlights.astro';
+import CloseUp from '@components/sections/CloseUp.astro';
+import FeatureCards from '@components/sections/FeatureCards.astro';
+import Specs from '@components/sections/Specs.astro';
+import BuyCTA from '@components/sections/BuyCTA.astro';
+import Footer from '@components/sections/Footer.astro';
+
+/*
+  Showcase do kit Tech Apple-ish — DNA matriz v1.
+  Produto fictício: "Orbit — Smart Air Purifier".
+  Light default + 1 seção dark variant pra mostrar modo cinematic.
+*/
+
+/* Product hero — cilindro iluminado (purifier) com halo + shadow */
+const productMain = `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 520'><defs><radialGradient id='body' cx='50%25' cy='40%25'><stop offset='0%25' stop-color='%23FAFAFA'/><stop offset='55%25' stop-color='%23D8D8DC'/><stop offset='100%25' stop-color='%2386868B'/></radialGradient><linearGradient id='halo' x1='0%25' y1='0%25' x2='0%25' y2='100%25'><stop offset='0%25' stop-color='%2364D2FF' stop-opacity='0.4'/><stop offset='100%25' stop-color='%230071E3' stop-opacity='0.1'/></linearGradient></defs><ellipse cx='200' cy='100' rx='160' ry='30' fill='url(%23halo)' opacity='0.6'/><ellipse cx='200' cy='110' rx='130' ry='22' fill='%23FFFFFF' opacity='0.7'/><rect x='90' y='110' width='220' height='340' rx='110' fill='url(%23body)'/><circle cx='200' cy='170' r='55' fill='none' stroke='%230071E3' stroke-width='2' opacity='0.5'/><circle cx='200' cy='170' r='6' fill='%230071E3'/><rect x='160' y='400' width='80' height='12' rx='3' fill='%2386868B' opacity='0.4'/></svg>`;
+
+const productDark = `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 520'><defs><radialGradient id='bodyD' cx='50%25' cy='40%25'><stop offset='0%25' stop-color='%231D1D1F'/><stop offset='55%25' stop-color='%23111113'/><stop offset='100%25' stop-color='%23000000'/></radialGradient><linearGradient id='haloD' x1='0%25' y1='0%25' x2='0%25' y2='100%25'><stop offset='0%25' stop-color='%2364D2FF' stop-opacity='0.8'/><stop offset='100%25' stop-color='%230071E3' stop-opacity='0.15'/></linearGradient></defs><ellipse cx='200' cy='100' rx='170' ry='35' fill='url(%23haloD)' opacity='0.9'/><ellipse cx='200' cy='110' rx='140' ry='24' fill='%2364D2FF' opacity='0.4'/><rect x='90' y='110' width='220' height='340' rx='110' fill='url(%23bodyD)'/><circle cx='200' cy='170' r='55' fill='none' stroke='%2364D2FF' stroke-width='2' opacity='0.8'/><circle cx='200' cy='170' r='6' fill='%2364D2FF'/><rect x='160' y='400' width='80' height='12' rx='3' fill='%23A1A1A6' opacity='0.3'/></svg>`;
+
+const detail = (label: string) =>
+  `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 420'><rect width='600' height='420' fill='%23FAFAFA'/><circle cx='300' cy='210' r='130' fill='%23E5E5EA'/><circle cx='300' cy='210' r='90' fill='%23F5F5F7'/><circle cx='300' cy='210' r='50' fill='%230071E3' opacity='0.15'/><text x='50%25' y='95%25' dominant-baseline='middle' text-anchor='middle' fill='%2386868B' font-family='Inter, sans-serif' font-size='14'>${label}</text></svg>`;
+
+const feature = (label: string, color = '1D1D1F', bg = 'FFFFFF') =>
+  `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'><rect width='400' height='500' fill='%23${bg}'/><circle cx='200' cy='200' r='90' fill='%23${color}' opacity='0.1'/><circle cx='200' cy='200' r='50' fill='%23${color}' opacity='0.2'/><text x='50%25' y='95%25' dominant-baseline='middle' text-anchor='middle' fill='%2386868B' font-family='Inter, sans-serif' font-size='13'>${label}</text></svg>`;
+
+const highlights = [
+  { label: 'LIVING AI',       title: 'An intelligence that learns your air.',          mediaSrc: feature('AI visualization') },
+  { label: 'HEPA 13 FILTER',  title: 'Captures 99.97% of 0.1μm particles.',            mediaSrc: feature('Filter layer') },
+  { label: 'SILENT OPERATION',title: 'Quieter than a whisper. 16 dB.',                 mediaSrc: feature('Acoustic diagram') },
+];
+
+const closeUps = [
+  { label: 'LIQUID GLASS UI',   title: 'A surface that responds to touch without showing it.', description: 'Projeção top-down que reage ao toque sem interface visível até você precisar dela.', mediaSrc: detail('Top panel') },
+  { label: 'MAGNETIC FILTER',   title: 'Replace in 3 seconds. No tools.',                       description: 'Sistema magnético patenteado. O filtro "clica" em lugar e a Orbit reconhece automaticamente.',                mediaSrc: detail('Magnetic lock') },
+  { label: 'USB-C + MATTER',    title: 'One cable. All platforms.',                             description: 'USB-C universal e suporte Matter nativo — funciona com HomeKit, Alexa, Google Home e qualquer hub.',             mediaSrc: detail('Connectivity') },
+];
+
+const featureCards = [
+  { icon: 'performance' as const,  label: 'PERFORMANCE',  title: 'Clean a 40m² room in 14 minutes.',   description: 'Fluxo de ar reprojetado com turbina CFD-otimizada.', stat: '340 m³/h' },
+  { icon: 'ai' as const,           label: 'LIVING AI',    title: 'Learns your schedule. Breathes for you.', description: 'Modelo on-device que ajusta intensidade por hora, cômodo e qualidade do ar.', stat: '0% cloud' },
+  { icon: 'battery' as const,      label: 'EFFICIENCY',   title: 'Uses 62% less energy than competitors.',  description: 'Motor BLDC + sensor IR cruzado + shutdown inteligente em ar limpo.', stat: '8 W idle' },
+  { icon: 'design' as const,       label: 'DESIGN',       title: 'Aluminum unibody. Recycled at 94%.',      description: 'Corpo em uma única peça de alumínio, construído pra durar uma década.', stat: '10 yr life' },
+];
+
+const specCols = [
+  { name: 'Orbit',     caption: 'Entry',   highlight: false },
+  { name: 'Orbit Pro', caption: 'Pro',     highlight: true  },
+  { name: 'Orbit Max', caption: 'Max',     highlight: false },
+];
+
+const specRows = [
+  { label: 'Coverage area',    values: ['40 m²',   '70 m²',   '120 m²']    },
+  { label: 'Air delivery rate',values: ['340 m³/h','520 m³/h','780 m³/h']  },
+  { label: 'Noise floor',      values: ['16 dB',   '18 dB',   '22 dB']     },
+  { label: 'Filter life',      values: ['12 mo',   '18 mo',   '24 mo']     },
+  { label: 'Sensors',          values: ['PM2.5',   'PM2.5 + VOC', 'PM2.5 + VOC + CO₂'] },
+  { label: 'Starting price',   values: ['$299',    '$499',    '$799']      },
+];
+---
+<BaseLayout
+  title="Orbit — Smart Air Purifier"
+  description="Kit 3 do sistema /criar-site. DNA: sans geométrica bold + produto flutuante + light/dark variant + period nos títulos."
+>
+  <Header
+    brand="Orbit"
+    nav={[
+      { label: 'Orbit',      href: '#' },
+      { label: 'Orbit Pro',  href: '#' },
+      { label: 'Orbit Max',  href: '#' },
+      { label: 'Support',    href: '#' },
+      { label: 'Reviews',    href: '#' },
+    ]}
+    cta={{ label: 'Buy', href: '#buy' }}
+  />
+
+  <Hero
+    variant="product-floating"
+    productName="Orbit Pro"
+    title="The first purifier that breathes with you."
+    subtitle="Living AI + HEPA 13 + whisper-silent 16 dB. A new category of clean air."
+    price="$499"
+    ctaLabel="Pre-order"
+    ctaHref="#buy"
+    secondaryCtaLabel="Watch the film"
+    secondaryCtaHref="#"
+    productSrc={productMain}
+    productAlt="Orbit Pro — smart air purifier"
+  />
+
+  <Highlights
+    heading="Get the highlights."
+    highlights={highlights}
+    secondaryLink={{ label: 'Watch the film', href: '#' }}
+  />
+
+  <CloseUp
+    heading="Take a closer look."
+    items={closeUps}
+  />
+
+  <FeatureCards
+    heading="Designed to disappear."
+    cards={featureCards}
+  />
+
+  {/* Dark variant showcase — hero cinematográfico dentro da mesma página */}
+  <Hero
+    variant="dark-cinematic"
+    productName="Night Mode"
+    title="Sleeps while you sleep."
+    subtitle="Dim ambient indicator. 14 dB floor. Wakes when you wake."
+    ctaLabel="Explore Night Mode"
+    ctaHref="#"
+    secondaryCtaLabel="How it works"
+    secondaryCtaHref="#"
+    productSrc={productDark}
+    productAlt="Orbit in dark cinematic mode"
+  />
+
+  <Specs
+    heading="Find your Orbit."
+    marker="COMPARE MODELS"
+    columns={specCols}
+    rows={specRows}
+  />
+
+  <BuyCTA
+    heading="Get yours in time for the season."
+    price="$299"
+    financing="or $24.91/mo. for 12 mo. with Orbit Financing."
+    mainCtaLabel="Pre-order Orbit"
+    mainCtaHref="#"
+    secondaryCtaLabel="Compare models"
+    secondaryCtaHref="#"
+    badges={['Free delivery', 'Trade-in credit', 'Ships April 2026']}
+  />
+
+  <Footer
+    brand="Orbit"
+    groups={[
+      { label: 'Shop',    links: [{ label: 'Orbit', href: '#' }, { label: 'Orbit Pro', href: '#' }, { label: 'Orbit Max', href: '#' }, { label: 'Filters', href: '#' }] },
+      { label: 'Learn',   links: [{ label: 'Why Orbit', href: '#' }, { label: 'Living AI', href: '#' }, { label: 'Compare', href: '#' }] },
+      { label: 'Support', links: [{ label: 'Setup guide', href: '#' }, { label: 'Replacement filters', href: '#' }, { label: 'Contact', href: '#' }] },
+      { label: 'Company', links: [{ label: 'About', href: '#' }, { label: 'Sustainability', href: '#' }, { label: 'Press', href: '#' }] },
+    ]}
+    finePrint={[
+      '† Financing subject to credit approval. $0 down, 0% APR for qualified buyers.',
+      'Trade-in credit varies by product condition. Visit Orbit.com/trade-in for details.',
+    ]}
+    copyright="© 2026 Orbit Inc. Kit Tech Apple-ish v0.1 · DNA matriz v1"
+  />
+</BaseLayout>

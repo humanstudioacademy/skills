@@ -1,0 +1,14 @@
+/* MOTION — Tech Apple-ish
+   Apple curve dominante. Durations precisas, robotic-smooth. */
+
+--duration-fast:   200ms;
+--duration-base:   400ms;
+--duration-ui:     500ms;
+--duration-reveal: 700ms;
+--duration-long:   1000ms;
+--duration-epic:   1400ms;
+
+--ease-apple:        cubic-bezier(0.42, 0, 0.58, 1);   /* default Apple curve */
+--ease-out-expo:     cubic-bezier(0.22, 1, 0.36, 1);
+--ease-out-cubic:    cubic-bezier(0.33, 1, 0.68, 1);
+--ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);

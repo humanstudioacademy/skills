@@ -1,0 +1,48 @@
+---
+/*
+  Close Up — "Take a closer look." seção Apple-signature.
+  Alternância imagem-texto + parallax suave nas imagens.
+*/
+
+export interface CloseUpItem {
+  label: string;
+  title: string;
+  description: string;
+  mediaSrc: string;
+  mediaAlt?: string;
+  side?: 'left' | 'right';
+}
+
+interface Props {
+  heading?: string;
+  items: CloseUpItem[];
+}
+const { heading = 'Take a closer look.', items } = Astro.props;
+---
+<section class="bg-[var(--color-bg)]">
+  <div class="mx-auto max-w-[var(--content-wide)] px-[var(--gutter)] py-[var(--space-20)]">
+    <h2 class="title-apple reveal mb-[var(--space-12)] text-[var(--color-ink)]">{heading}</h2>
+
+    <div class="flex flex-col gap-[var(--space-16)]">
+      {items.map((it, idx) => {
+        const side = it.side ?? (idx % 2 === 0 ? 'right' : 'left');
+        return (
+          <div class={`grid items-center gap-10 md:grid-cols-2 ${side === 'left' ? 'md:[&>*:first-child]:order-2' : ''}`}>
+            <div class="reveal">
+              <p class="label-tech mb-3">{it.label}</p>
+              <h3 class="font-[family-name:var(--font-display)] text-[length:var(--text-xl)] font-bold leading-[var(--leading-heading)] tracking-[var(--tracking-tight)] text-[var(--color-ink)]">
+                {it.title}
+              </h3>
+              <p class="mt-4 max-w-md text-[length:var(--text-md)] leading-[var(--leading-body)] text-[var(--color-ink-dim)]">
+                {it.description}
+              </p>
+            </div>
+            <figure class="reveal overflow-hidden rounded-[var(--radius-lg)] bg-[var(--color-surface)]">
+              <img src={it.mediaSrc} alt={it.mediaAlt ?? it.title} class="h-full w-full object-cover" data-parallax="0.12" />
+            </figure>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>

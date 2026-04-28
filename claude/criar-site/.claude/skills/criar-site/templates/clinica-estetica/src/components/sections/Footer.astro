@@ -1,0 +1,63 @@
+---
+/*
+  Footer — sóbrio, wellness. Info de contato + horários + links sutis.
+*/
+import Logo from '@components/base/Logo.astro';
+
+interface FooterCol {
+  label: string;
+  items: string[];
+}
+
+interface Props {
+  brand: string;
+  italic?: string;
+  tagline?: string;
+  address?: string;
+  hours?: string;
+  phone?: string;
+  email?: string;
+  socials?: { label: string; href: string }[];
+  colophon?: string;
+}
+const { brand, italic, tagline, address, hours, phone, email, socials = [], colophon } = Astro.props;
+---
+<footer class="border-t border-[var(--color-rule)] bg-[var(--color-bg-alt)]">
+  <div class="mx-auto max-w-[var(--content-max)] px-[var(--gutter)] py-[var(--space-12)]">
+    <div class="grid grid-cols-12 gap-[var(--gutter)]">
+      <div class="col-span-12 md:col-span-4">
+        <Logo brand={brand} italic={italic} href="/" size="lg" />
+        {tagline && (
+          <p class="mt-4 max-w-sm text-[length:var(--text-sm)] leading-[var(--leading-body)] text-[var(--color-ink-dim)]">
+            {tagline}
+          </p>
+        )}
+      </div>
+
+      <div class="col-span-12 md:col-span-3">
+        <p class="label-small-caps mb-3">Visit</p>
+        {address && <p class="text-[length:var(--text-sm)] text-[var(--color-ink-dim)] whitespace-pre-line">{address}</p>}
+      </div>
+
+      <div class="col-span-12 md:col-span-3">
+        <p class="label-small-caps mb-3">Hours</p>
+        {hours && <p class="text-[length:var(--text-sm)] text-[var(--color-ink-dim)] whitespace-pre-line">{hours}</p>}
+      </div>
+
+      <div class="col-span-12 md:col-span-2">
+        <p class="label-small-caps mb-3">Contact</p>
+        <ul class="flex flex-col gap-2 text-[length:var(--text-sm)]">
+          {phone && <li><a href={`tel:${phone.replace(/\s/g, '')}`} class="link-soft">{phone}</a></li>}
+          {email && <li><a href={`mailto:${email}`} class="link-soft">{email}</a></li>}
+          {socials.map((s) => <li><a href={s.href} class="link-soft">{s.label}</a></li>)}
+        </ul>
+      </div>
+    </div>
+
+    {colophon && (
+      <div class="mt-[var(--space-10)] border-t border-[var(--color-rule)] pt-[var(--space-4)]">
+        <p class="label-small-caps text-[var(--color-ink-mute)]">{colophon}</p>
+      </div>
+    )}
+  </div>
+</footer>

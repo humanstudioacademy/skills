@@ -1,0 +1,42 @@
+---
+/*
+  Header — Apple-style: nav horizontal small com separação discreta.
+  Sticky com backdrop blur forte.
+*/
+import Logo from '@components/base/Logo.astro';
+import Button from '@components/base/Button.astro';
+
+interface Props {
+  brand: string;
+  nav?: { label: string; href: string }[];
+  cta?: { label: string; href: string };
+  mode?: 'light' | 'dark';
+}
+const { brand, nav = [], cta, mode = 'light' } = Astro.props;
+
+const isDark = mode === 'dark';
+---
+<header
+  class={`sticky top-0 z-50 border-b backdrop-blur-xl ${isDark ? 'bg-[var(--color-bg-dark)]/80 border-[var(--color-rule-dark)]' : 'bg-[var(--color-bg)]/80 border-[var(--color-rule)]'}`}
+>
+  <div class="mx-auto flex max-w-[var(--content-max)] items-center justify-between gap-6 px-[var(--gutter)] py-3">
+    <Logo brand={brand} href="/" />
+
+    {nav.length > 0 && (
+      <nav class="hidden md:flex items-center gap-7" aria-label="Primary">
+        {nav.map((item) => (
+          <a
+            href={item.href}
+            class={`text-[length:var(--text-sm)] font-medium transition-colors duration-[var(--duration-base)] ${isDark ? 'text-[var(--color-ink-dim-dark)] hover:text-[var(--color-ink-dark)]' : 'text-[var(--color-ink-dim)] hover:text-[var(--color-ink)]'}`}
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
+    )}
+
+    <div class="flex items-center gap-3">
+      {cta && <Button href={cta.href} label={cta.label} variant="primary-accent" size="sm" />}
+    </div>
+  </div>
+</header>

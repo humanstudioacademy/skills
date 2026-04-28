@@ -1,0 +1,65 @@
+---
+/*
+  Specs — comparative benchmarks table. Signature tech-ish Apple.
+  Suporta monospace opt-in (via classe global `.mono-on` em body, ou prop).
+*/
+
+export interface SpecColumn {
+  name: string;       // "M5" | "M5 Pro" | "M5 Max"
+  caption?: string;   // "Entry"
+  highlight?: boolean;
+}
+
+export interface SpecRow {
+  label: string;      // "CPU cores"
+  values: string[];   // ["10", "12", "14"]
+}
+
+interface Props {
+  heading?: string;
+  marker?: string;
+  columns: SpecColumn[];
+  rows: SpecRow[];
+  mono?: boolean;     // opt-in monospace pros valores
+}
+const { heading, marker = 'SPECS', columns, rows, mono = false } = Astro.props;
+const valueFont = mono ? 'font-[family-name:var(--font-mono)]' : 'font-[family-name:var(--font-display)] font-semibold';
+---
+<section class="bg-[var(--color-bg-alt)]">
+  <div class="mx-auto max-w-[var(--content-max)] px-[var(--gutter)] py-[var(--space-20)]">
+    <div class="mb-[var(--space-10)] reveal">
+      {marker && <p class="label-tech mb-3">{marker}</p>}
+      {heading && <h2 class="title-apple text-[var(--color-ink)]">{heading}</h2>}
+    </div>
+
+    <div class="overflow-x-auto rounded-[var(--radius-lg)] bg-[var(--color-surface)]">
+      <table class="w-full text-left">
+        <thead>
+          <tr class="border-b border-[var(--color-rule)]">
+            <th class="p-5 label-tech"></th>
+            {columns.map((c) => (
+              <th class={`p-5 ${c.highlight ? 'bg-[var(--color-bg-alt)]' : ''}`}>
+                <span class="block font-[family-name:var(--font-display)] text-[length:var(--text-md)] font-bold text-[var(--color-ink)]">
+                  {c.name}
+                </span>
+                {c.caption && <span class="mt-1 block label-tech">{c.caption}</span>}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr class="border-b border-[var(--color-rule)] last:border-0">
+              <td class="p-5 text-[length:var(--text-sm)] font-medium text-[var(--color-ink-dim)]">{r.label}</td>
+              {r.values.map((v, i) => (
+                <td class={`p-5 ${columns[i]?.highlight ? 'bg-[var(--color-bg-alt)]' : ''}`}>
+                  <span class={`${valueFont} text-[length:var(--text-base)] text-[var(--color-ink)]`}>{v}</span>
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

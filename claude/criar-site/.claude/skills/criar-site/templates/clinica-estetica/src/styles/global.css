@@ -1,0 +1,161 @@
+@import "./tokens.css";
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input, button, textarea, select { font: inherit; color: inherit; }
+button { background: none; border: none; cursor: pointer; padding: 0; }
+a { color: inherit; text-decoration: none; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;  /* serif expressiva quer peso regular, não bold pesado */
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-snug);
+}
+
+p, ul, ol { margin: 0; }
+
+h1, h2, h3 { text-wrap: balance; }
+p          { text-wrap: pretty; max-width: var(--measure); }
+
+/* ── SIGNATURE UTILITIES (Clínica Estética) ── */
+
+/* Small caps wide — signature das labels ("MISSION", "OUR SERVICES") */
+.label-small-caps {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--color-ink-mute);
+}
+
+/* Italic emphasis — recurso do kit: intercalar "Skin — clean" */
+.italic-emphasis {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Rule fina — sóbria, usada em separadores horizontais curtos */
+.rule-thin {
+  border: 0;
+  border-top: 1px solid var(--color-rule);
+  width: 2.5rem;  /* rule curta, signature editorial de spa/wellness */
+}
+.rule-full {
+  border: 0;
+  border-top: 1px solid var(--color-rule);
+}
+
+/* Serif display — usado em heros e mission statements */
+.type-serif-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.5rem, 7vw, var(--text-5xl));
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-snug);
+}
+
+/* Pill button base — radius total, signature do kit */
+.pill-base {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  transition:
+    background-color var(--duration-ui) var(--ease-out-expo),
+    color var(--duration-ui) var(--ease-out-expo),
+    transform var(--duration-ui) var(--ease-out-expo);
+}
+
+/* Reveal base */
+.reveal { will-change: opacity, transform; }
+
+/* Ornament float — SVG com opacity baixa, signature da paleta */
+.ornament {
+  position: absolute;
+  pointer-events: none;
+  opacity: var(--ornament-opacity);
+  color: var(--color-accent);
+}
+
+/* Avatar circular — signature: retratos em círculos overlay */
+.avatar-circle {
+  aspect-ratio: 1;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  background: var(--color-mid);
+}
+
+/* Link sóbrio (underline suave) */
+.link-soft {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--color-rule);
+  transition: text-decoration-color var(--duration-base) var(--ease-out-expo),
+              color var(--duration-base) var(--ease-out-expo);
+}
+.link-soft:hover {
+  text-decoration-color: var(--color-deep);
+  color: var(--color-deep);
+}
+
+/* ── ACESSIBILIDADE ── */
+:focus-visible {
+  outline: 2px solid var(--color-deep);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0);
+  white-space: nowrap; border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,::before,::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background: var(--color-deep);
+  color: var(--color-bg);
+}

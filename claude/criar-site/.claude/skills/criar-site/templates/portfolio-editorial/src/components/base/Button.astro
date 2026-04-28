@@ -1,0 +1,49 @@
+---
+/*
+  Button — retangular minimal, signature Portfolio Editorial.
+  NUNCA pill (pill pertence ao Clínica Estética).
+  Variants:
+    - 'primary'   : fill ink, text off-white
+    - 'outline'   : border ink, transparent
+    - 'accent'    : fill accent, ink-accent text
+    - 'ghost'     : só texto com underline
+*/
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'outline' | 'accent' | 'ghost';
+  label: string;
+  as?: 'a' | 'button';
+  size?: 'sm' | 'md' | 'lg';
+}
+const { href, variant = 'primary', label, as = 'a', size = 'md' } = Astro.props;
+
+const sizeClasses = {
+  sm: 'px-4 py-2 text-[length:var(--text-sm)]',
+  md: 'px-6 py-3 text-[length:var(--text-base)]',
+  lg: 'px-8 py-4 text-[length:var(--text-md)]',
+}[size];
+
+const variantClasses = {
+  primary:
+    'bg-[var(--color-ink)] text-[var(--color-bg)] hover:bg-[var(--color-accent)] hover:text-[var(--color-accent-ink)]',
+  outline:
+    'border border-[var(--color-ink)] text-[var(--color-ink)] hover:bg-[var(--color-ink)] hover:text-[var(--color-bg)]',
+  accent:
+    'bg-[var(--color-accent)] text-[var(--color-accent-ink)] hover:bg-[var(--color-ink)] hover:text-[var(--color-bg)]',
+  ghost:
+    'text-[var(--color-ink)] hover:text-[var(--color-accent)] link-ink',
+}[variant];
+
+const shared = `inline-flex items-center gap-2 font-[family-name:var(--font-sans)] font-medium uppercase tracking-[var(--tracking-wider)] transition-colors duration-[var(--duration-base)] ${sizeClasses} ${variantClasses}`;
+---
+{as === 'a' && href ? (
+  <a href={href} class={shared}>
+    <span>{label}</span>
+    <span aria-hidden="true">→</span>
+  </a>
+) : (
+  <button class={shared} type="button">
+    <span>{label}</span>
+    <span aria-hidden="true">→</span>
+  </button>
+)}

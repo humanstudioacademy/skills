@@ -1,0 +1,46 @@
+---
+/*
+  Editorial Pitch — headline declarativa + body em 2-col com marker.
+  Bloco editorial denso, signature Portfolio Editorial.
+*/
+import Marker from '@components/base/Marker.astro';
+
+interface Props {
+  marker?: string;
+  markerLabel?: string;
+  heading: string;
+  body?: string;
+  bodyRight?: string;  // segunda coluna opcional
+  id?: string;
+}
+const { marker = '02', markerLabel, heading, body, bodyRight, id } = Astro.props;
+---
+<section id={id} class="bg-[var(--color-bg)]">
+  <div class="mx-auto max-w-[var(--content-max)] px-[var(--gutter)] py-[var(--space-24)]">
+    <div class="grid grid-cols-12 gap-[var(--gutter)]">
+      <div class="reveal col-span-12 md:col-span-2">
+        <Marker value={marker} variant="paren" label={markerLabel} />
+      </div>
+
+      <h2 class="reveal col-span-12 md:col-span-10 font-[family-name:var(--font-display)] text-[length:var(--text-xl)] md:text-[length:var(--text-2xl)] font-bold leading-[var(--leading-heading)] tracking-[var(--tracking-tight)] text-[var(--color-ink)]" data-scramble>
+        {heading}
+      </h2>
+    </div>
+
+    {(body || bodyRight) && (
+      <div class="mt-[var(--space-10)] grid grid-cols-12 gap-[var(--gutter)]">
+        <div class="hidden md:block md:col-span-2"></div>
+        {body && (
+          <p class="reveal col-span-12 md:col-span-5 text-[length:var(--text-md)] leading-[var(--leading-body)] text-[var(--color-ink-dim)]">
+            {body}
+          </p>
+        )}
+        {bodyRight && (
+          <p class="reveal col-span-12 md:col-span-5 text-[length:var(--text-md)] leading-[var(--leading-body)] text-[var(--color-ink-dim)]">
+            {bodyRight}
+          </p>
+        )}
+      </div>
+    )}
+  </div>
+</section>

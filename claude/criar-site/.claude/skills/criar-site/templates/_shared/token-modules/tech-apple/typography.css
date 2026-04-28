@@ -1,0 +1,28 @@
+/* TYPOGRAPHY — Tech Apple-ish
+   Sans geométrica (Inter como Apple-like SF Pro). Mono opt-in via briefing.
+   Ratio 1.333 (Apple-friendly). */
+
+--font-display: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+--font-sans:    'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+--font-mono:    'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+
+--text-xs:   0.75rem;
+--text-sm:   0.875rem;
+--text-base: 1rem;
+--text-md:   1.21rem;
+--text-lg:   1.611rem;
+--text-xl:   2.147rem;
+--text-2xl:  2.862rem;
+--text-3xl:  3.816rem;
+--text-4xl:  5.086rem;
+--text-5xl:  6.779rem;
+
+--tracking-tight:    -0.022em;
+--tracking-snug:     -0.014em;
+--tracking-normal:    0;
+--tracking-wide:      0.02em;
+--tracking-wider:     0.04em;
+
+--leading-display: 1.05;
+--leading-heading: 1.125;
+--leading-body:    1.47;

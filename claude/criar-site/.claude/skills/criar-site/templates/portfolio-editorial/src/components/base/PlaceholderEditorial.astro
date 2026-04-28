@@ -1,0 +1,80 @@
+---
+/*
+  PlaceholderEditorial — substitui mídia gerada quando o projeto ainda não tem asset real.
+  Quando falta imagem, tipografia substitui (signature Portfolio Editorial).
+
+  Uso típico:
+    <PlaceholderEditorial marker="02" name="Vila Ourinhos" aspect="4/5" />
+
+  NÃO é ornamento de showcase — é solução honesta pra seções que precisam ter conteúdo
+  mas o asset ainda não foi gerado. Se o projeto NÃO tem o asset E não vai ter, a seção
+  inteira deve ser repensada (ver feedback_templates_moldaveis_ao_conteudo.md em memory).
+*/
+
+interface Props {
+  marker: string;       // "02" | "A" | "II"
+  name: string;         // "Vila Ourinhos"
+  aspect?: '4/5' | '3/2' | '1/1' | '3/4' | '16/9';
+  label?: string;       // label topo — default: "INDEX"
+  meta?: string;        // metadata topo direita — default: "Archive"
+  tone?: 'light' | 'dark';  // paleta do placeholder — default light
+}
+const {
+  marker,
+  name,
+  aspect = '4/5',
+  label = 'INDEX',
+  meta = 'Archive',
+  tone = 'light',
+} = Astro.props;
+
+const aspectClass = {
+  '4/5':  'aspect-[4/5]',
+  '3/2':  'aspect-[3/2]',
+  '1/1':  'aspect-square',
+  '3/4':  'aspect-[3/4]',
+  '16/9': 'aspect-video',
+}[aspect];
+
+const bg = tone === 'dark' ? 'var(--color-ink)' : 'var(--color-bg-alt)';
+const ink = tone === 'dark' ? 'var(--color-bg)' : 'var(--color-ink)';
+const mute = tone === 'dark' ? 'var(--color-ink-mute)' : 'var(--color-ink-mute)';
+const ruleSoft = tone === 'dark' ? 'var(--color-rule-soft)' : 'var(--color-rule-soft)';
+---
+
+<figure
+  class={`relative w-full overflow-hidden ${aspectClass}`}
+  style={`background: ${bg};`}
+>
+  {/* Meta strip topo */}
+  <div
+    class="absolute top-[6%] left-[6%] right-[6%] flex items-center justify-between label-caps"
+    style={`color: ${mute}; border-top: 1px solid ${ink};`}
+  >
+    <span style="padding-top: 8px;">{label}</span>
+    <span style="padding-top: 8px;">{meta}</span>
+  </div>
+
+  {/* Marcador monumental centrado */}
+  <div class="absolute inset-0 flex items-center justify-center">
+    <span
+      class="font-[family-name:var(--font-display)] font-bold leading-none"
+      style={`color: ${ink}; font-size: clamp(6rem, 32vw, 16rem); letter-spacing: -0.06em;`}
+    >
+      ({marker})
+    </span>
+  </div>
+
+  {/* Nome embaixo */}
+  <div
+    class="absolute bottom-[6%] left-[6%] right-[6%] text-center"
+    style={`border-top: 1px solid ${ruleSoft}; padding-top: 12px;`}
+  >
+    <span
+      class="font-[family-name:var(--font-display)] font-bold"
+      style={`color: ${ink}; font-size: clamp(0.75rem, 1.5vw, 1.25rem); letter-spacing: 0.2em; text-transform: uppercase;`}
+    >
+      {name}
+    </span>
+  </div>
+</figure>

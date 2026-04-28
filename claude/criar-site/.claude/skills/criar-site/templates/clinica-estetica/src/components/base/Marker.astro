@@ -1,0 +1,19 @@
+---
+/*
+  Marker — signature da Clínica: small caps wide + rule curto opcional.
+  Usos: "MISSION", "OUR SERVICES", "— Skin", "AESTHETIC TREATMENTS"
+*/
+interface Props {
+  label: string;
+  align?: 'left' | 'center' | 'right';
+  rule?: boolean;       // exibe rule curto antes do label (signature "— Skin")
+}
+const { label, align = 'left', rule = false } = Astro.props;
+const alignClass =
+  align === 'center' ? 'justify-center' :
+  align === 'right'  ? 'justify-end'    : 'justify-start';
+---
+<div class={`flex items-center gap-3 ${alignClass}`}>
+  {rule && <span class="rule-thin" aria-hidden="true"></span>}
+  <span class="label-small-caps">{label}</span>
+</div>

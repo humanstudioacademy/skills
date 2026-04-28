@@ -1,0 +1,22 @@
+---
+/*
+  Carousel Controls — signature Apple: pill branco + dots + play/pause.
+  Presentational only; motion.ts gerencia active state.
+*/
+interface Props {
+  count: number;
+  activeIndex?: number;
+  withPlayPause?: boolean;
+}
+const { count, activeIndex = 0, withPlayPause = true } = Astro.props;
+---
+<div class="carousel-controls" role="tablist">
+  {[...Array(count)].map((_, i) => (
+    <span class={`dot ${i === activeIndex ? 'active' : ''}`} aria-hidden="true"></span>
+  ))}
+  {withPlayPause && (
+    <button type="button" class="ml-2 flex h-6 w-6 items-center justify-center rounded-full text-[var(--color-ink)] hover:bg-[var(--color-bg-alt)]" aria-label="Pause">
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" aria-hidden="true"><rect x="2" y="1" width="2" height="8" rx="0.5"/><rect x="6" y="1" width="2" height="8" rx="0.5"/></svg>
+    </button>
+  )}
+</div>

@@ -1,0 +1,54 @@
+---
+/*
+  Footer — Apple-style: nav groups + fine print + copyright.
+*/
+interface FooterGroup {
+  label: string;
+  links: { label: string; href: string }[];
+}
+
+interface Props {
+  brand: string;
+  groups?: FooterGroup[];
+  finePrint?: string[];
+  copyright?: string;
+}
+const { brand, groups = [], finePrint = [], copyright } = Astro.props;
+---
+<footer class="border-t border-[var(--color-rule)] bg-[var(--color-bg-alt)]">
+  <div class="mx-auto max-w-[var(--content-max)] px-[var(--gutter)] py-[var(--space-10)]">
+    {groups.length > 0 && (
+      <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
+        {groups.map((g) => (
+          <div>
+            <p class="label-tech mb-4 text-[var(--color-ink)]">{g.label}</p>
+            <ul class="flex flex-col gap-2">
+              {g.links.map((l) => (
+                <li>
+                  <a href={l.href} class="text-[length:var(--text-sm)] text-[var(--color-ink-dim)] hover:text-[var(--color-accent)] hover:underline">
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    )}
+
+    {finePrint.length > 0 && (
+      <div class="mt-[var(--space-8)] border-t border-[var(--color-rule)] pt-6">
+        <ul class="flex flex-col gap-1">
+          {finePrint.map((f) => (
+            <li class="text-[length:var(--text-xs)] leading-relaxed text-[var(--color-ink-mute)]">{f}</li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    <div class="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-[var(--color-rule)] pt-4">
+      <p class="text-[length:var(--text-xs)] text-[var(--color-ink-mute)]">{copyright ?? `© 2026 ${brand}. All rights reserved.`}</p>
+      <p class="text-[length:var(--text-xs)] text-[var(--color-ink-mute)]">{brand}</p>
+    </div>
+  </div>
+</footer>

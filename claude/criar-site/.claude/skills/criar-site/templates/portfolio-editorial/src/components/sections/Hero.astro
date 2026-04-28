@@ -1,0 +1,165 @@
+---
+/*
+  Hero — duas variantes controladas por prop (DNA Portfolio Editorial):
+
+    variant="monumental-word"  (default)
+      Palavra/nome gigante em grotesque condensada dominando o fold.
+      Mídia opcional fullbleed atrás. Subtítulo 1 linha abaixo. Marker topo. CTA ghost base.
+
+    variant="editorial-phrase"
+      Frase em 3-4 linhas (serif expressiva se displayFont=serif-expressive).
+      Marker lateral + mídia inserida entre palavras (collage-style).
+
+  Prop heroOverlay controla legibilidade sobre a foto:
+    - "none"              (default) — foto 100% limpa, tipografia em var(--color-ink) sobre foto
+    - "radial-bg"         — gradient radial cream centrado, pra legibilidade sobre fotos com áreas escuras
+    - "blend-difference"  — OVERRIDE punk (projetos dark-saturated). Texto em branco com mix-blend-difference
+
+  O default é "none" — o kit aposta em foto que já funciona com tipo ink. Override é decisão de projeto específico.
+*/
+import Marker from '@components/base/Marker.astro';
+import Button from '@components/base/Button.astro';
+
+interface Props {
+  variant?: 'monumental-word' | 'editorial-phrase';
+  heroOverlay?: 'none' | 'radial-bg' | 'blend-difference';
+  marker?: string;              // "(01)" ou "(Design/Production)"
+  markerLabel?: string;
+  word?: string;                // palavra monumental — usado em monumental-word
+  phrase?: string;              // frase editorial — usado em editorial-phrase
+  lead?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  mediaSrc?: string;
+  mediaType?: 'image' | 'video';
+  mediaAlt?: string;
+  mediaPosition?: string;       // CSS background-position / object-position (ex: "center 30%")
+  poster?: string;
+}
+const {
+  variant = 'monumental-word',
+  heroOverlay = 'none',
+  marker = '01',
+  markerLabel,
+  word,
+  phrase,
+  lead,
+  ctaLabel,
+  ctaHref,
+  mediaSrc,
+  mediaType = 'image',
+  mediaAlt = '',
+  mediaPosition = 'center 50%',
+  poster,
+} = Astro.props;
+
+const isBlend = heroOverlay === 'blend-difference';
+const textColor = isBlend ? '#FFFFFF' : 'var(--color-ink)';
+const borderColor = isBlend ? '#FFFFFF' : 'var(--color-rule)';
+---
+<section class="relative overflow-hidden bg-[var(--color-bg)]">
+  {variant === 'monumental-word' ? (
+    <div class="relative">
+      {/* Media fullbleed — background-image pra previsibilidade de position */}
+      {mediaSrc && (
+        mediaType === 'video' ? (
+          <div class="absolute inset-0 z-0">
+            <video class="h-full w-full object-cover" src={mediaSrc} poster={poster} autoplay muted loop playsinline style={`object-position: ${mediaPosition};`} />
+          </div>
+        ) : (
+          <div
+            class="absolute inset-0 z-0"
+            style={`background-image: url(${mediaSrc}); background-size: cover; background-position: ${mediaPosition}; background-repeat: no-repeat;`}
+            role="img"
+            aria-label={mediaAlt}
+          ></div>
+        )
+      )}
+
+      {/* Overlay opcional — só renderiza se heroOverlay === "radial-bg" */}
+      {mediaSrc && heroOverlay === 'radial-bg' && (
+        <div
+          class="pointer-events-none absolute inset-0 z-[5]"
+          style="background: radial-gradient(ellipse 70% 45% at 50% 48%, rgba(var(--color-bg-rgb, 244 239 230), 0.45) 0%, rgba(var(--color-bg-rgb, 244 239 230), 0.22) 35%, rgba(var(--color-bg-rgb, 244 239 230), 0) 70%);"
+          aria-hidden="true"
+        ></div>
+      )}
+
+      <div
+        class="relative z-10 mx-auto flex min-h-[88vh] max-w-[var(--content-max)] flex-col px-[var(--gutter)] pt-[var(--space-10)] pb-[var(--space-8)]"
+        style={isBlend ? 'mix-blend-mode: difference; color: #FFFFFF;' : `color: ${textColor};`}
+      >
+        <div class="flex items-start justify-between gap-4">
+          <div class={`reveal ${isBlend ? '[&_span]:!text-white' : ''}`}>
+            <Marker value={marker} variant="paren" label={markerLabel} />
+          </div>
+          {lead && (
+            <p
+              class="reveal hidden md:block max-w-md text-right text-[length:var(--text-md)] leading-[var(--leading-body)]"
+              style={`color: ${textColor};`}
+            >
+              {lead}
+            </p>
+          )}
+        </div>
+
+        <div class="flex flex-1 items-center justify-center">
+          <h1
+            class="type-monumental text-center"
+            style={`color: ${textColor};`}
+            data-marquee-intro
+          >
+            {word}
+          </h1>
+        </div>
+
+        <div class="flex flex-wrap items-end justify-between gap-6 border-t pt-6" style={`border-color: ${borderColor};`}>
+          {lead && (
+            <p
+              class="reveal md:hidden max-w-md text-[length:var(--text-md)] leading-[var(--leading-body)]"
+              style={`color: ${textColor};`}
+            >
+              {lead}
+            </p>
+          )}
+          {ctaLabel && ctaHref && (
+            <div class={`reveal ml-auto ${isBlend ? '[&_*]:!text-white' : ''}`}>
+              <Button href={ctaHref} label={ctaLabel} variant="ghost" size="md" />
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  ) : (
+    <div class="relative mx-auto flex min-h-[88vh] max-w-[var(--content-max)] flex-col justify-between gap-[var(--space-10)] px-[var(--gutter)] pt-[var(--space-10)] pb-[var(--space-10)]">
+      <div class="reveal">
+        <Marker value={marker} variant="paren" label={markerLabel} />
+      </div>
+
+      <div class="grid grid-cols-12 items-end gap-[var(--gutter)]">
+        <h1 class="reveal col-span-12 md:col-span-10 font-[family-name:var(--font-display)] text-[length:var(--text-3xl)] md:text-[length:var(--text-4xl)] font-bold leading-[var(--leading-heading)] tracking-[var(--tracking-tight)] text-[var(--color-ink)]">
+          {phrase}
+        </h1>
+
+        {mediaSrc && (
+          <figure class="reveal col-span-12 md:col-span-2 md:col-start-11 self-center">
+            <img src={mediaSrc} alt={mediaAlt} class="aspect-[3/4] w-full object-cover" style={`object-position: ${mediaPosition};`} />
+          </figure>
+        )}
+      </div>
+
+      <div class="grid grid-cols-12 items-start gap-[var(--gutter)] border-t border-[var(--color-rule)] pt-6">
+        {lead && (
+          <p class="reveal col-span-12 md:col-span-6 text-[length:var(--text-md)] leading-[var(--leading-body)] text-[var(--color-ink-dim)]">
+            {lead}
+          </p>
+        )}
+        {ctaLabel && ctaHref && (
+          <div class="reveal col-span-12 md:col-span-3 md:col-start-10 justify-self-end">
+            <Button href={ctaHref} label={ctaLabel} variant="ghost" size="md" />
+          </div>
+        )}
+      </div>
+    </div>
+  )}
+</section>

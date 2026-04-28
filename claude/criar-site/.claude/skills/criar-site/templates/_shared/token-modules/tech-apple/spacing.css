@@ -1,0 +1,22 @@
+/* SPACING — Tech Apple-ish
+   Container 1152px default + 1440px wide pra heros. Grid centralizado puro. */
+
+--space-0:  0;
+--space-1:  0.5rem;
+--space-2:  1rem;
+--space-3:  1.5rem;
+--space-4:  2rem;
+--space-5:  2.5rem;
+--space-6:  3rem;
+--space-8:  4rem;
+--space-10: 5rem;
+--space-12: 6rem;
+--space-16: 8rem;
+--space-20: 10rem;
+--space-24: 12rem;
+--space-32: 16rem;
+
+--content-max:  72rem;     /* 1152px default */
+--content-wide: 90rem;     /* 1440px pra heros e lifestyle */
+--measure:      62ch;
+--gutter:       var(--space-5);

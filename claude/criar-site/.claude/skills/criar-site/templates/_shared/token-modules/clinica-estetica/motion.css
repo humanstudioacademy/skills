@@ -1,0 +1,13 @@
+/* MOTION — Clínica Estética
+   Durations respiradas, easings gentle. Tudo desacelerado em relação a Portfolio. */
+
+--duration-fast:   200ms;
+--duration-base:   400ms;
+--duration-ui:     600ms;
+--duration-reveal: 900ms;
+--duration-long:   1200ms;
+--duration-epic:   1600ms;
+
+--ease-out-expo:   cubic-bezier(0.22, 1, 0.36, 1);
+--ease-out-cubic:  cubic-bezier(0.33, 1, 0.68, 1);
+--ease-gentle:     cubic-bezier(0.4, 0, 0.2, 1);

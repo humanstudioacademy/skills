@@ -1,0 +1,24 @@
+---
+/*
+  Marker — marcador alfanumérico signature do Portfolio Editorial.
+  Usos: (01), (A), (01/03), №26, (Design/Production).
+  Variant 'paren' = (01)  |  'slash' = (01/03)  |  'numero' = №26  |  'bare' = 01
+*/
+interface Props {
+  value: string;           // '01' | 'A' | '01/03' | '26'
+  variant?: 'paren' | 'slash' | 'numero' | 'bare';
+  label?: string;          // texto ao lado, opcional: "Operating principles"
+  align?: 'left' | 'right';
+}
+const { value, variant = 'paren', label, align = 'left' } = Astro.props;
+
+const display =
+  variant === 'paren'  ? `(${value})` :
+  variant === 'slash'  ? `(${value})` :
+  variant === 'numero' ? `№${value}` :
+  value;
+---
+<div class={`flex items-baseline gap-3 ${align === 'right' ? 'justify-end text-right' : ''}`}>
+  <span class="label-caps text-[var(--color-ink-mute)]">{display}</span>
+  {label && <span class="label-caps text-[var(--color-ink-dim)]">{label}</span>}
+</div>

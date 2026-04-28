@@ -1,0 +1,68 @@
+---
+/*
+  Services Grid — 3-4 col com ícones lineares finos + título small caps + descrição.
+  Ícones: SVG inline por serviço (traços hair-line signature).
+*/
+import Marker from '@components/base/Marker.astro';
+
+export interface Service {
+  icon: 'skin' | 'brow' | 'injectable' | 'lash' | 'laser' | 'facial' | 'consult';
+  title: string;
+  caption: string;
+  description?: string;
+  href?: string;
+}
+
+interface Props {
+  id?: string;
+  marker?: string;
+  heading: string;
+  services: Service[];
+  layout?: '3-col' | '4-col' | 'list-horizontal';
+}
+const { id, marker = 'OUR SERVICES', heading, services, layout = '4-col' } = Astro.props;
+
+const colsClass =
+  layout === '4-col' ? 'md:grid-cols-4' :
+  layout === '3-col' ? 'md:grid-cols-3' : 'md:grid-cols-2';
+
+/* SVG icons hair-line — minimalistas, signature orgânica */
+const icons: Record<Service['icon'], string> = {
+  skin:       `<circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="1" fill="none"/><path d="M16 24 Q 24 18, 32 24 Q 24 30, 16 24 Z" stroke="currentColor" stroke-width="1" fill="none"/>`,
+  brow:       `<path d="M8 30 Q 16 22, 24 26 Q 32 30, 40 24" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round"/><path d="M12 33 L 16 28" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><path d="M20 31 L 24 27" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><path d="M28 30 L 32 26" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>`,
+  injectable: `<path d="M10 38 L 28 20" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><path d="M26 18 L 32 24 L 36 20 L 30 14 Z" stroke="currentColor" stroke-width="1" fill="none"/><circle cx="10" cy="38" r="2" stroke="currentColor" stroke-width="1" fill="none"/>`,
+  lash:       `<path d="M8 30 Q 24 18, 40 30" stroke="currentColor" stroke-width="1" fill="none"/><path d="M12 30 L 10 36" stroke="currentColor" stroke-width="1"/><path d="M20 25 L 20 34" stroke="currentColor" stroke-width="1"/><path d="M28 25 L 28 34" stroke="currentColor" stroke-width="1"/><path d="M36 30 L 38 36" stroke="currentColor" stroke-width="1"/>`,
+  laser:      `<path d="M24 6 L 24 16" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><path d="M8 24 L 18 24" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><path d="M30 24 L 40 24" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><path d="M24 32 L 24 42" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="1" fill="none"/>`,
+  facial:     `<path d="M24 8 C 32 8, 36 16, 36 24 C 36 34, 30 40, 24 40 C 18 40, 12 34, 12 24 C 12 16, 16 8, 24 8 Z" stroke="currentColor" stroke-width="1" fill="none"/><circle cx="20" cy="22" r="1" fill="currentColor"/><circle cx="28" cy="22" r="1" fill="currentColor"/><path d="M20 30 Q 24 32, 28 30" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round"/>`,
+  consult:    `<circle cx="24" cy="18" r="6" stroke="currentColor" stroke-width="1" fill="none"/><path d="M12 40 Q 12 28, 24 28 Q 36 28, 36 40" stroke="currentColor" stroke-width="1" fill="none"/>`,
+};
+---
+<section id={id} class="bg-[var(--color-bg)]">
+  <div class="mx-auto max-w-[var(--content-max)] px-[var(--gutter)] py-[var(--space-20)]">
+    <div class="reveal mb-[var(--space-12)] text-center">
+      <div class="mb-5 flex justify-center"><Marker label={marker} align="center" rule /></div>
+      <h2 class="font-[family-name:var(--font-display)] text-[length:var(--text-xl)] md:text-[length:var(--text-2xl)] font-normal leading-[var(--leading-heading)] text-[var(--color-deep)]">
+        {heading}
+      </h2>
+    </div>
+
+    <div class={`stagger-children grid grid-cols-1 gap-x-8 gap-y-[var(--space-10)] sm:grid-cols-2 ${colsClass}`}>
+      {services.map((s) => (
+        <a href={s.href ?? '#'} class="group block text-center">
+          <div class="mx-auto mb-5 text-[var(--color-deep)] transition-transform duration-[var(--duration-ui)] group-hover:scale-110" style="width:48px;height:48px">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" set:html={icons[s.icon]}></svg>
+          </div>
+          <p class="label-small-caps mb-2 text-[var(--color-deep)]">{s.title}</p>
+          <p class="text-[length:var(--text-sm)] italic font-[family-name:var(--font-display)] text-[var(--color-ink-mute)]">
+            {s.caption}
+          </p>
+          {s.description && (
+            <p class="mx-auto mt-3 max-w-[20ch] text-[length:var(--text-sm)] leading-[var(--leading-body)] text-[var(--color-ink-dim)]">
+              {s.description}
+            </p>
+          )}
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

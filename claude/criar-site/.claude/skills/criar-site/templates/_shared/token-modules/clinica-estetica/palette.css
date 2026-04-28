@@ -1,0 +1,15 @@
+/* PALETTE — Clínica Estética
+   Sage default. Briefing pode trocar pra rose-taupe / sand / warm-nude / custom warm.
+   Nunca puro preto, nunca cool, nunca vibrante. */
+
+--color-bg:         #F5EEE6;       /* cream foundation */
+--color-bg-alt:     #EDE5DA;       /* warmer surface */
+--color-surface:    #FFFFFF;
+--color-deep:       #2E3A2E;       /* sage deep dominante */
+--color-mid:        #E5D5C8;       /* blush mid */
+--color-ink:        #2A2520;       /* warm near-black */
+--color-ink-dim:    #5B524A;
+--color-ink-mute:   #8A7E72;
+--color-accent:     #B8923D;       /* gold/bronze fino, só em ornamentos */
+--color-rule:       #C9BFB2;
+--color-rule-deep:  #2E3A2E;

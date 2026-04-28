@@ -1,0 +1,22 @@
+---
+/*
+  Logo — wordmark tipográfico por padrão.
+  Grotesque condensada bold. Aceita src (imagem) opcional.
+*/
+interface Props {
+  brand: string;
+  href?: string;
+  src?: string;
+  alt?: string;
+}
+const { brand, href = '/', src, alt = brand } = Astro.props;
+---
+<a href={href} class="inline-flex items-center" aria-label={brand}>
+  {src ? (
+    <img src={src} alt={alt} class="h-7 w-auto" />
+  ) : (
+    <span class="font-[family-name:var(--font-display)] text-[length:var(--text-md)] font-bold tracking-[var(--tracking-tight)] text-[var(--color-ink)]">
+      {brand}
+    </span>
+  )}
+</a>

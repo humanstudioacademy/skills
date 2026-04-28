@@ -1,0 +1,124 @@
+---
+/*
+  Hero — 3 variants (signature Tech Apple):
+
+    variant="product-floating" (default)
+      Product-name-small + tagline massiva com period + subcopy + price/CTA pill
+      + produto flutuando centralizado com shadow sutil.
+
+    variant="product-lifestyle"
+      Produto em fundo lifestyle (foto ambiente) + title sobreposto.
+
+    variant="dark-cinematic"
+      Dark background + produto iluminado dramático + title bold centralizado.
+*/
+import Button from '@components/base/Button.astro';
+
+interface Props {
+  variant?: 'product-floating' | 'product-lifestyle' | 'dark-cinematic';
+  productName: string;
+  title: string;            // "The world's best Active Noise Cancellation."
+  subtitle?: string;
+  price?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  secondaryCtaLabel?: string;
+  secondaryCtaHref?: string;
+  productSrc?: string;
+  productAlt?: string;
+  lifestyleSrc?: string;
+  lifestyleAlt?: string;
+}
+const {
+  variant = 'product-floating',
+  productName,
+  title,
+  subtitle,
+  price,
+  ctaLabel,
+  ctaHref,
+  secondaryCtaLabel,
+  secondaryCtaHref,
+  productSrc,
+  productAlt = productName,
+  lifestyleSrc,
+  lifestyleAlt = '',
+} = Astro.props;
+---
+{variant === 'product-floating' ? (
+  <section class="relative overflow-hidden bg-[var(--color-bg)]">
+    <div class="mx-auto flex max-w-[var(--content-wide)] flex-col items-center px-[var(--gutter)] pt-[var(--space-16)] text-center">
+      <p class="label-tech reveal mb-3">{productName}</p>
+      <h1 class="title-apple-hero reveal mx-auto max-w-4xl text-[var(--color-ink)]">
+        {title}
+      </h1>
+      {subtitle && (
+        <p class="reveal mx-auto mt-5 max-w-xl text-[length:var(--text-md)] text-[var(--color-ink-dim)]">
+          {subtitle}
+        </p>
+      )}
+
+      <div class="reveal mt-8 flex flex-wrap items-center justify-center gap-3">
+        {ctaLabel && ctaHref && <Button href={ctaHref} label={ctaLabel} variant="primary-accent" size="md" />}
+        {secondaryCtaLabel && secondaryCtaHref && <Button href={secondaryCtaHref} label={secondaryCtaLabel} variant="text" arrow />}
+        {price && <span class="ml-2 text-[length:var(--text-sm)] text-[var(--color-ink-mute)]">From {price}</span>}
+      </div>
+
+      {productSrc && (
+        <div class="reveal relative mx-auto mt-[var(--space-12)] w-full max-w-2xl" data-scroll-scale data-scroll-scale-from="0.9" data-scroll-scale-to="1.08">
+          <img src={productSrc} alt={productAlt} class="relative z-10 mx-auto h-auto w-full" data-product-tilt data-product-tilt-max="6" />
+          <div class="product-shadow"></div>
+        </div>
+      )}
+    </div>
+  </section>
+) : variant === 'dark-cinematic' ? (
+  <section class="dark-section relative overflow-hidden" data-theme-reveal>
+    <div class="mx-auto flex max-w-[var(--content-wide)] flex-col items-center px-[var(--gutter)] pt-[var(--space-16)] pb-[var(--space-20)] text-center">
+      <p class="label-tech reveal mb-3" style="color: var(--color-ink-mute-dark)">{productName}</p>
+      <h1 class="title-apple-hero reveal mx-auto max-w-4xl text-[var(--color-ink-dark)]">
+        {title}
+      </h1>
+      {subtitle && (
+        <p class="reveal mx-auto mt-5 max-w-xl text-[length:var(--text-md)]" style="color: var(--color-ink-dim-dark)">
+          {subtitle}
+        </p>
+      )}
+
+      <div class="reveal mt-8 flex flex-wrap items-center justify-center gap-3">
+        {ctaLabel && ctaHref && <Button href={ctaHref} label={ctaLabel} variant="primary-accent" size="md" />}
+        {secondaryCtaLabel && secondaryCtaHref && <Button href={secondaryCtaHref} label={secondaryCtaLabel} variant="text" arrow />}
+      </div>
+
+      {productSrc && (
+        <div class="reveal relative mx-auto mt-[var(--space-12)] w-full max-w-3xl" data-scroll-scale data-scroll-scale-from="0.92" data-scroll-scale-to="1.06">
+          <img src={productSrc} alt={productAlt} class="relative z-10 mx-auto h-auto w-full" data-product-tilt data-product-tilt-max="7" />
+          <div class="product-shadow" style="background: radial-gradient(ellipse at center, rgba(255,255,255,0.12) 0%, transparent 70%);"></div>
+        </div>
+      )}
+    </div>
+  </section>
+) : (
+  <section class="relative overflow-hidden bg-[var(--color-bg)]">
+    <div class="relative min-h-[88vh]">
+      {lifestyleSrc && (
+        <div class="absolute inset-0 z-0">
+          <img src={lifestyleSrc} alt={lifestyleAlt} class="h-full w-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-bg)] via-transparent to-transparent"></div>
+        </div>
+      )}
+      <div class="relative z-10 mx-auto flex min-h-[88vh] max-w-[var(--content-wide)] flex-col items-center justify-end px-[var(--gutter)] pb-[var(--space-16)] text-center">
+        <p class="label-tech reveal mb-3">{productName}</p>
+        <h1 class="title-apple-hero reveal mx-auto max-w-4xl text-[var(--color-ink)]">
+          {title}
+        </h1>
+        {subtitle && (
+          <p class="reveal mx-auto mt-5 max-w-xl text-[length:var(--text-md)] text-[var(--color-ink-dim)]">{subtitle}</p>
+        )}
+        <div class="reveal mt-8 flex flex-wrap items-center justify-center gap-3">
+          {ctaLabel && ctaHref && <Button href={ctaHref} label={ctaLabel} variant="primary-accent" size="md" />}
+        </div>
+      </div>
+    </div>
+  </section>
+)}

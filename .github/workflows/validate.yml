@@ -1,0 +1,51 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  marketplace:
+    name: Marketplace structure
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate marketplace.json + plugins + skills
+        run: python3 scripts/validate_marketplace.py
+
+  python-syntax:
+    name: Python syntax (py_compile)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Compile every .py
+        run: |
+          set -e
+          mapfile -t files < <(git ls-files '*.py')
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "no .py files tracked"
+            exit 0
+          fi
+          python3 -m py_compile "${files[@]}"
+          echo "✅ ${#files[@]} arquivo(s) python compilam"
+
+  json-lint:
+    name: JSON manifests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate every JSON manifest
+        run: |
+          set -e
+          for f in $(git ls-files '*.json'); do
+            python3 -c "import json,sys; json.load(open('$f')); print('✅ $f')" || { echo "❌ $f"; exit 1; }
+          done

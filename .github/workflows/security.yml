@@ -1,0 +1,36 @@
+name: security
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: "0 5 * * 1"
+  workflow_dispatch:
+
+jobs:
+  secrets:
+    name: Secret scan (gitleaks)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Run gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  no-tracked-env:
+    name: No .env files tracked
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fail if any .env file is tracked
+        run: |
+          if git ls-files | grep -E '(^|/)\.env(\..+)?$'; then
+            echo "❌ arquivo .env tracked — remova e adicione ao .gitignore"
+            exit 1
+          fi
+          echo "✅ nenhum .env tracked"

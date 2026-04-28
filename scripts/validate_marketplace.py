@@ -93,7 +93,17 @@ def validate_plugin(entry: dict, plugin_root: Path) -> None:
         err(f"plugin '{name}' sem 'source'")
         return
 
-    plugin_dir = (plugin_root / entry["source"]).resolve()
+    src = entry["source"]
+    if isinstance(src, str) and not (src.startswith("./") or src.startswith("../")):
+        err(f"plugin '{name}': source string '{src}' precisa começar com './' "
+            f"(o validador do Claude Code rejeita formas como '{src}'). "
+            f"Use './plugins/{name}' ou similar.")
+        return
+
+    plugin_dir = (plugin_root / src).resolve() if isinstance(src, str) else None
+    if plugin_dir is None:
+        # source é objeto (github, npm, etc) — fora do escopo deste validador
+        return
     if not plugin_dir.exists():
         err(f"plugin '{name}' source aponta pra dir inexistente: {plugin_dir.relative_to(ROOT)}")
         return

@@ -230,13 +230,13 @@ description: Frase com gatilhos de ativação (quando o Claude deve invocar).
 ```json
 {
   "plugins": [
-    { "name": "criar-site", "source": "criar-site", "description": "..." },
-    { "name": "<nome>",     "source": "<nome>",     "description": "..." }
+    { "name": "criar-site", "source": "./plugins/criar-site", "description": "..." },
+    { "name": "<nome>",     "source": "./plugins/<nome>",     "description": "..." }
   ]
 }
 ```
 
-`source` é relativo ao `pluginRoot` (`./plugins`).
+`source` é caminho relativo à raiz do marketplace, **com prefixo `./` obrigatório**.
 
 ### 5. Valide local antes do PR
 

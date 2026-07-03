@@ -12,6 +12,11 @@
       "name": "criar-site",
       "source": "./plugins/criar-site",
       "description": "Gera sites responsivos completos com imagens/vídeos de IA (Freepik) e 3 matrizes estéticas hibridáveis."
+    },
+    {
+      "name": "departamento-criativo",
+      "source": "./plugins/departamento-criativo",
+      "description": "Painel de revisão criativa adversarial com 7 agentes para avaliar e reformar copy, carrossel, Reel, arte e campanhas."
     }
   ]
 }

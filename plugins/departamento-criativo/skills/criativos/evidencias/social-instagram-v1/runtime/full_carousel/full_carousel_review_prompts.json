@@ -1,0 +1,101 @@
+{
+  "_meta": {
+    "scope": "full_carousel",
+    "corpus_base": "62 carrosseis completos, 412 slides, 17 contas, 8 nichos",
+    "coverage_note": "Apenas features de capa + copy/legenda foram codificadas no corpus. Dimensões inter-slide (progressão, redundância entre slides, ganho de informação por slide, naming entre slides) não foram codificadas — não há review_prompts para essas dimensões.",
+    "score_weight": 0,
+    "usage_rule": "Review prompts são perguntas de observação, não regras de pontuação. T2 contextualiza, nunca pontua nem derruba piso T1."
+  },
+  "review_prompts": [
+    {
+      "prompt_id": "RP-FC-001",
+      "lens": "atencao",
+      "related_feature": "cover_hook.cover_hook_type",
+      "asset_scope": "full_carousel",
+      "prompt": "O gancho da capa é uma afirmação forte (bold_claim — nomeia benefício ou risco específico) ou uma pergunta aberta ao leitor (question)? [Corpus full_carousel: bold_claim acompanha desempenho relativamente mais alto (lift +0.081, 5 contas, 4 nichos); question acompanha mais baixo (lift -0.231, 2 contas). CONFOUND: cover_hook_type=none também aparece com lift positivo (+0.166, 6 contas) — não há hierarquia clara. Não prescrever; observar e contextualizar.]",
+      "evidence_ref": "FC-EV-001",
+      "confidence": "weak_contextual",
+      "score_weight": 0
+    },
+    {
+      "prompt_id": "RP-FC-002",
+      "lens": "atencao",
+      "related_feature": "copy.second_person",
+      "asset_scope": "full_carousel",
+      "prompt": "A copy da legenda usa a segunda pessoa ('você tem...', 'você pode...') ou fala sobre o produto/marca em terceira pessoa ('são 3 recursos que...')? [Corpus full_carousel: second_person=no acompanha desempenho mais alto (lift +0.281, 13 contas, 7 nichos — maior lift positivo da amostra); second_person=yes acompanha desempenho mais baixo (lift -0.281, 4 contas). Confundido com tom de marca: marcas institucionais tendem a evitar 2ª pessoa. Não prescrever 'evitar você' — observar o padrão e checar coerência com tom declarado no briefing.]",
+      "evidence_ref": "FC-EV-008",
+      "confidence": "contextual",
+      "score_weight": 0
+    },
+    {
+      "prompt_id": "RP-FC-003",
+      "lens": "clareza",
+      "related_feature": "copy.word_count",
+      "asset_scope": "full_carousel",
+      "prompt": "A legenda tem muitas palavras (word_count=high, acima de ~80 palavras) ou poucas/médias (medium, ~30-50)? [Corpus full_carousel: word_count=high acompanha desempenho relativamente mais alto (lift +0.105, 11 contas, 7 nichos, 4 pares intra-conta apoiando); word_count=medium acompanha mais baixo (lift -0.148, 5 contas: finance+food+tech). Par intra-conta forte: nicho education_and_culture (word_count entre as 3 features que mudaram). Confundido com tipo de conteúdo educativo. Não afirmar 'mais texto = melhor'. Registrar qual é o caso e checar se a densidade é proporcional ao valor entregue.]",
+      "evidence_ref": "FC-EV-002",
+      "confidence": "contextual",
+      "score_weight": 0
+    },
+    {
+      "prompt_id": "RP-FC-004",
+      "lens": "originalidade",
+      "related_feature": "copy.hook_type",
+      "asset_scope": "full_carousel",
+      "prompt": "O gancho textual da legenda é uma bold_claim (afirmação forte, inesperada) ou uma question (pergunta ao leitor)? [Corpus full_carousel: hook_type=bold_claim acompanha desempenho relativamente mais alto (lift +0.083, 4 contas, 4 nichos); hook_type=question acompanha mais baixo (lift -0.142, 3 contas, 3 nichos). Sinal fraco (poucas contas). Não prescrever tipo de gancho — a voz da marca determina o que soa natural. Registrar qual é o caso e se o gancho é diferenciador ou genérico para o nicho.]",
+      "evidence_ref": "FC-EV-001",
+      "confidence": "weak_contextual",
+      "score_weight": 0
+    },
+    {
+      "prompt_id": "RP-FC-005",
+      "lens": "originalidade",
+      "related_feature": "cover_visual.photo_or_illustration",
+      "asset_scope": "full_carousel",
+      "prompt": "A capa usa fotografia real (photo) ou ilustração/gráfico/texto puro (illustration)? [Corpus full_carousel: photo_or_illustration=photo acompanha desempenho mais alto (lift +0.200, 10 contas, 6 nichos, in_eligible_pair, within_account_supporting=3, 0 contradizendo). Sinal de relativa consistência. Mas foto não é regra — carrosseis de educação/tech frequentemente usam ilustração com igual sucesso. Observar se a escolha photo vs illustration é intencional ou padrão de template.]",
+      "evidence_ref": "FC-EV-004",
+      "confidence": "contextual",
+      "score_weight": 0
+    },
+    {
+      "prompt_id": "RP-FC-006",
+      "lens": "coerencia",
+      "related_feature": "cover_visual.logo_prominence",
+      "asset_scope": "full_carousel",
+      "prompt": "O logo/identidade da marca está prominente na capa, sutil, ou ausente? [Corpus full_carousel: logo_prominence=prominent acompanha desempenho mais alto (lift +0.215, 6 contas, 5 nichos, within_account_supporting=6, 1 contradizendo — segundo maior lift positivo e sinal intra-conta mais consistente da amostra); logo_prominence=none acompanha mais baixo (lift -0.194). Confundido com maturidade de marca. Para marcas estabelecidas: logo proeminente pode sinalizar confiança. Para creators: ausência de logo pode ser estilo intencional.]",
+      "evidence_ref": "FC-EV-007",
+      "confidence": "contextual",
+      "score_weight": 0
+    },
+    {
+      "prompt_id": "RP-FC-007",
+      "lens": "coerencia",
+      "related_feature": "cover_visual.brand_presence",
+      "asset_scope": "full_carousel",
+      "prompt": "A identidade visual da marca (além do logo — cores de marca, tipografia de marca, estilo visual consistente) é reconhecível na capa? [Corpus full_carousel: brand_presence=yes acompanha desempenho mais alto (lift +0.146, 12 contas, 7 nichos — maior cobertura de contas na amostra, within_account_supporting=4, 2 contradizendo). brand_presence=no acompanha mais baixo (lift -0.146). Confundido com tipo de conta (brand vs creator). Registrar se o estilo visual da peça é reconhecível como pertencente à marca, independente do logo.]",
+      "evidence_ref": "FC-EV-006",
+      "confidence": "contextual",
+      "score_weight": 0
+    },
+    {
+      "prompt_id": "RP-FC-008",
+      "lens": "execucao",
+      "related_feature": "cover_visual.saturation",
+      "asset_scope": "full_carousel",
+      "prompt": "A saturação cromática da capa é média (paleta controlada, cores não gritantes) ou alta (vibrante) ou baixa (pasteis/dessaturada)? [Corpus full_carousel: saturation=medium acompanha desempenho mais alto (lift +0.160, 8 contas, 4 nichos: finance+food+home+tech, within_account_supporting=5, in_eligible_pair); brightness=bright acompanha desempenho mais baixo (lift -0.289 — maior lift negativo da amostra, 8 contas, 5 nichos). Par intra-conta forte: nicho food_and_beverage (saturation entre as 3 features que mudaram entre o post de alto e baixo desempenho). Não proibir saturação alta — checar se é coerente com o sistema visual da marca.]",
+      "evidence_ref": "FC-EV-003",
+      "confidence": "contextual",
+      "score_weight": 0
+    },
+    {
+      "prompt_id": "RP-FC-009",
+      "lens": "execucao",
+      "related_feature": "cover_visual.image_or_text_dominance",
+      "asset_scope": "full_carousel",
+      "prompt": "A capa é dominada visualmente por imagem (foto, ilustração) ou por texto (copy, headline grande)? [Corpus full_carousel: image_or_text_dominance=image acompanha desempenho mais alto (lift +0.158, 9 contas, 5 nichos, within_account_supporting=4, 1 contradizendo). Dimensão correlacionada com photo_or_illustration=photo (FC-EV-004) — não interpretar isoladamente. composition=texto_dominante acompanha desempenho mais baixo (lift -0.231), mas sinal altamente instável intra-conta (within_acct_contradicting=6). Não afirmar que texto=pior; o tipo de produto e nicho modifica o padrão.]",
+      "evidence_ref": "FC-EV-005",
+      "confidence": "weak_contextual",
+      "score_weight": 0
+    }
+  ]
+}

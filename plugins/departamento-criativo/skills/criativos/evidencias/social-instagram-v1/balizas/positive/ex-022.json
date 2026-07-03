@@ -1,0 +1,40 @@
+{
+  "example_id": "ex-022",
+  "category": "strong_full_carousel",
+  "polarity": "positive",
+  "canonical_role": "positive",
+  "sensitivity": "not_sensitive",
+  "niche": "fashion_and_lifestyle",
+  "account_type": "mixed_br_panel",
+  "format": "Sidecar",
+  "asset_scope": "full_carousel",
+  "asset": "assets/img-022.jpg",
+  "dimension_demonstrated": "structure_and_flow",
+  "justification": "fluxo observavel entre slides no escopo full_carousel",
+  "observable_evidence": {
+    "features": {
+      "copy.hook_type": "bold_claim",
+      "copy.promise_present": "no",
+      "copy.proof_type": "social_proof",
+      "copy.word_count": "high",
+      "copy.emoji_count": "0",
+      "cover_visual.color_count": "low",
+      "cover_visual.text_over_image": "yes",
+      "cover_visual.photo_or_illustration": "mixed",
+      "image_text_relation": "complementary"
+    },
+    "asset_present": true
+  },
+  "why_useful": "carrossel completo com overperformance ajustada (estavel)",
+  "reason_to_use": "carrossel completo com overperformance ajustada (estavel)",
+  "reason_not_causal": "overperformance ajustada e associacao scope-bound; nenhum par isola feature unica -> nao tratar como regra causal",
+  "performance_class": "high",
+  "adjusted_residual": 1.5732,
+  "stability": "stable",
+  "maturity": "cannot_be_evaluated",
+  "extraordinary_flag": false,
+  "limitations": [
+    "associacao nao-causal; exemplo ilustrativo, nao prova de regra",
+    ""
+  ]
+}

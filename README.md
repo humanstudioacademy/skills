@@ -11,7 +11,7 @@ Cada skill aqui dentro é uma habilidade pronta pra uso, instalável em 2 comand
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-compatible-7B61FF)](https://docs.claude.com/claude-code)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org)
-[![Plugins](https://img.shields.io/badge/plugins-1-success)](#-skills-disponíveis)
+[![Plugins](https://img.shields.io/badge/plugins-2-success)](#-skills-disponíveis)
 [![Last commit](https://img.shields.io/github/last-commit/humanstudioacademy/skills/main)](https://github.com/humanstudioacademy/skills/commits/main)
 
 [Instalar](#-instalação-rápida) · [Skills](#-skills-disponíveis) · [Arquitetura](#%EF%B8%8F-arquitetura) · [Adicionar skill](#%EF%B8%8F-como-adicionar-uma-skill-nova) · [Segurança](#-segurança)
@@ -27,9 +27,10 @@ Dentro do Claude Code (CLI ou Desktop):
 ```bash
 /plugin marketplace add humanstudioacademy/skills
 /plugin install criar-site@human-studio
+/plugin install departamento-criativo@human-studio
 ```
 
-Pronto. A skill `/criar-site` está disponível em qualquer projeto.
+Pronto. As skills `/criar-site` e `/criativos` ficam disponíveis em qualquer projeto.
 
 > Para listar todas as skills: `/plugin marketplace list human-studio`
 > Para atualizar: `/plugin marketplace update human-studio`
@@ -57,13 +58,16 @@ Gera **site responsivo end-to-end** (Astro + Tailwind) com imagens e vídeos de 
 </td>
 <td width="50%" valign="top">
 
-### ➕ [Sua skill aqui](#%EF%B8%8F-como-adicionar-uma-skill-nova)
+### 🧠 [`departamento-criativo`](plugins/departamento-criativo/)
 
-Quer contribuir? Mais skills serão adicionadas conforme amadurecemos. Cada uma vira um plugin instalável independente.
+Painel de **revisão criativa adversarial** com 7 agentes para avaliar e reformar conteúdo antes de publicar.
 
-**Roadmap:** revisão de pitch, briefing de identidade visual, redator de copy editorial, auditoria de UX.
+- Avalia copy, carrossel, Reel, arte, campanha ou versões comparativas
+- Lentes: Atenção, Clareza, Originalidade, Coerência e Execução
+- Entrega veredito, discussão do departamento, direção final e reforma concreta
 
-Tem ideia? [Abre uma issue](https://github.com/humanstudioacademy/skills/issues/new) ou manda PR.
+**Comando:** `/criativos`
+**Tempo médio:** 5–30 min conforme complexidade da peça
 
 </td>
 </tr>
@@ -323,6 +327,7 @@ Cada plugin tem documentação própria, mais profunda:
 | Skill | README | INSTALL | Detalhes técnicos |
 |---|---|---|---|
 | `criar-site` | [README](plugins/criar-site/README.md) | [INSTALL](plugins/criar-site/INSTALL.md) | [SKILL.md](plugins/criar-site/skills/criar-site/SKILL.md) · [LESSONS.md](plugins/criar-site/skills/criar-site/LESSONS.md) |
+| `departamento-criativo` | [README](plugins/departamento-criativo/README.md) | — | [SKILL.md](plugins/departamento-criativo/skills/criativos/SKILL.md) · [runtime](plugins/departamento-criativo/skills/criativos/runtime/) |
 
 ---
 

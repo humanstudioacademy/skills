@@ -1,0 +1,234 @@
+{
+  "_meta": {
+    "scope": "full_carousel",
+    "corpus_base": "62 carrosseis completos, 17 contas, 8 nichos",
+    "score_weight": 0,
+    "usage_rule": "Padrões contextuais são referências de observação, não regras. T2 nunca derruba piso T1. Associação ≠ causalidade. Não citar como prova de qualidade."
+  },
+  "patterns": [
+    {
+      "pattern_id": "FC-CP-001",
+      "dimension": "visual_system_saturation",
+      "scope": "full_carousel",
+      "observation": "Em 62 carrosseis completos, saturation=medium acompanha desempenho relativamente mais alto (lift +0.160, 8 contas, 4 nichos) e brightness=bright acompanha o maior lift negativo da amostra (-0.289, 8 contas, 5 nichos). Par intra-conta forte (food_and_beverage, 34 features iguais): o post high tem saturation distinta do post low.",
+      "direction": "saturation=medium acompanha desempenho mais alto; brightness=bright acompanha o maior lift negativo",
+      "lift_high": 0.160,
+      "lift_low": -0.289,
+      "posts_observed": 16,
+      "accounts_observed": 8,
+      "niches_observed": ["finance", "food_and_beverage", "home_design", "technology_and_saas", "fashion_and_lifestyle"],
+      "within_account_pairs": [
+        {
+          "pair_id": "FC-EX-001/FC-CX-001",
+          "niche": "food_and_beverage",
+          "quality": "strong",
+          "high_post": "FC-EX-001",
+          "low_post": "FC-CX-001",
+          "features_same": 34,
+          "features_differ": ["color_count", "composition", "saturation"],
+          "note": "saturation é uma das 3 features que mudaram — não isolável"
+        }
+      ],
+      "stability": "moderadamente estavel — saturation=medium: 5 pares intra-conta apoiando; brightness=bright: 5 contradizendo (instabilidade no sinal negativo)",
+      "source_ids": ["DES-full-brightness-bright", "RES-full-saturation-medium"],
+      "limitations": [
+        "par food_and_beverage: 3 features mudaram — saturation não isolável",
+        "brightness=bright pode refletir nicho de lifestyle/fashion, não apenas decisão de design",
+        "associação contextual, não causal; performance=proxy"
+      ],
+      "confidence": "contextual",
+      "score_weight": 0
+    },
+    {
+      "pattern_id": "FC-CP-002",
+      "dimension": "text_density_legenda",
+      "scope": "full_carousel",
+      "observation": "Em 62 carrosseis completos, word_count=high na legenda acompanha desempenho mais alto (lift +0.105, 11 contas, 7 nichos, within_account_supporting=4). word_count=medium acompanha desempenho mais baixo (lift -0.148, 5 contas: finance+food+tech). Par intra-conta forte (education_and_culture, 34 features iguais): word_count é uma das 3 features que mudaram entre high=par-externo e low=FC-CX-002. Par moderado: nicho finance (9 features mudaram).",
+      "direction": "word_count=high acompanha desempenho mais alto; word_count=medium acompanha desempenho mais baixo",
+      "lift_high": 0.105,
+      "lift_low": -0.148,
+      "posts_observed": 16,
+      "accounts_observed": 11,
+      "niches_observed": ["finance", "food_and_beverage", "technology_and_saas", "education_and_culture", "fashion_and_lifestyle", "beauty_and_wellness", "home_design"],
+      "within_account_pairs": [
+        {
+          "pair_id": "par-education-A",
+          "niche": "education_and_culture",
+          "quality": "strong",
+          "high_post": null,
+          "low_post": "FC-CX-002",
+          "features_same": 34,
+          "features_differ": ["word_count", "cover_hook_type", "text_density_on_image"],
+          "note": "word_count é uma das 3 features que mudaram — não isolável; conta de education/humor"
+        },
+        {
+          "pair_id": "FC-EX-002/par",
+          "niche": "finance",
+          "quality": "moderate",
+          "high_post": "FC-EX-002",
+          "low_post": null,
+          "features_same": 28,
+          "features_differ_count": 9,
+          "note": "word_count entre as 9 features que mudaram — sinal fraco"
+        }
+      ],
+      "stability": "moderadamente estavel — 4 pares intra-conta apoiando o sinal positivo, 2 contradizendo",
+      "source_ids": ["RES-full-word_count-high", "DES-full-word_count-medium"],
+      "limitations": [
+        "word_count=high confundido com tipo de conteúdo (B2B e edutainment tendem a escrever mais e ter bases diferentes)",
+        "par intra-conta education: 3 features mudaram — word_count não isolável",
+        "associação contextual, não causal; performance=proxy"
+      ],
+      "confidence": "contextual",
+      "score_weight": 0
+    },
+    {
+      "pattern_id": "FC-CP-003",
+      "dimension": "image_headline_dominance",
+      "scope": "full_carousel",
+      "observation": "Em 62 carrosseis completos, capas com imagem dominante (image_or_text_dominance=image, lift +0.158, 9 contas, 5 nichos) e com fotografia real (photo_or_illustration=photo, lift +0.200, 10 contas, 6 nichos) acompanham desempenho mais alto. Dois sinais correlacionados — não são independentes.",
+      "direction": "imagem fotográfica dominante na capa associada a desempenho mais alto",
+      "lift_high": 0.200,
+      "lift_low": null,
+      "posts_observed": 19,
+      "accounts_observed": 10,
+      "niches_observed": ["finance", "technology_and_saas", "beauty_and_wellness", "food_and_beverage", "fashion_and_lifestyle", "education_and_culture"],
+      "within_account_pairs": [
+        {
+          "pair_id": "par-food-B",
+          "niche": "food_and_beverage",
+          "quality": "strong",
+          "high_post": null,
+          "low_post": null,
+          "features_same": 33,
+          "features_differ": ["word_count", "cover_hook_type", "saturation", "whitespace_level"],
+          "note": "photo_or_illustration na mesma conta — mas não é a feature diferenciadora do par"
+        }
+      ],
+      "stability": "moderadamente estavel — photo: 3 pares apoiando, 0 contradizendo; image_dominance: 4 apoiando, 1 contradizendo",
+      "source_ids": ["RES-full-photo_or_illustration-photo", "RES-full-image_or_text_dominance-image"],
+      "limitations": [
+        "photo e image_dominance são dimensões correlacionadas — não interpretar como dois sinais independentes",
+        "confundido com nicho: contas de lifestyle/beauty usam mais foto",
+        "carrosseis educativos com ilustração podem ter desempenho igual",
+        "associação contextual, não causal; performance=proxy"
+      ],
+      "confidence": "contextual",
+      "score_weight": 0
+    },
+    {
+      "pattern_id": "FC-CP-004",
+      "dimension": "logo_brand_mark",
+      "scope": "full_carousel",
+      "observation": "Em 62 carrosseis completos, logo_prominence=prominent acompanha o segundo maior lift positivo da amostra (lift +0.215, 6 contas, 5 nichos, within_account_supporting=6, 1 contradizendo). brand_presence=yes acompanha desempenho mais alto com maior cobertura de contas (lift +0.146, 12 contas, 7 nichos). logo_prominence=none acompanha desempenho mais baixo (lift -0.194, 6 contas). Sinal intra-conta mais consistente da amostra para logo_prominence.",
+      "direction": "logo proeminente e presença de marca associados a desempenho mais alto; ausência de logo associada a desempenho mais baixo",
+      "lift_high": 0.215,
+      "lift_low": -0.194,
+      "posts_observed": 18,
+      "accounts_observed": 12,
+      "niches_observed": ["finance", "fashion_and_lifestyle", "food_and_beverage", "technology_and_saas", "beauty_and_wellness", "home_design", "education_and_culture"],
+      "within_account_pairs": [],
+      "stability": "estavel para logo_prominence — within_account_supporting=6, 1 contradizendo; moderadamente estavel para brand_presence (4 apoiando, 2 contradizendo)",
+      "source_ids": ["RES-full-logo_prominence-prominent", "DES-full-logo_prominence-none", "RES-full-brand_presence-yes", "DES-full-brand_presence-no"],
+      "limitations": [
+        "logo_prominence=prominent característico de marcas estabelecidas — confundido com maturidade/reach da conta",
+        "brand_presence=no pode ser escolha estética intencional em contas de creator",
+        "apenas 6 contas para logo_prominence — generalizar com cautela",
+        "associação contextual, não causal; performance=proxy"
+      ],
+      "confidence": "contextual",
+      "score_weight": 0
+    },
+    {
+      "pattern_id": "FC-CP-005",
+      "dimension": "second_person_voice_legenda",
+      "scope": "full_carousel",
+      "observation": "Em 62 carrosseis completos, second_person=no na legenda acompanha o maior lift positivo da amostra (lift +0.281, 13 contas, 7 nichos, within_account_supporting=7, 2 contradizendo). second_person=yes acompanha o maior lift negativo (lift -0.281, 4 contas, 4 nichos, within_acct_contradicting=7). Sinal bipolar simétrico — mas o sinal negativo é altamente instável intra-conta.",
+      "direction": "second_person=no acompanha maior lift positivo da amostra; second_person=yes acompanha maior lift negativo (mas instável intra-conta)",
+      "lift_high": 0.281,
+      "lift_low": -0.281,
+      "posts_observed": 17,
+      "accounts_observed": 13,
+      "niches_observed": ["finance", "fashion_and_lifestyle", "food_and_beverage", "home_design", "technology_and_saas", "beauty_and_wellness", "education_and_culture"],
+      "within_account_pairs": [
+        {
+          "pair_id": "FC-EX-002/par",
+          "niche": "finance",
+          "quality": "moderate",
+          "high_post": "FC-EX-002",
+          "low_post": null,
+          "features_same": 28,
+          "features_differ_count": 9,
+          "note": "second_person entre as 9 features que mudaram — sinal fraco por isolamento"
+        }
+      ],
+      "stability": "moderadamente estavel para o sinal positivo (7 pares apoiando); instavel para o sinal negativo (within_acct_contradicting=7 para second_person=yes)",
+      "source_ids": ["RES-full-second_person-no", "DES-full-second_person-yes"],
+      "limitations": [
+        "second_person=no pode refletir tom institucional de marca, não decisão criativa independente",
+        "within_acct_contradicting=7 para o sinal negativo — o padrão não se mantém dentro das mesmas contas",
+        "par intra-conta finance: 9 features mudaram — não isolável",
+        "associação contextual, não causal; performance=proxy"
+      ],
+      "confidence": "contextual",
+      "score_weight": 0
+    },
+    {
+      "pattern_id": "FC-CP-006",
+      "dimension": "cover_hook_type_signal",
+      "scope": "full_carousel",
+      "observation": "Em 62 carrosseis completos, cover_hook_type apresenta sinal contraditório: bold_claim (lift +0.081, 5 contas) e none (lift +0.166, 6 contas) ambos acompanham desempenho mais alto; question acompanha desempenho mais baixo (lift -0.231, 2 contas, in_eligible_pair). O sinal é confundido: não há hierarquia clara entre bold_claim e none. Padrão classificado como confounded — uso proibido como regra de pontuação.",
+      "direction": "none=relativo_alto (confundido); bold_claim=relativo_alto (fraco); question=relativo_baixo (poucos dados)",
+      "lift_high": 0.166,
+      "lift_low": -0.231,
+      "posts_observed": 13,
+      "accounts_observed": 7,
+      "niches_observed": ["finance", "commerce", "technology_and_saas", "food_and_beverage"],
+      "within_account_pairs": [
+        {
+          "pair_id": "par-education-A",
+          "niche": "education_and_culture",
+          "quality": "strong",
+          "high_post": null,
+          "low_post": "FC-CX-002",
+          "features_same": 34,
+          "features_differ": ["word_count", "cover_hook_type", "text_density_on_image"],
+          "note": "cover_hook_type é uma das 3 features que mudaram — não isolável; conta de education/humor"
+        }
+      ],
+      "stability": "instavel — sinal confundido (bold_claim e none ambos no mesmo sentido positivo)",
+      "source_ids": ["DES-full-cover_hook_type-question", "RES-full-cover_hook_type-bold_claim", "RES-full-cover_hook_type-none"],
+      "limitations": [
+        "sinal confundido — bold_claim e none ambos acompanham desempenho mais alto: não há como prescrever 'use bold_claim'",
+        "apenas 2 contas para cover_hook_type=question",
+        "cover_hook_type depende de voz de marca e nicho — não é atributo universal",
+        "associação contextual, não causal; performance=proxy"
+      ],
+      "confidence": "weak_contextual",
+      "score_weight": 0
+    },
+    {
+      "pattern_id": "FC-CP-007",
+      "dimension": "whitespace_visual_density",
+      "scope": "full_carousel",
+      "observation": "Em 62 carrosseis completos, whitespace_level=low (capa visualmente densa) acompanha desempenho mais alto (lift +0.152, 9 contas, 6 nichos, within_account_supporting=4, 2 contradizendo). visual_complexity=low acompanha desempenho mais baixo (lift -0.186, 2 contas, 2 nichos: finance+tech). Sinal aparentemente paradoxal: densidade visual=alta + complexidade visual=baixa = capa com muito conteúdo, mas organizado.",
+      "direction": "whitespace=low (densa) acompanha desempenho mais alto; visual_complexity=low (simplista) acompanha desempenho mais baixo",
+      "lift_high": 0.152,
+      "lift_low": -0.186,
+      "posts_observed": 11,
+      "accounts_observed": 9,
+      "niches_observed": ["finance", "technology_and_saas", "food_and_beverage", "fashion_and_lifestyle", "beauty_and_wellness", "education_and_culture"],
+      "within_account_pairs": [],
+      "stability": "moderadamente estavel — whitespace=low: 4 pares apoiando, 2 contradizendo",
+      "source_ids": ["RES-full-whitespace_level-low", "DES-full-visual_complexity-low"],
+      "limitations": [
+        "whitespace=low confundido com template visual: marcas de tech/finance tendem a ter layouts mais densos",
+        "visual_complexity=low: apenas 2 contas — sinal muito fraco",
+        "a combinação 'densa mas organizada' é inferência interpretativa, não mensuração direta",
+        "associação contextual, não causal; performance=proxy"
+      ],
+      "confidence": "contextual",
+      "score_weight": 0
+    }
+  ]
+}

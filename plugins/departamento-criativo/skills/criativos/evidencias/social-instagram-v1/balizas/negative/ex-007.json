@@ -1,0 +1,40 @@
+{
+  "example_id": "ex-007",
+  "category": "weak_visual_hierarchy",
+  "polarity": "negative",
+  "canonical_role": "negative",
+  "sensitivity": "moderately_sensitive",
+  "niche": "creator_lifestyle",
+  "account_type": "creator",
+  "format": "Sidecar",
+  "asset_scope": "carousel_cover_only",
+  "asset": "assets/img-007.jpg",
+  "dimension_demonstrated": "visual_hierarchy_and_legibility",
+  "justification": "dispersao observavel na capa; ilustrativo",
+  "observable_evidence": {
+    "features": {
+      "copy.hook_type": "offer_first",
+      "copy.promise_present": "yes",
+      "copy.proof_type": "none",
+      "copy.word_count": "high",
+      "copy.emoji_count": "1-2",
+      "cover_visual.color_count": "medium",
+      "cover_visual.text_over_image": "no",
+      "cover_visual.photo_or_illustration": "photo",
+      "image_text_relation": "image_independent"
+    },
+    "asset_present": true
+  },
+  "why_useful": "capa com atencao dispersa",
+  "reason_to_use": "capa com atencao dispersa",
+  "reason_not_causal": "overperformance ajustada e associacao scope-bound; nenhum par isola feature unica -> nao tratar como regra causal",
+  "performance_class": "low",
+  "adjusted_residual": -2.5123,
+  "stability": "moderately_sensitive",
+  "maturity": "persists_in_mature_sample",
+  "extraordinary_flag": true,
+  "limitations": [
+    "associacao nao-causal; exemplo ilustrativo, nao prova de regra",
+    "cover-only: sem slides/video"
+  ]
+}

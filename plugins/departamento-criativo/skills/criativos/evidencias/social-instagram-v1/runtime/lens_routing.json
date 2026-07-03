@@ -1,0 +1,137 @@
+{
+  "note": "Mapa explícito do que cada lente PODE receber como T2. Execução mantém T1; recebe T2 só sobre atributos da peça no mesmo asset_scope. Nada de engajamento como prova; popularidade != qualidade.",
+  "lenses": {
+    "atencao": {
+      "allowed_dimensions": [
+        "copy.hook_type",
+        "copy.question_count",
+        "copy.second_person",
+        "copy.urgency",
+        "copy.offer_present",
+        "copy.promise_present",
+        "copy.promise_specificity",
+        "copy.cta_type",
+        "cover_hook.cover_has_text",
+        "cover_hook.cover_hook_type",
+        "cover_visual.face_presence",
+        "cover_visual.human_presence",
+        "cover_visual.text_over_image"
+      ],
+      "allowed_topics": [
+        "primeira_frase",
+        "abertura",
+        "promessa",
+        "tensao",
+        "pergunta",
+        "curiosidade",
+        "conflito",
+        "capa",
+        "cta_comentario",
+        "risco_clickbait",
+        "abertura_que_posterga_mensagem"
+      ],
+      "forbidden": [
+        "julgamento_de_craft_visual"
+      ]
+    },
+    "clareza": {
+      "allowed_dimensions": [
+        "copy.word_count",
+        "copy.emoji_count",
+        "copy.proof_type",
+        "copy.offer_present",
+        "copy.promise_present",
+        "copy.promise_specificity",
+        "image_text_relation",
+        "cover_visual.text_density_on_image",
+        "cover_visual.text_over_image"
+      ],
+      "allowed_topics": [
+        "densidade",
+        "tamanho_proporcional_da_copy",
+        "redundancia",
+        "especificidade",
+        "organizacao",
+        "relacao_headline_legenda",
+        "excesso_de_informacao",
+        "promessa_versus_entrega",
+        "legibilidade_textual"
+      ],
+      "forbidden": [
+        "regra_de_legenda_media_performa_melhor"
+      ]
+    },
+    "originalidade": {
+      "allowed_dimensions": [
+        "copy.hook_type",
+        "cover_visual.photo_or_illustration",
+        "image_text_relation"
+      ],
+      "allowed_topics": [
+        "exemplos",
+        "contraexemplos",
+        "formulas_repetidas",
+        "cliches",
+        "relacao_texto_imagem",
+        "solucoes_metaforicas",
+        "homogeneizacao",
+        "popular_mas_generico"
+      ],
+      "forbidden": [
+        "engajamento_como_prova_de_originalidade"
+      ]
+    },
+    "coerencia": {
+      "allowed_dimensions": [
+        "copy.tone",
+        "copy.urgency",
+        "cover_visual.brand_presence",
+        "cover_visual.logo_prominence",
+        "cover_visual.product_presence"
+      ],
+      "allowed_topics": [
+        "diferencas_creator_marca_b2b_b2c",
+        "padroes_contextuais",
+        "aderencia_ao_nicho",
+        "extrapolacoes_proibidas",
+        "exemplos_compativeis_incompativeis",
+        "alertas_de_identidade"
+      ],
+      "forbidden": [
+        "nike_apple_creator_como_modelo_automatico"
+      ]
+    },
+    "execucao": {
+      "allowed_dimensions": [
+        "cover_visual.color_count",
+        "cover_visual.brightness",
+        "cover_visual.saturation",
+        "cover_visual.composition",
+        "cover_visual.visual_complexity",
+        "cover_visual.image_or_text_dominance",
+        "cover_visual.text_density_on_image",
+        "cover_visual.text_over_image",
+        "cover_visual.photo_or_illustration",
+        "image_text_relation",
+        "layout.whitespace_level",
+        "layout.balance",
+        "layout.symmetry",
+        "layout.headline_position"
+      ],
+      "allowed_topics": [
+        "capa",
+        "dispersao_cromatica",
+        "texto_visual",
+        "densidade",
+        "relacao_texto_imagem",
+        "fotografia_versus_ilustracao",
+        "legibilidade_mobile",
+        "exemplos_no_mesmo_asset_scope"
+      ],
+      "forbidden": [
+        "julgamento_estrategico",
+        "substituir_T1_de_luz_forma_cor_anti_slop"
+      ]
+    }
+  }
+}

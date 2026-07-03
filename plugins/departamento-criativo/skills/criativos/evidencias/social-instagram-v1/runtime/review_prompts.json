@@ -1,0 +1,236 @@
+[
+  {
+    "prompt_id": "RP-caro-color_count-low",
+    "question": "A quantidade de cores/elementos esta dispersando a hierarquia da capa?",
+    "asset_scope": "carousel_cover_only",
+    "related_feature": "cover_visual.color_count",
+    "observed_value": "low",
+    "observed_direction": "high",
+    "evidence_note": "No corpus, 'color_count=low' acompanhou desempenho high no escopo carousel_cover_only (lift agregado 0.1953, maduro 0.1733, 15 contas/6 nichos).",
+    "why_not_a_rule": "sinal real porem feature nao reproduzivel por metodo estavel -> pergunta de revisao",
+    "confidence": "baixa-media",
+    "scores": false,
+    "penalizes": false,
+    "limitations": [
+      "associacao nao-causal; performance=proxy",
+      "cover-only: sem slides/video",
+      "ausencia do atributo NAO e erro automatico"
+    ]
+  },
+  {
+    "prompt_id": "RP-vide-photo_or_illustration-photo",
+    "question": "A fotografia (vs ilustracao) acrescenta prova/emocao/contexto, ou e so decorativa?",
+    "asset_scope": "video_cover_only",
+    "related_feature": "cover_visual.photo_or_illustration",
+    "observed_value": "photo",
+    "observed_direction": "high",
+    "evidence_note": "No corpus, 'photo_or_illustration=photo' acompanhou desempenho high no escopo video_cover_only (lift agregado 0.1667, maduro 0.1875, 9 contas/5 nichos).",
+    "why_not_a_rule": "sinal real porem feature nao reproduzivel por metodo estavel -> pergunta de revisao",
+    "confidence": "baixa-media",
+    "scores": false,
+    "penalizes": false,
+    "limitations": [
+      "associacao nao-causal; performance=proxy",
+      "cover-only: sem slides/video",
+      "ausencia do atributo NAO e erro automatico"
+    ]
+  },
+  {
+    "prompt_id": "RP-vide-question_count-0",
+    "question": "A pergunta na copy cria tensao relevante ou apenas adia a mensagem principal?",
+    "asset_scope": "video_cover_only",
+    "related_feature": "copy.question_count",
+    "observed_value": "0",
+    "observed_direction": "high",
+    "evidence_note": "No corpus, 'question_count=0' acompanhou desempenho high no escopo video_cover_only (lift agregado 0.1111, maduro 0.2411, 9 contas/5 nichos).",
+    "why_not_a_rule": "sinal real mas insuficiente p/ regra automatica -> pergunta de revisao",
+    "confidence": "baixa-media",
+    "scores": false,
+    "penalizes": false,
+    "limitations": [
+      "associacao nao-causal; performance=proxy",
+      "cover-only: sem slides/video",
+      "ausencia do atributo NAO e erro automatico"
+    ]
+  },
+  {
+    "prompt_id": "RP-caro-word_count-medium",
+    "question": "O tamanho da legenda esta adequado a mensagem, ou esta diluindo/empacotando demais?",
+    "asset_scope": "carousel_cover_only",
+    "related_feature": "copy.word_count",
+    "observed_value": "medium",
+    "observed_direction": "high",
+    "evidence_note": "No corpus, 'word_count=medium' acompanhou desempenho high no escopo carousel_cover_only (lift agregado 0.0896, maduro 0.1745, 16 contas/6 nichos).",
+    "why_not_a_rule": "sinal real mas insuficiente p/ regra automatica -> pergunta de revisao",
+    "confidence": "baixa-media",
+    "scores": false,
+    "penalizes": false,
+    "limitations": [
+      "associacao nao-causal; performance=proxy",
+      "cover-only: sem slides/video",
+      "ausencia do atributo NAO e erro automatico"
+    ]
+  },
+  {
+    "prompt_id": "RP-caro-emoji_count-1-2",
+    "question": "Os emojis ajudam o tom/legibilidade ou viram ruido?",
+    "asset_scope": "carousel_cover_only",
+    "related_feature": "copy.emoji_count",
+    "observed_value": "1-2",
+    "observed_direction": "high",
+    "evidence_note": "No corpus, 'emoji_count=1-2' acompanhou desempenho high no escopo carousel_cover_only (lift agregado 0.0851, maduro 0.1552, 15 contas/4 nichos).",
+    "why_not_a_rule": "sinal real mas insuficiente p/ regra automatica -> pergunta de revisao",
+    "confidence": "baixa-media",
+    "scores": false,
+    "penalizes": false,
+    "limitations": [
+      "associacao nao-causal; performance=proxy",
+      "cover-only: sem slides/video",
+      "ausencia do atributo NAO e erro automatico"
+    ]
+  },
+  {
+    "prompt_id": "RP-vide-hook_type-bold_claim",
+    "question": "O tipo de gancho combina com a promessa e o briefing, ou e formula generica?",
+    "asset_scope": "video_cover_only",
+    "related_feature": "copy.hook_type",
+    "observed_value": "bold_claim",
+    "observed_direction": "high",
+    "evidence_note": "No corpus, 'hook_type=bold_claim' acompanhou desempenho high no escopo video_cover_only (lift agregado 0.4444, maduro 0.5179, 8 contas/4 nichos).",
+    "why_not_a_rule": "sinal real porem feature nao reproduzivel por metodo estavel -> pergunta de revisao",
+    "confidence": "baixa-media",
+    "scores": false,
+    "penalizes": false,
+    "limitations": [
+      "associacao nao-causal; performance=proxy",
+      "cover-only: sem slides/video",
+      "ausencia do atributo NAO e erro automatico"
+    ]
+  },
+  {
+    "prompt_id": "RP-caro-text_over_image-no",
+    "question": "O texto sobre a imagem complementa ou apenas repete a legenda?",
+    "asset_scope": "carousel_cover_only",
+    "related_feature": "cover_visual.text_over_image",
+    "observed_value": "no",
+    "observed_direction": "high",
+    "evidence_note": "No corpus, 'text_over_image=no' acompanhou desempenho high no escopo carousel_cover_only (lift agregado 0.1747, maduro 0.1394, 21 contas/7 nichos).",
+    "why_not_a_rule": "sinal real porem feature nao reproduzivel por metodo estavel -> pergunta de revisao",
+    "confidence": "baixa-media",
+    "scores": false,
+    "penalizes": false,
+    "limitations": [
+      "associacao nao-causal; performance=proxy",
+      "cover-only: sem slides/video",
+      "ausencia do atributo NAO e erro automatico"
+    ]
+  },
+  {
+    "prompt_id": "RP-vide-second_person-no",
+    "question": "O atributo 'second_person=no' faz sentido para ESTA peca e briefing (nao por formula)?",
+    "asset_scope": "video_cover_only",
+    "related_feature": "copy.second_person",
+    "observed_value": "no",
+    "observed_direction": "high",
+    "evidence_note": "No corpus, 'second_person=no' acompanhou desempenho high no escopo video_cover_only (lift agregado 0.1667, maduro 0.2321, 9 contas/5 nichos).",
+    "why_not_a_rule": "sinal real porem feature nao reproduzivel por metodo estavel -> pergunta de revisao",
+    "confidence": "baixa-media",
+    "scores": false,
+    "penalizes": false,
+    "limitations": [
+      "associacao nao-causal; performance=proxy",
+      "cover-only: sem slides/video",
+      "ausencia do atributo NAO e erro automatico"
+    ]
+  },
+  {
+    "prompt_id": "RP-stat-text_over_image-yes",
+    "question": "O texto sobre a imagem complementa ou apenas repete a legenda?",
+    "asset_scope": "static_image",
+    "related_feature": "cover_visual.text_over_image",
+    "observed_value": "yes",
+    "observed_direction": "high",
+    "evidence_note": "No corpus, 'text_over_image=yes' acompanhou desempenho high no escopo static_image (lift agregado 0.1457, maduro 0.1429, 12 contas/8 nichos).",
+    "why_not_a_rule": "sinal real porem feature nao reproduzivel por metodo estavel -> pergunta de revisao",
+    "confidence": "baixa-media",
+    "scores": false,
+    "penalizes": false,
+    "limitations": [
+      "associacao nao-causal; performance=proxy",
+      "",
+      "ausencia do atributo NAO e erro automatico"
+    ]
+  },
+  {
+    "prompt_id": "RP-caro-cta_type-none",
+    "question": "O atributo 'cta_type=none' faz sentido para ESTA peca e briefing (nao por formula)?",
+    "asset_scope": "carousel_cover_only",
+    "related_feature": "copy.cta_type",
+    "observed_value": "none",
+    "observed_direction": "high",
+    "evidence_note": "No corpus, 'cta_type=none' acompanhou desempenho high no escopo carousel_cover_only (lift agregado 0.1147, maduro 0.0788, 20 contas/7 nichos).",
+    "why_not_a_rule": "sinal real porem feature nao reproduzivel por metodo estavel -> pergunta de revisao",
+    "confidence": "baixa-media",
+    "scores": false,
+    "penalizes": false,
+    "limitations": [
+      "associacao nao-causal; performance=proxy",
+      "cover-only: sem slides/video",
+      "ausencia do atributo NAO e erro automatico"
+    ]
+  },
+  {
+    "prompt_id": "RP-vide-whitespace_level-low",
+    "question": "O atributo 'whitespace_level=low' faz sentido para ESTA peca e briefing (nao por formula)?",
+    "asset_scope": "video_cover_only",
+    "related_feature": "layout.whitespace_level",
+    "observed_value": "low",
+    "observed_direction": "high",
+    "evidence_note": "No corpus, 'whitespace_level=low' acompanhou desempenho high no escopo video_cover_only (lift agregado 0.1111, maduro 0.0893, 8 contas/5 nichos).",
+    "why_not_a_rule": "sinal real porem feature nao reproduzivel por metodo estavel -> pergunta de revisao",
+    "confidence": "baixa-media",
+    "scores": false,
+    "penalizes": false,
+    "limitations": [
+      "associacao nao-causal; performance=proxy",
+      "cover-only: sem slides/video",
+      "ausencia do atributo NAO e erro automatico"
+    ]
+  },
+  {
+    "prompt_id": "RP-caro-product_presence-no",
+    "question": "O produto aparece com a enfase certa para o objetivo?",
+    "asset_scope": "carousel_cover_only",
+    "related_feature": "cover_visual.product_presence",
+    "observed_value": "no",
+    "observed_direction": "high",
+    "evidence_note": "No corpus, 'product_presence=no' acompanhou desempenho high no escopo carousel_cover_only (lift agregado 0.1102, maduro 0.1091, 19 contas/6 nichos).",
+    "why_not_a_rule": "sinal real porem feature nao reproduzivel por metodo estavel -> pergunta de revisao",
+    "confidence": "baixa-media",
+    "scores": false,
+    "penalizes": false,
+    "limitations": [
+      "associacao nao-causal; performance=proxy",
+      "cover-only: sem slides/video",
+      "ausencia do atributo NAO e erro automatico"
+    ]
+  },
+  {
+    "prompt_id": "RP-caro-image_text_relation-complementary",
+    "question": "Texto e imagem se complementam ou competem/repetem?",
+    "asset_scope": "carousel_cover_only",
+    "related_feature": "image_text_relation",
+    "observed_value": "complementary",
+    "observed_direction": "high",
+    "evidence_note": "No corpus, 'image_text_relation=complementary' acompanhou desempenho high no escopo carousel_cover_only (lift agregado 0.0806, maduro 0.0848, 17 contas/7 nichos).",
+    "why_not_a_rule": "sinal real porem feature nao reproduzivel por metodo estavel -> pergunta de revisao",
+    "confidence": "baixa-media",
+    "scores": false,
+    "penalizes": false,
+    "limitations": [
+      "associacao nao-causal; performance=proxy",
+      "cover-only: sem slides/video",
+      "ausencia do atributo NAO e erro automatico"
+    ]
+  }
+]

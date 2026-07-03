@@ -1,0 +1,40 @@
+{
+  "example_id": "ex-024",
+  "category": "counterexample",
+  "polarity": "counterexample",
+  "canonical_role": "counterexample",
+  "sensitivity": "not_sensitive",
+  "niche": "food_and_beverage",
+  "account_type": "mixed_br_panel",
+  "format": "Sidecar",
+  "asset_scope": "full_carousel",
+  "asset": "assets/img-024.jpg",
+  "dimension_demonstrated": "—",
+  "justification": "par forte com multiplas features mudando -> prova que nenhum atributo isolado explica desempenho",
+  "observable_evidence": {
+    "features": {
+      "copy.hook_type": "information_gap",
+      "copy.promise_present": "no",
+      "copy.proof_type": "none",
+      "copy.word_count": "low",
+      "copy.emoji_count": "1-2",
+      "cover_visual.color_count": "low",
+      "cover_visual.text_over_image": "no",
+      "cover_visual.photo_or_illustration": "photo",
+      "image_text_relation": "image_independent"
+    },
+    "asset_present": true
+  },
+  "why_useful": "lado BAIXO de par forte [full_carousel]: 3 features mudaram -> nenhuma feature isolavel",
+  "reason_to_use": "lado BAIXO de par forte [full_carousel]: 3 features mudaram -> nenhuma feature isolavel",
+  "reason_not_causal": "overperformance ajustada e associacao scope-bound; nenhum par isola feature unica -> nao tratar como regra causal",
+  "performance_class": "middle",
+  "adjusted_residual": 0.2281,
+  "stability": "moderately_sensitive",
+  "maturity": "weakens_in_mature_sample",
+  "extraordinary_flag": false,
+  "limitations": [
+    "associacao nao-causal; exemplo ilustrativo, nao prova de regra",
+    ""
+  ]
+}

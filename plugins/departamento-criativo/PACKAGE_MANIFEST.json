@@ -1,0 +1,49 @@
+{
+  "package": {
+    "name": "Departamento Criativo",
+    "identifier": "departamento-criativo",
+    "version": "1.0.0",
+    "built_date": "2026-06-28",
+    "language": "pt-BR",
+    "command": "/criativos",
+    "requires": "Claude Code + Python 3.10+"
+  },
+  "contents": {
+    "plugin_descriptor": ".claude-plugin/plugin.json",
+    "skill_entry": "skills/criativos/SKILL.md",
+    "agents": 7,
+    "criterios": 18,
+    "runtime_modules": 3,
+    "evidence_modules": 1,
+    "evidence_module_id": "social-instagram-v1",
+    "image_assets": 0,
+    "balizas_positive": 12,
+    "balizas_negative": 10,
+    "balizas_counterexamples": 2,
+    "total_files": 75
+  },
+  "architecture": {
+    "tiers": ["T1-canonico", "T2-contextual"],
+    "lenses": ["atencao", "clareza", "originalidade", "coerencia", "execucao"],
+    "engine": "runtime/sala.py",
+    "evidence_router": "runtime/evidence_router.py",
+    "evidence_scope": ["carousel_cover_only", "full_carousel"]
+  },
+  "invariants": [
+    "T1 sempre cego (sem evidência empírica no parecer inicial)",
+    "T2 contextualiza — nunca derruba T1",
+    "Showrunner integra, não tira média",
+    "Regra do piso: falha essencial sempre sinalizada independente do peso",
+    "Frontstage coloquial — backstage técnico nunca vaza",
+    "Associação != causalidade (T2)",
+    "Briefing prevalece sobre padrões empíricos"
+  ],
+  "excluded": [
+    "calibracao/",
+    "pesquisa/",
+    "brutos/",
+    "dados brutos de coleta",
+    "imagens do corpus (peças reais de terceiros — sem consumidor em runtime)",
+    "__pycache__/"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "example_id": "ex-011",
+  "category": "weak_text_image_relationship",
+  "polarity": "negative",
+  "canonical_role": "negative",
+  "sensitivity": "not_sensitive",
+  "niche": "commerce_and_logistics",
+  "account_type": "mixed_br_panel",
+  "format": "Image",
+  "asset_scope": "static_image",
+  "asset": "assets/img-011.jpg",
+  "dimension_demonstrated": "text_image_relationship",
+  "justification": "relacao redundant/decorative registrada; observavel",
+  "observable_evidence": {
+    "features": {
+      "copy.hook_type": "list",
+      "copy.promise_present": "yes",
+      "copy.proof_type": "none",
+      "copy.word_count": "high",
+      "copy.emoji_count": "1-2",
+      "cover_visual.color_count": "medium",
+      "cover_visual.text_over_image": "yes",
+      "cover_visual.photo_or_illustration": "graphic",
+      "image_text_relation": "redundant"
+    },
+    "asset_present": true
+  },
+  "why_useful": "texto repete/decora a imagem",
+  "reason_to_use": "texto repete/decora a imagem",
+  "reason_not_causal": "overperformance ajustada e associacao scope-bound; nenhum par isola feature unica -> nao tratar como regra causal",
+  "performance_class": "low",
+  "adjusted_residual": -1.0704,
+  "stability": "stable",
+  "maturity": "persists_in_mature_sample",
+  "extraordinary_flag": false,
+  "limitations": [
+    "associacao nao-causal; exemplo ilustrativo, nao prova de regra",
+    ""
+  ]
+}

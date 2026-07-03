@@ -1,0 +1,40 @@
+{
+  "example_id": "ex-004",
+  "category": "weak_copy",
+  "polarity": "negative",
+  "canonical_role": "negative",
+  "sensitivity": "not_sensitive",
+  "niche": "creator_lifestyle",
+  "account_type": "creator",
+  "format": "Sidecar",
+  "asset_scope": "carousel_cover_only",
+  "asset": "assets/img-004.jpg",
+  "dimension_demonstrated": "message_and_copy_clarity",
+  "justification": "lado fraco observavel na legenda; ilustra o que evitar, nao uma regra",
+  "observable_evidence": {
+    "features": {
+      "copy.hook_type": "story",
+      "copy.promise_present": "no",
+      "copy.proof_type": "data",
+      "copy.word_count": "medium",
+      "copy.emoji_count": "3+",
+      "cover_visual.color_count": "medium",
+      "cover_visual.text_over_image": "yes",
+      "cover_visual.photo_or_illustration": "mixed",
+      "image_text_relation": "explanatory"
+    },
+    "asset_present": true
+  },
+  "why_useful": "underperformance ajustada; copy nao sustentou",
+  "reason_to_use": "underperformance ajustada; copy nao sustentou",
+  "reason_not_causal": "overperformance ajustada e associacao scope-bound; nenhum par isola feature unica -> nao tratar como regra causal",
+  "performance_class": "low",
+  "adjusted_residual": -3.0096,
+  "stability": "stable",
+  "maturity": "persists_in_mature_sample",
+  "extraordinary_flag": false,
+  "limitations": [
+    "associacao nao-causal; exemplo ilustrativo, nao prova de regra",
+    "cover-only: sem slides/video"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "note": "Protege escopo: cover-only NUNCA equivale a análise completa. Ausência de info != qualidade baixa.",
+  "scopes": {
+    "none": {
+      "analisavel": [],
+      "proibido": [
+        "qualquer_nota_visual",
+        "qualquer_nota_de_copy"
+      ]
+    },
+    "text_only": {
+      "analisavel": [
+        "copy"
+      ],
+      "proibido": [
+        "nota_visual"
+      ]
+    },
+    "static_image": {
+      "analisavel": [
+        "imagem_unica",
+        "copy"
+      ],
+      "proibido": []
+    },
+    "photography": {
+      "analisavel": [
+        "imagem_unica",
+        "copy"
+      ],
+      "proibido": []
+    },
+    "video_cover_only": {
+      "analisavel": [
+        "frame_de_capa",
+        "copy"
+      ],
+      "proibido": [
+        "progressao_de_video",
+        "audio",
+        "edicao",
+        "retencao",
+        "narrativa_do_video"
+      ]
+    },
+    "carousel_cover_only": {
+      "analisavel": [
+        "capa",
+        "copy"
+      ],
+      "proibido": [
+        "slides_internos",
+        "progressao_de_slides",
+        "arco_narrativo",
+        "entrega_de_valor_completa"
+      ]
+    },
+    "full_carousel": {
+      "analisavel": [
+        "todos_os_slides",
+        "copy"
+      ],
+      "proibido": []
+    }
+  }
+}

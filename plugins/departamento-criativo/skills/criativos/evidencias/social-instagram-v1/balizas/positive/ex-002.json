@@ -1,0 +1,40 @@
+{
+  "example_id": "ex-002",
+  "category": "strong_copy",
+  "polarity": "positive",
+  "canonical_role": "positive",
+  "sensitivity": "not_sensitive",
+  "niche": "technology_and_saas",
+  "account_type": "mixed_br_panel",
+  "format": "Sidecar",
+  "asset_scope": "full_carousel",
+  "asset": "assets/img-002.jpg",
+  "dimension_demonstrated": "value_or_promise/credibility",
+  "justification": "selecao confirma substancia textual (nao so overperformance): word_count medio/alto + promessa/prova/gancho",
+  "observable_evidence": {
+    "features": {
+      "copy.hook_type": "story",
+      "copy.promise_present": "yes",
+      "copy.proof_type": "none",
+      "copy.word_count": "medium",
+      "copy.emoji_count": "3+",
+      "cover_visual.color_count": "low",
+      "cover_visual.text_over_image": "no",
+      "cover_visual.photo_or_illustration": "illustration",
+      "image_text_relation": "complementary"
+    },
+    "asset_present": true
+  },
+  "why_useful": "overperformance ajustada com qualidade textual observavel (promessa/prova/gancho presentes), estavel, nao-sensivel",
+  "reason_to_use": "overperformance ajustada com qualidade textual observavel (promessa/prova/gancho presentes), estavel, nao-sensivel",
+  "reason_not_causal": "overperformance ajustada e associacao scope-bound; nenhum par isola feature unica -> nao tratar como regra causal",
+  "performance_class": "high",
+  "adjusted_residual": 2.4455,
+  "stability": "stable",
+  "maturity": "persists_in_mature_sample",
+  "extraordinary_flag": false,
+  "limitations": [
+    "associacao nao-causal; exemplo ilustrativo, nao prova de regra",
+    ""
+  ]
+}

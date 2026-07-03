@@ -1,0 +1,40 @@
+{
+  "example_id": "ex-005",
+  "category": "strong_visual_hierarchy",
+  "polarity": "positive",
+  "canonical_role": "positive",
+  "sensitivity": "not_sensitive",
+  "niche": "insurance",
+  "account_type": "brand_or_service",
+  "format": "Video",
+  "asset_scope": "video_cover_only",
+  "asset": "assets/img-005.jpg",
+  "dimension_demonstrated": "visual_hierarchy_and_legibility",
+  "justification": "hierarquia observavel na capa (cor enxuta/texto controlado); dimensao de revisao, nao regra",
+  "observable_evidence": {
+    "features": {
+      "copy.hook_type": "story",
+      "copy.promise_present": "no",
+      "copy.proof_type": "demo",
+      "copy.word_count": "high",
+      "copy.emoji_count": "1-2",
+      "cover_visual.color_count": "medium",
+      "cover_visual.text_over_image": "no",
+      "cover_visual.photo_or_illustration": "photo",
+      "image_text_relation": "image_independent"
+    },
+    "asset_present": true
+  },
+  "why_useful": "capa com leitura organizada (estavel, nao-sensivel)",
+  "reason_to_use": "capa com leitura organizada (estavel, nao-sensivel)",
+  "reason_not_causal": "overperformance ajustada e associacao scope-bound; nenhum par isola feature unica -> nao tratar como regra causal",
+  "performance_class": "high",
+  "adjusted_residual": 2.1772,
+  "stability": "stable",
+  "maturity": "cannot_be_evaluated",
+  "extraordinary_flag": false,
+  "limitations": [
+    "associacao nao-causal; exemplo ilustrativo, nao prova de regra",
+    "cover-only: sem slides/video"
+  ]
+}

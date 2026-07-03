@@ -1,0 +1,32 @@
+{
+  "module": "social-instagram-v1",
+  "version": "1.0.0",
+  "built_utc_date": "2026-06-28",
+  "role": "camada T2 (atualidade contextual) — evidência criativa do corpus IG. NUNCA T1, NUNCA pontua.",
+  "counts": {
+    "review_prompts": 13,
+    "contextual_guidance": 1,
+    "confounded_patterns": 78,
+    "feature_definitions": 10,
+    "evidence_index_rows": 116,
+    "balizas": 24,
+    "assets": 0,
+    "research_hypotheses": 47,
+    "descriptive_observations": 109
+  },
+  "excluded_on_purpose": [
+    "rubrics 0-100",
+    "scoring_policy",
+    "4 agentes genéricos",
+    "brutos/raw_data/checkpoints"
+  ],
+  "invariants": [
+    "associação != causa",
+    "popularidade != qualidade",
+    "T2 não apaga piso T1",
+    "hipótese/observação não muda nota/veredito",
+    "cover-only != análise completa",
+    "ausência de info != qualidade baixa",
+    "briefing prevalece"
+  ]
+}

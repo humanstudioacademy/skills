@@ -1,0 +1,72 @@
+[
+  {
+    "source": "phase2_transversal",
+    "asset_scope": "video_cover_only",
+    "analysis_dimension": "copy.offer_present",
+    "value": "no",
+    "direction": "high",
+    "n_high_with": 17,
+    "n_low_with": 15,
+    "accounts": [
+      "anicolekhouri",
+      "brunalohaiine",
+      "gupy_",
+      "luide",
+      "morimura",
+      "rayssabuq",
+      "urbanarts",
+      "youseseguros",
+      "zenklub"
+    ],
+    "n_accounts": 9,
+    "niches": [
+      "creator_lifestyle",
+      "home_and_design",
+      "insurance",
+      "mental_health",
+      "technology_and_saas"
+    ],
+    "n_niches": 5,
+    "lift_aggregate": 0.1111,
+    "lift_mature": 0.1161,
+    "within_account_supporting": 2,
+    "within_account_contradicting": 1,
+    "subset_lifts": {
+      "all_eligible": 0.1111,
+      "mature_only": 0.1161,
+      "stable_rank_only": 0.1667,
+      "cleaner_comparison": 0.0536,
+      "brands_only": 0.0,
+      "creators_only": 0.3333,
+      "exclude_apple_nike": 0.1111,
+      "exclude_sensitive_events": 0.0621,
+      "exclude_collabs": 0.0536,
+      "exclude_comment_cta": 0.1111
+    },
+    "loao_min": 0.0,
+    "loao_max": 0.1875,
+    "loao_direction_stable": false,
+    "most_influential_account": "brunalohaiine",
+    "simpson_consistent": true,
+    "by_niche_lift": {
+      "creator_lifestyle": 0.3,
+      "home_and_design": null,
+      "insurance": null,
+      "mental_health": null,
+      "technology_and_saas": null
+    },
+    "by_account_type_lift": {
+      "brand_or_service": 0.0,
+      "creator": 0.3333
+    },
+    "intercoder_reliable": true,
+    "reproducible_method": false,
+    "in_eligible_pair": false,
+    "persists_in_mature": true,
+    "direction_stable_all_subsets": false,
+    "extraordinary_driven": false,
+    "counterexamples": 16,
+    "final_class": "contextual_observational_guidance",
+    "classification_reason": "associacao contextual; nao pontua, orienta o revisor"
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "name": "departamento-criativo",
+  "identifier": "departamento-criativo",
+  "version": "1.0.0",
+  "description": "Painel de agentes especializados que lê uma peça de conteúdo antes de publicar, discute os problemas concretos e devolve veredito + reforma. Uma lente por agente; o Showrunner decide; o Finalizador reescreve.",
+  "skills": [
+    {
+      "name": "criativos",
+      "path": "skills/criativos/SKILL.md",
+      "command": "/criativos"
+    }
+  ],
+  "required_tools": ["Bash(python:*)", "Read", "Write", "Edit", "Glob"],
+  "min_claude_version": "3.5",
+  "author": {
+    "name": "Human Studio",
+    "email": "humanstudio.ai@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "criativos",
+    "revisao-criativa",
+    "copywriting",
+    "design",
+    "carrossel",
+    "reels",
+    "social-media"
+  ]
+}

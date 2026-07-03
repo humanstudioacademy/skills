@@ -1,0 +1,40 @@
+{
+  "example_id": "ex-016",
+  "category": "weak_carousel_cover",
+  "polarity": "negative",
+  "canonical_role": "negative",
+  "sensitivity": "not_sensitive",
+  "niche": "home_and_design",
+  "account_type": "brand_or_service",
+  "format": "Sidecar",
+  "asset_scope": "carousel_cover_only",
+  "asset": "assets/img-016.jpg",
+  "dimension_demonstrated": "carousel_cover",
+  "justification": "capa fraca observavel; so a capa",
+  "observable_evidence": {
+    "features": {
+      "copy.hook_type": "story",
+      "copy.promise_present": "no",
+      "copy.proof_type": "none",
+      "copy.word_count": "high",
+      "copy.emoji_count": "3+",
+      "cover_visual.color_count": "medium",
+      "cover_visual.text_over_image": "yes",
+      "cover_visual.photo_or_illustration": "photo",
+      "image_text_relation": "complementary"
+    },
+    "asset_present": true
+  },
+  "why_useful": "capa de carrossel com underperformance ajustada",
+  "reason_to_use": "capa de carrossel com underperformance ajustada",
+  "reason_not_causal": "overperformance ajustada e associacao scope-bound; nenhum par isola feature unica -> nao tratar como regra causal",
+  "performance_class": "low",
+  "adjusted_residual": -1.545,
+  "stability": "stable",
+  "maturity": "persists_in_mature_sample",
+  "extraordinary_flag": false,
+  "limitations": [
+    "associacao nao-causal; exemplo ilustrativo, nao prova de regra",
+    "cover-only: sem slides/video"
+  ]
+}

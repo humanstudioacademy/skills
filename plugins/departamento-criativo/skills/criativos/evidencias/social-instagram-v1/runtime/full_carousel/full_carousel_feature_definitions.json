@@ -1,0 +1,144 @@
+{
+  "_meta": {
+    "scope": "full_carousel",
+    "corpus_base": "62 carrosseis completos, 412 slides, 17 contas, 8 nichos",
+    "coding_note": "O corpus codificou apenas features de capa (cover) e legenda/copy. Features inter-slide (progressão de slides, redundância entre slides, ganho de informação por slide, naming) NÃO foram codificadas — a dimensão correspondente é marcada como 'unavailable'.",
+    "availability_levels": {
+      "contextual": "evidência em 8+ contas, 3+ nichos, com pares intra-conta; confundimentos conhecidos mas não invalidantes",
+      "weak_contextual": "evidência em <5 contas ou sinal confundido que impede direção clara; usar apenas como lembrete de observação",
+      "unavailable": "dimensão não codificada no corpus — T2=none obrigatório; T1 permanece"
+    }
+  },
+  "definitions": [
+    {
+      "dimension_id": "cover_specificity",
+      "dimension_name": "Especificidade da promessa da capa",
+      "description": "O grau em que a capa nomeia um benefício ou risco concreto (vs. estado emocional genérico). Inclui tipo de gancho (bold_claim, question, none) e se o conflito ou benefício é nomeado na capa.",
+      "corpus_feature_map": ["cover_hook.cover_hook_type", "copy.hook_type"],
+      "availability": "weak_contextual",
+      "evidence_ref": "FC-EV-001",
+      "signal_note": "Sinal confundido: bold_claim e none ambos aparecem com lift positivo. question aparece com lift negativo mas em apenas 2 contas. Não há hierarquia clara entre os tipos de gancho.",
+      "score_weight": 0
+    },
+    {
+      "dimension_id": "cover_body_coherence",
+      "dimension_name": "Coerência capa → slides internos",
+      "description": "Se a promessa da capa é honrada e desenvolvida pelos slides internos, sem bait-and-switch.",
+      "corpus_feature_map": [],
+      "availability": "unavailable",
+      "evidence_ref": null,
+      "signal_note": "Dimensão NÃO codificada no corpus. O corpus registrou apenas features da capa e da legenda; os slides internos não foram analisados individualmente. T2=none obrigatório. Juízo é T1/OBSERVABLE_ASSET.",
+      "score_weight": 0
+    },
+    {
+      "dimension_id": "caption_slide_redundancy",
+      "dimension_name": "Redundância legenda ↔ slides",
+      "description": "Se a legenda reproduz os mesmos pontos dos slides ou acrescenta informação nova (ativação, custo, prova, contexto).",
+      "corpus_feature_map": [],
+      "availability": "unavailable",
+      "evidence_ref": null,
+      "signal_note": "Dimensão NÃO codificada no corpus. O corpus tem word_count da legenda, mas não compara o conteúdo semântico da legenda com os slides. T2=none obrigatório.",
+      "score_weight": 0
+    },
+    {
+      "dimension_id": "information_gain_per_slide",
+      "dimension_name": "Ganho de informação por slide",
+      "description": "Se cada slide interno acrescenta informação nova ao leitor (sem repetir o slide anterior).",
+      "corpus_feature_map": [],
+      "availability": "unavailable",
+      "evidence_ref": null,
+      "signal_note": "Dimensão NÃO codificada no corpus. Os slides internos não foram analisados individualmente. T2=none obrigatório.",
+      "score_weight": 0
+    },
+    {
+      "dimension_id": "slide_to_slide_progression",
+      "dimension_name": "Progressão lógica entre slides",
+      "description": "Se os slides seguem uma progressão narrativa ou argumentativa (problema → desenvolvimento → solução → CTA).",
+      "corpus_feature_map": [],
+      "availability": "unavailable",
+      "evidence_ref": null,
+      "signal_note": "Dimensão NÃO codificada no corpus. T2=none obrigatório. Juízo é T1/OBSERVABLE_ASSET.",
+      "score_weight": 0
+    },
+    {
+      "dimension_id": "internal_repetition",
+      "dimension_name": "Repetição entre slides",
+      "description": "Se slides internos repetem formulações, ícones ou argumentos já apresentados em slides anteriores.",
+      "corpus_feature_map": [],
+      "availability": "unavailable",
+      "evidence_ref": null,
+      "signal_note": "Dimensão NÃO codificada no corpus. T2=none obrigatório.",
+      "score_weight": 0
+    },
+    {
+      "dimension_id": "final_slide_function",
+      "dimension_name": "Função do slide de fechamento",
+      "description": "Se o último slide tem próximo passo claro compatível com o objetivo (awareness, ativação, conversão) e com o público declarado.",
+      "corpus_feature_map": [],
+      "availability": "unavailable",
+      "evidence_ref": null,
+      "signal_note": "Dimensão NÃO codificada no corpus. O corpus registrou copy.cta_type na legenda, mas não analisou o conteúdo ou função do slide final. T2=none obrigatório.",
+      "score_weight": 0
+    },
+    {
+      "dimension_id": "cta_function",
+      "dimension_name": "Função do CTA (copy e legenda)",
+      "description": "Tipo de CTA na legenda/cópia (flag_comment, link_bio, direct, none) e se é compatível com o objetivo.",
+      "corpus_feature_map": ["copy.cta_type"],
+      "availability": "unavailable",
+      "evidence_ref": null,
+      "signal_note": "copy.cta_type foi codificado, mas não há observações descritivas ou hipóteses com sinal utilizável em full_carousel. rdstation aparece com 'flag_comment_cta' como confound, não como feature de desempenho. T2=none obrigatório.",
+      "score_weight": 0
+    },
+    {
+      "dimension_id": "text_density_distribution",
+      "dimension_name": "Densidade de texto (legenda)",
+      "description": "Volume de copy na legenda (word_count) como indicador de densidade informacional.",
+      "corpus_feature_map": ["copy.word_count"],
+      "availability": "contextual",
+      "evidence_ref": "FC-EV-002",
+      "signal_note": "word_count=high acompanha desempenho mais alto (lift +0.105, 11 contas, 7 nichos). word_count=medium acompanha desempenho mais baixo. Par intra-conta forte (education_and_culture). Confundido com tipo de conteúdo.",
+      "score_weight": 0
+    },
+    {
+      "dimension_id": "visual_system_consistency",
+      "dimension_name": "Consistência do sistema visual (capa)",
+      "description": "Coerência da capa como representante do sistema visual da marca: saturação, brilho, paleta de cores e nível de whitespace.",
+      "corpus_feature_map": ["cover_visual.saturation", "cover_visual.brightness", "cover_visual.color_count", "layout.whitespace_level"],
+      "availability": "contextual",
+      "evidence_ref": "FC-EV-003",
+      "signal_note": "saturation=medium (lift +0.160, 8 contas), whitespace_level=low (lift +0.152, 9 contas), brightness=bright (lift -0.289, 8 contas — maior lift negativo da amostra). Par intra-conta forte (food_and_beverage).",
+      "score_weight": 0
+    },
+    {
+      "dimension_id": "headline_support_relation",
+      "dimension_name": "Relação imagem ↔ headline na capa",
+      "description": "Se a imagem da capa suporta visualmente o headline, e se a capa usa fotografia real vs. ilustração/texto puro.",
+      "corpus_feature_map": ["cover_visual.photo_or_illustration", "cover_visual.image_or_text_dominance"],
+      "availability": "contextual",
+      "evidence_ref": "FC-EV-004",
+      "signal_note": "photo (lift +0.200, 10 contas, 6 nichos, 3 pares intra-conta apoiando, 0 contradizendo) e image_dominance (lift +0.158, 9 contas). Sinais correlacionados — não interpretar como independentes.",
+      "score_weight": 0
+    },
+    {
+      "dimension_id": "listicle_structure",
+      "dimension_name": "Estrutura de listicle (composição da capa)",
+      "description": "Se a capa é texto-dominante (lista visível, texto central) ou produto-central (objeto/cena/produto em destaque).",
+      "corpus_feature_map": ["cover_visual.composition"],
+      "availability": "weak_contextual",
+      "evidence_ref": "FC-EV-005",
+      "signal_note": "produto_central (lift +0.123, 5 contas). texto_dominante (lift -0.231, 2 contas, within_acct_contradicting=6 — sinal altamente instável). Sinal confundido com nicho.",
+      "score_weight": 0
+    },
+    {
+      "dimension_id": "naming_parallelism",
+      "dimension_name": "Paralelismo de naming entre slides",
+      "description": "Se os títulos/nomes dos itens do carrossel seguem estrutura gramatical e nível de concretude equivalentes (ex.: todos substantivo+substantivo).",
+      "corpus_feature_map": [],
+      "availability": "unavailable",
+      "evidence_ref": null,
+      "signal_note": "Dimensão NÃO codificada no corpus. Os títulos de slides internos não foram analisados. T2=none obrigatório. Juízo é T1/OBSERVABLE_ASSET.",
+      "score_weight": 0
+    }
+  ]
+}

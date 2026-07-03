@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "evidence_router I/O",
+  "definitions": {
+    "input": {
+      "type": "object",
+      "required": ["lens"],
+      "properties": {
+        "altitude": {"enum": ["conceito", "roteiro", "arte", null]},
+        "content_type": {"enum": ["idea_only","caption_only","script","static_post","photography","video_cover","carousel_cover_only","full_carousel","paid_ad","copy_plus_visual", null]},
+        "asset_scope": {"enum": ["none","text_only","static_image","photography","video_cover_only","carousel_cover_only","full_carousel", null]},
+        "objective": {"type": ["string","null"]},
+        "primary_niche": {"type": ["string","null"]},
+        "account_type": {"enum": ["creator","brand","b2b","b2c","mixed","unknown", null]},
+        "lens": {"enum": ["atencao","clareza","originalidade","coerencia","execucao"]}
+      }
+    },
+    "output": {
+      "type": "object",
+      "required": ["evidence_packet_id","lens","asset_scope","review_prompts","contextual_guidance","examples","counterexamples","confounding_warnings","scope_limitations","confidence"],
+      "properties": {
+        "evidence_packet_id": {"type": "string"},
+        "lens": {"type": "string"},
+        "asset_scope": {"type": "string"},
+        "review_prompts": {"type": "array", "maxItems": 3},
+        "contextual_guidance": {"type": "array", "maxItems": 2},
+        "examples": {"type": "array", "maxItems": 1},
+        "counterexamples": {"type": "array", "maxItems": 1},
+        "confounding_warnings": {"type": "array", "maxItems": 2},
+        "scope_limitations": {"type": "array"},
+        "confidence": {"enum": ["none","baixa","baixa-media"]}
+      }
+    }
+  }
+}

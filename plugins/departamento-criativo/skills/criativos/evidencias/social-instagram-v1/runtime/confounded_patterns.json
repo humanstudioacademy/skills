@@ -1,0 +1,2723 @@
+[
+  {
+    "scope": "carousel_cover_only",
+    "dimension": "cover_visual.brightness",
+    "value": "medium",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.278,
+    "rate_low": 0.677,
+    "lift": -0.4,
+    "lift_mature": -0.407,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 10,
+    "n_low_with": 21,
+    "accounts": 7,
+    "niches": [
+      "creator_lifestyle",
+      "sports_and_global_brand"
+    ],
+    "n_niches": 2,
+    "account_types": [
+      "brand_or_service",
+      "creator",
+      "global_control"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 4,
+    "within_account_contradicting": 11,
+    "feature_reliable": false,
+    "extraordinary_share_in_high": 0.4,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "video_cover_only",
+    "dimension": "layout.balance",
+    "value": "imbalanced",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.056,
+    "rate_low": 0.389,
+    "lift": -0.333,
+    "lift_mature": -0.375,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 1,
+    "n_low_with": 7,
+    "accounts": 1,
+    "niches": [
+      "home_and_design"
+    ],
+    "n_niches": 1,
+    "account_types": [
+      "brand_or_service"
+    ],
+    "cohorts": [
+      "LEVA2"
+    ],
+    "within_account_supporting": 1,
+    "within_account_contradicting": 5,
+    "feature_reliable": false,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "carousel_cover_only",
+    "dimension": "cover_visual.brightness",
+    "value": "bright",
+    "classification": "confounded",
+    "direction": "high",
+    "rate_high": 0.556,
+    "rate_low": 0.226,
+    "lift": 0.33,
+    "lift_mature": 0.305,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 20,
+    "n_low_with": 7,
+    "accounts": 14,
+    "niches": [
+      "commerce_and_logistics",
+      "creator_lifestyle",
+      "education_and_culture",
+      "home_and_design",
+      "professional_services",
+      "sports_and_global_brand",
+      "technology_and_saas"
+    ],
+    "n_niches": 7,
+    "account_types": [
+      "brand_or_service",
+      "creator",
+      "global_control"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 12,
+    "within_account_contradicting": 3,
+    "feature_reliable": false,
+    "extraordinary_share_in_high": 0.5,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "full_carousel",
+    "dimension": "cover_visual.brightness",
+    "value": "bright",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.348,
+    "rate_low": 0.636,
+    "lift": -0.289,
+    "lift_mature": -0.282,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 8,
+    "n_low_with": 14,
+    "accounts": 8,
+    "niches": [
+      "beauty_and_wellness",
+      "commerce_and_logistics",
+      "finance",
+      "food_and_beverage",
+      "technology_and_saas"
+    ],
+    "n_niches": 5,
+    "account_types": [
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED"
+    ],
+    "within_account_supporting": 2,
+    "within_account_contradicting": 5,
+    "feature_reliable": false,
+    "extraordinary_share_in_high": 0.12,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "carousel_cover_only",
+    "dimension": "cover_visual.composition",
+    "value": "retrato_central",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.583,
+    "rate_low": 0.871,
+    "lift": -0.288,
+    "lift_mature": -0.304,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 21,
+    "n_low_with": 27,
+    "accounts": 13,
+    "niches": [
+      "commerce_and_logistics",
+      "creator_lifestyle",
+      "technology_and_saas"
+    ],
+    "n_niches": 3,
+    "account_types": [
+      "brand_or_service",
+      "creator"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 0,
+    "within_account_contradicting": 9,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.38,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "full_carousel",
+    "dimension": "copy.second_person",
+    "value": "yes",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.174,
+    "rate_low": 0.455,
+    "lift": -0.281,
+    "lift_mature": -0.274,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 4,
+    "n_low_with": 10,
+    "accounts": 4,
+    "niches": [
+      "fashion_and_lifestyle",
+      "finance",
+      "food_and_beverage",
+      "home_and_design"
+    ],
+    "n_niches": 4,
+    "account_types": [
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED"
+    ],
+    "within_account_supporting": 2,
+    "within_account_contradicting": 7,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.25,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "static_image",
+    "dimension": "cover_visual.product_presence",
+    "value": "no",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.615,
+    "rate_low": 0.895,
+    "lift": -0.279,
+    "lift_mature": -0.19,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 8,
+    "n_low_with": 17,
+    "accounts": 6,
+    "niches": [
+      "creator_lifestyle",
+      "education_and_culture",
+      "home_and_design",
+      "mental_health",
+      "technology_and_saas"
+    ],
+    "n_niches": 5,
+    "account_types": [
+      "brand_or_service",
+      "creator",
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED",
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 0,
+    "within_account_contradicting": 3,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.12,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "video_cover_only",
+    "dimension": "cover_visual.composition",
+    "value": "retrato_central",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.444,
+    "rate_low": 0.722,
+    "lift": -0.278,
+    "lift_mature": -0.321,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 8,
+    "n_low_with": 13,
+    "accounts": 4,
+    "niches": [
+      "creator_lifestyle",
+      "mental_health",
+      "technology_and_saas"
+    ],
+    "n_niches": 3,
+    "account_types": [
+      "brand_or_service",
+      "creator"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 1,
+    "within_account_contradicting": 5,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.25,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "video_cover_only",
+    "dimension": "layout.symmetry",
+    "value": "asymmetric",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.5,
+    "rate_low": 0.778,
+    "lift": -0.278,
+    "lift_mature": -0.25,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 9,
+    "n_low_with": 14,
+    "accounts": 6,
+    "niches": [
+      "creator_lifestyle",
+      "home_and_design",
+      "mental_health",
+      "technology_and_saas"
+    ],
+    "n_niches": 4,
+    "account_types": [
+      "brand_or_service",
+      "creator"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 2,
+    "within_account_contradicting": 6,
+    "feature_reliable": false,
+    "extraordinary_share_in_high": 0.33,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "full_carousel",
+    "dimension": "layout.headline_position",
+    "value": "topo",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.0,
+    "rate_low": 0.273,
+    "lift": -0.273,
+    "lift_mature": -0.263,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 0,
+    "n_low_with": 6,
+    "accounts": 0,
+    "niches": [],
+    "n_niches": 0,
+    "account_types": [],
+    "cohorts": [],
+    "within_account_supporting": 0,
+    "within_account_contradicting": 4,
+    "feature_reliable": false,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "static_image",
+    "dimension": "cover_visual.saturation",
+    "value": "high",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.308,
+    "rate_low": 0.579,
+    "lift": -0.271,
+    "lift_mature": -0.25,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 4,
+    "n_low_with": 11,
+    "accounts": 4,
+    "niches": [
+      "beauty_and_wellness",
+      "home_and_design",
+      "technology_and_saas"
+    ],
+    "n_niches": 3,
+    "account_types": [
+      "brand_or_service",
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED",
+      "LEVA2"
+    ],
+    "within_account_supporting": 1,
+    "within_account_contradicting": 2,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.25,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "carousel_cover_only",
+    "dimension": "layout.symmetry",
+    "value": "asymmetric",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.417,
+    "rate_low": 0.677,
+    "lift": -0.261,
+    "lift_mature": -0.225,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 15,
+    "n_low_with": 21,
+    "accounts": 13,
+    "niches": [
+      "creator_lifestyle",
+      "education_and_culture",
+      "home_and_design",
+      "sports_and_global_brand"
+    ],
+    "n_niches": 4,
+    "account_types": [
+      "brand_or_service",
+      "creator",
+      "global_control"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 3,
+    "within_account_contradicting": 11,
+    "feature_reliable": false,
+    "extraordinary_share_in_high": 0.4,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "static_image",
+    "dimension": "cover_visual.composition",
+    "value": "retrato_central",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.077,
+    "rate_low": 0.316,
+    "lift": -0.239,
+    "lift_mature": -0.202,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 1,
+    "n_low_with": 6,
+    "accounts": 1,
+    "niches": [
+      "creator_lifestyle"
+    ],
+    "n_niches": 1,
+    "account_types": [
+      "creator"
+    ],
+    "cohorts": [
+      "LEVA3"
+    ],
+    "within_account_supporting": 0,
+    "within_account_contradicting": 1,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "full_carousel",
+    "dimension": "cover_hook.cover_hook_type",
+    "value": "question",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.087,
+    "rate_low": 0.318,
+    "lift": -0.231,
+    "lift_mature": -0.163,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 2,
+    "n_low_with": 7,
+    "accounts": 2,
+    "niches": [
+      "commerce_and_logistics",
+      "finance"
+    ],
+    "n_niches": 2,
+    "account_types": [
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED"
+    ],
+    "within_account_supporting": 1,
+    "within_account_contradicting": 5,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "full_carousel",
+    "dimension": "cover_visual.composition",
+    "value": "texto_dominante",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.087,
+    "rate_low": 0.318,
+    "lift": -0.231,
+    "lift_mature": -0.213,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 2,
+    "n_low_with": 7,
+    "accounts": 2,
+    "niches": [
+      "commerce_and_logistics",
+      "fashion_and_lifestyle"
+    ],
+    "n_niches": 2,
+    "account_types": [
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED"
+    ],
+    "within_account_supporting": 1,
+    "within_account_contradicting": 6,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "video_cover_only",
+    "dimension": "cover_hook.cover_hook_type",
+    "value": "story",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.111,
+    "rate_low": 0.333,
+    "lift": -0.222,
+    "lift_mature": -0.232,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 2,
+    "n_low_with": 6,
+    "accounts": 2,
+    "niches": [
+      "creator_lifestyle"
+    ],
+    "n_niches": 1,
+    "account_types": [
+      "creator"
+    ],
+    "cohorts": [
+      "LEVA3"
+    ],
+    "within_account_supporting": 0,
+    "within_account_contradicting": 4,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "static_image",
+    "dimension": "cover_hook.cover_has_text",
+    "value": "yes",
+    "classification": "confounded",
+    "direction": "high",
+    "rate_high": 0.846,
+    "rate_low": 0.632,
+    "lift": 0.215,
+    "lift_mature": 0.19,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 11,
+    "n_low_with": 12,
+    "accounts": 8,
+    "niches": [
+      "creator_lifestyle",
+      "education_and_culture",
+      "food_and_beverage",
+      "home_and_design",
+      "mental_health",
+      "technology_and_saas"
+    ],
+    "n_niches": 6,
+    "account_types": [
+      "brand_or_service",
+      "creator",
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED",
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 0,
+    "within_account_contradicting": 1,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.09,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "carousel_cover_only",
+    "dimension": "cover_visual.color_count",
+    "value": "medium",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.5,
+    "rate_low": 0.71,
+    "lift": -0.21,
+    "lift_mature": -0.255,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 18,
+    "n_low_with": 22,
+    "accounts": 15,
+    "niches": [
+      "creator_lifestyle",
+      "education_and_culture",
+      "home_and_design",
+      "sports_and_global_brand",
+      "technology_and_saas"
+    ],
+    "n_niches": 5,
+    "account_types": [
+      "brand_or_service",
+      "creator",
+      "global_control"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 3,
+    "within_account_contradicting": 7,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.44,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "carousel_cover_only",
+    "dimension": "copy.hook_type",
+    "value": "none",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.083,
+    "rate_low": 0.29,
+    "lift": -0.207,
+    "lift_mature": -0.229,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 3,
+    "n_low_with": 9,
+    "accounts": 3,
+    "niches": [
+      "commerce_and_logistics",
+      "creator_lifestyle"
+    ],
+    "n_niches": 2,
+    "account_types": [
+      "brand_or_service",
+      "creator"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 1,
+    "within_account_contradicting": 6,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.33,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "carousel_cover_only",
+    "dimension": "cover_hook.cover_hook_type",
+    "value": "none",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.472,
+    "rate_low": 0.677,
+    "lift": -0.205,
+    "lift_mature": -0.235,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 17,
+    "n_low_with": 21,
+    "accounts": 12,
+    "niches": [
+      "commerce_and_logistics",
+      "creator_lifestyle",
+      "home_and_design",
+      "sports_and_global_brand",
+      "technology_and_saas"
+    ],
+    "n_niches": 5,
+    "account_types": [
+      "brand_or_service",
+      "creator",
+      "global_control"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 1,
+    "within_account_contradicting": 8,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.35,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "static_image",
+    "dimension": "copy.hook_type",
+    "value": "story",
+    "classification": "confounded",
+    "direction": "high",
+    "rate_high": 0.308,
+    "rate_low": 0.105,
+    "lift": 0.202,
+    "lift_mature": 0.19,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 4,
+    "n_low_with": 2,
+    "accounts": 4,
+    "niches": [
+      "beauty_and_wellness",
+      "education_and_culture",
+      "food_and_beverage",
+      "home_and_design"
+    ],
+    "n_niches": 4,
+    "account_types": [
+      "brand_or_service",
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED",
+      "LEVA2"
+    ],
+    "within_account_supporting": 0,
+    "within_account_contradicting": 1,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "static_image",
+    "dimension": "copy.promise_specificity",
+    "value": "high",
+    "classification": "confounded",
+    "direction": "high",
+    "rate_high": 0.308,
+    "rate_low": 0.105,
+    "lift": 0.202,
+    "lift_mature": 0.333,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 4,
+    "n_low_with": 2,
+    "accounts": 4,
+    "niches": [
+      "beauty_and_wellness",
+      "mental_health",
+      "sports_and_global_brand",
+      "technology_and_saas"
+    ],
+    "n_niches": 4,
+    "account_types": [
+      "brand_or_service",
+      "global_control",
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED",
+      "LEVA2"
+    ],
+    "within_account_supporting": 2,
+    "within_account_contradicting": 0,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.5,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "full_carousel",
+    "dimension": "cover_visual.logo_prominence",
+    "value": "none",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.261,
+    "rate_low": 0.455,
+    "lift": -0.194,
+    "lift_mature": -0.171,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 6,
+    "n_low_with": 10,
+    "accounts": 6,
+    "niches": [
+      "fashion_and_lifestyle",
+      "finance",
+      "food_and_beverage",
+      "technology_and_saas"
+    ],
+    "n_niches": 4,
+    "account_types": [
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED"
+    ],
+    "within_account_supporting": 1,
+    "within_account_contradicting": 5,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "full_carousel",
+    "dimension": "cover_visual.visual_complexity",
+    "value": "low",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.087,
+    "rate_low": 0.273,
+    "lift": -0.186,
+    "lift_mature": -0.163,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 2,
+    "n_low_with": 6,
+    "accounts": 2,
+    "niches": [
+      "finance",
+      "technology_and_saas"
+    ],
+    "n_niches": 2,
+    "account_types": [
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED"
+    ],
+    "within_account_supporting": 1,
+    "within_account_contradicting": 4,
+    "feature_reliable": false,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "carousel_cover_only",
+    "dimension": "cover_visual.text_over_image",
+    "value": "yes",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.083,
+    "rate_low": 0.258,
+    "lift": -0.175,
+    "lift_mature": -0.139,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 3,
+    "n_low_with": 8,
+    "accounts": 3,
+    "niches": [
+      "creator_lifestyle",
+      "education_and_culture"
+    ],
+    "n_niches": 2,
+    "account_types": [
+      "brand_or_service",
+      "creator"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 1,
+    "within_account_contradicting": 5,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.33,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "static_image",
+    "dimension": "layout.symmetry",
+    "value": "asymmetric",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.462,
+    "rate_low": 0.632,
+    "lift": -0.17,
+    "lift_mature": -0.143,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 6,
+    "n_low_with": 12,
+    "accounts": 6,
+    "niches": [
+      "beauty_and_wellness",
+      "creator_lifestyle",
+      "education_and_culture",
+      "food_and_beverage",
+      "mental_health",
+      "technology_and_saas"
+    ],
+    "n_niches": 6,
+    "account_types": [
+      "brand_or_service",
+      "creator",
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED",
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 1,
+    "within_account_contradicting": 2,
+    "feature_reliable": false,
+    "extraordinary_share_in_high": 0.17,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "carousel_cover_only",
+    "dimension": "copy.emoji_count",
+    "value": "3+",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.25,
+    "rate_low": 0.419,
+    "lift": -0.169,
+    "lift_mature": -0.158,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 9,
+    "n_low_with": 13,
+    "accounts": 6,
+    "niches": [
+      "creator_lifestyle",
+      "professional_services"
+    ],
+    "n_niches": 2,
+    "account_types": [
+      "brand_or_service",
+      "creator"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 2,
+    "within_account_contradicting": 6,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.44,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "carousel_cover_only",
+    "dimension": "cover_visual.composition",
+    "value": "centralizada",
+    "classification": "confounded",
+    "direction": "high",
+    "rate_high": 0.167,
+    "rate_low": 0.0,
+    "lift": 0.167,
+    "lift_mature": 0.152,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 6,
+    "n_low_with": 0,
+    "accounts": 5,
+    "niches": [
+      "creator_lifestyle",
+      "education_and_culture",
+      "sports_and_global_brand"
+    ],
+    "n_niches": 3,
+    "account_types": [
+      "brand_or_service",
+      "creator",
+      "global_control"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 5,
+    "within_account_contradicting": 0,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.83,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "video_cover_only",
+    "dimension": "copy.cta_type",
+    "value": "soft",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.167,
+    "rate_low": 0.333,
+    "lift": -0.167,
+    "lift_mature": -0.241,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 3,
+    "n_low_with": 6,
+    "accounts": 2,
+    "niches": [
+      "creator_lifestyle",
+      "insurance"
+    ],
+    "n_niches": 2,
+    "account_types": [
+      "brand_or_service",
+      "creator"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 1,
+    "within_account_contradicting": 3,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "video_cover_only",
+    "dimension": "copy.emoji_count",
+    "value": "3+",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.111,
+    "rate_low": 0.278,
+    "lift": -0.167,
+    "lift_mature": -0.179,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 2,
+    "n_low_with": 5,
+    "accounts": 2,
+    "niches": [
+      "creator_lifestyle",
+      "mental_health"
+    ],
+    "n_niches": 2,
+    "account_types": [
+      "brand_or_service",
+      "creator"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 1,
+    "within_account_contradicting": 4,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.5,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "video_cover_only",
+    "dimension": "copy.hook_type",
+    "value": "story",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.278,
+    "rate_low": 0.444,
+    "lift": -0.167,
+    "lift_mature": -0.152,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 5,
+    "n_low_with": 8,
+    "accounts": 4,
+    "niches": [
+      "creator_lifestyle",
+      "insurance",
+      "mental_health"
+    ],
+    "n_niches": 3,
+    "account_types": [
+      "brand_or_service",
+      "creator"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 0,
+    "within_account_contradicting": 3,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.4,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "video_cover_only",
+    "dimension": "copy.second_person",
+    "value": "yes",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.167,
+    "rate_low": 0.333,
+    "lift": -0.167,
+    "lift_mature": -0.232,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 3,
+    "n_low_with": 6,
+    "accounts": 3,
+    "niches": [
+      "home_and_design",
+      "insurance",
+      "mental_health"
+    ],
+    "n_niches": 3,
+    "account_types": [
+      "brand_or_service"
+    ],
+    "cohorts": [
+      "LEVA2"
+    ],
+    "within_account_supporting": 0,
+    "within_account_contradicting": 3,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.33,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "video_cover_only",
+    "dimension": "cover_visual.brightness",
+    "value": "medium",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.444,
+    "rate_low": 0.611,
+    "lift": -0.167,
+    "lift_mature": -0.402,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 8,
+    "n_low_with": 11,
+    "accounts": 8,
+    "niches": [
+      "creator_lifestyle",
+      "home_and_design",
+      "insurance",
+      "technology_and_saas"
+    ],
+    "n_niches": 4,
+    "account_types": [
+      "brand_or_service",
+      "creator"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 1,
+    "within_account_contradicting": 3,
+    "feature_reliable": false,
+    "extraordinary_share_in_high": 0.12,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "video_cover_only",
+    "dimension": "cover_visual.product_presence",
+    "value": "no",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.611,
+    "rate_low": 0.778,
+    "lift": -0.167,
+    "lift_mature": -0.17,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 11,
+    "n_low_with": 14,
+    "accounts": 6,
+    "niches": [
+      "creator_lifestyle",
+      "mental_health",
+      "technology_and_saas"
+    ],
+    "n_niches": 3,
+    "account_types": [
+      "brand_or_service",
+      "creator"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 0,
+    "within_account_contradicting": 3,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.27,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "video_cover_only",
+    "dimension": "layout.whitespace_level",
+    "value": "medium",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.111,
+    "rate_low": 0.278,
+    "lift": -0.167,
+    "lift_mature": -0.17,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 2,
+    "n_low_with": 5,
+    "accounts": 1,
+    "niches": [
+      "creator_lifestyle"
+    ],
+    "n_niches": 1,
+    "account_types": [
+      "creator"
+    ],
+    "cohorts": [
+      "LEVA3"
+    ],
+    "within_account_supporting": 1,
+    "within_account_contradicting": 4,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "static_image",
+    "dimension": "layout.whitespace_level",
+    "value": "medium",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.154,
+    "rate_low": 0.316,
+    "lift": -0.162,
+    "lift_mature": -0.19,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 2,
+    "n_low_with": 6,
+    "accounts": 2,
+    "niches": [
+      "beauty_and_wellness",
+      "mental_health"
+    ],
+    "n_niches": 2,
+    "account_types": [
+      "brand_or_service",
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED",
+      "LEVA2"
+    ],
+    "within_account_supporting": 0,
+    "within_account_contradicting": 2,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "carousel_cover_only",
+    "dimension": "layout.whitespace_level",
+    "value": "medium",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.194,
+    "rate_low": 0.355,
+    "lift": -0.16,
+    "lift_mature": -0.178,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 7,
+    "n_low_with": 11,
+    "accounts": 6,
+    "niches": [
+      "creator_lifestyle",
+      "education_and_culture",
+      "home_and_design",
+      "professional_services",
+      "technology_and_saas"
+    ],
+    "n_niches": 5,
+    "account_types": [
+      "brand_or_service",
+      "creator"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 2,
+    "within_account_contradicting": 5,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.14,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "full_carousel",
+    "dimension": "copy.word_count",
+    "value": "medium",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.261,
+    "rate_low": 0.409,
+    "lift": -0.148,
+    "lift_mature": -0.118,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 6,
+    "n_low_with": 9,
+    "accounts": 5,
+    "niches": [
+      "finance",
+      "food_and_beverage",
+      "technology_and_saas"
+    ],
+    "n_niches": 3,
+    "account_types": [
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED"
+    ],
+    "within_account_supporting": 2,
+    "within_account_contradicting": 4,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "full_carousel",
+    "dimension": "cover_visual.brand_presence",
+    "value": "no",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.217,
+    "rate_low": 0.364,
+    "lift": -0.146,
+    "lift_mature": -0.168,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 5,
+    "n_low_with": 8,
+    "accounts": 5,
+    "niches": [
+      "fashion_and_lifestyle",
+      "finance",
+      "food_and_beverage",
+      "technology_and_saas"
+    ],
+    "n_niches": 4,
+    "account_types": [
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED"
+    ],
+    "within_account_supporting": 2,
+    "within_account_contradicting": 4,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "static_image",
+    "dimension": "cover_visual.image_or_text_dominance",
+    "value": "text",
+    "classification": "confounded",
+    "direction": "high",
+    "rate_high": 0.462,
+    "rate_low": 0.316,
+    "lift": 0.146,
+    "lift_mature": 0.06,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 6,
+    "n_low_with": 6,
+    "accounts": 5,
+    "niches": [
+      "education_and_culture",
+      "home_and_design",
+      "mental_health",
+      "technology_and_saas"
+    ],
+    "n_niches": 4,
+    "account_types": [
+      "brand_or_service",
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED",
+      "LEVA2"
+    ],
+    "within_account_supporting": 0,
+    "within_account_contradicting": 1,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "static_image",
+    "dimension": "cover_visual.text_over_image",
+    "value": "no",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.538,
+    "rate_low": 0.684,
+    "lift": -0.146,
+    "lift_mature": -0.143,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 7,
+    "n_low_with": 13,
+    "accounts": 6,
+    "niches": [
+      "beauty_and_wellness",
+      "education_and_culture",
+      "home_and_design",
+      "mental_health",
+      "sports_and_global_brand"
+    ],
+    "n_niches": 5,
+    "account_types": [
+      "brand_or_service",
+      "global_control",
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED",
+      "LEVA2"
+    ],
+    "within_account_supporting": 1,
+    "within_account_contradicting": 2,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.14,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "full_carousel",
+    "dimension": "copy.hook_type",
+    "value": "question",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.13,
+    "rate_low": 0.273,
+    "lift": -0.142,
+    "lift_mature": -0.113,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 3,
+    "n_low_with": 6,
+    "accounts": 3,
+    "niches": [
+      "commerce_and_logistics",
+      "finance",
+      "food_and_beverage"
+    ],
+    "n_niches": 3,
+    "account_types": [
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED"
+    ],
+    "within_account_supporting": 2,
+    "within_account_contradicting": 4,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.33,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "carousel_cover_only",
+    "dimension": "copy.second_person",
+    "value": "yes",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.056,
+    "rate_low": 0.194,
+    "lift": -0.138,
+    "lift_mature": -0.019,
+    "maturity": "weakens_in_mature_sample",
+    "n_high_with": 2,
+    "n_low_with": 6,
+    "accounts": 1,
+    "niches": [
+      "professional_services"
+    ],
+    "n_niches": 1,
+    "account_types": [
+      "brand_or_service"
+    ],
+    "cohorts": [
+      "LEVA2"
+    ],
+    "within_account_supporting": 0,
+    "within_account_contradicting": 4,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "static_image",
+    "dimension": "copy.urgency",
+    "value": "no",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.769,
+    "rate_low": 0.895,
+    "lift": -0.126,
+    "lift_mature": -0.107,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 10,
+    "n_low_with": 17,
+    "accounts": 8,
+    "niches": [
+      "creator_lifestyle",
+      "education_and_culture",
+      "food_and_beverage",
+      "home_and_design",
+      "mental_health",
+      "sports_and_global_brand",
+      "technology_and_saas"
+    ],
+    "n_niches": 7,
+    "account_types": [
+      "brand_or_service",
+      "creator",
+      "global_control",
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED",
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 0,
+    "within_account_contradicting": 2,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.1,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "carousel_cover_only",
+    "dimension": "cover_visual.logo_prominence",
+    "value": "subtle",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.167,
+    "rate_low": 0.29,
+    "lift": -0.124,
+    "lift_mature": -0.048,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 6,
+    "n_low_with": 9,
+    "accounts": 4,
+    "niches": [
+      "commerce_and_logistics",
+      "creator_lifestyle",
+      "education_and_culture",
+      "home_and_design"
+    ],
+    "n_niches": 4,
+    "account_types": [
+      "brand_or_service",
+      "creator"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 2,
+    "within_account_contradicting": 6,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "carousel_cover_only",
+    "dimension": "copy.proof_type",
+    "value": "none",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.75,
+    "rate_low": 0.871,
+    "lift": -0.121,
+    "lift_mature": -0.113,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 27,
+    "n_low_with": 27,
+    "accounts": 16,
+    "niches": [
+      "commerce_and_logistics",
+      "creator_lifestyle",
+      "education_and_culture",
+      "home_and_design",
+      "sports_and_global_brand"
+    ],
+    "n_niches": 5,
+    "account_types": [
+      "brand_or_service",
+      "creator",
+      "global_control"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 1,
+    "within_account_contradicting": 4,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.48,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "static_image",
+    "dimension": "copy.promise_present",
+    "value": "no",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.615,
+    "rate_low": 0.737,
+    "lift": -0.121,
+    "lift_mature": -0.202,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 8,
+    "n_low_with": 14,
+    "accounts": 6,
+    "niches": [
+      "creator_lifestyle",
+      "education_and_culture",
+      "food_and_beverage",
+      "home_and_design",
+      "mental_health"
+    ],
+    "n_niches": 5,
+    "account_types": [
+      "brand_or_service",
+      "creator",
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED",
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 0,
+    "within_account_contradicting": 2,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "static_image",
+    "dimension": "copy.promise_specificity",
+    "value": "none",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.615,
+    "rate_low": 0.737,
+    "lift": -0.121,
+    "lift_mature": -0.202,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 8,
+    "n_low_with": 14,
+    "accounts": 6,
+    "niches": [
+      "creator_lifestyle",
+      "education_and_culture",
+      "food_and_beverage",
+      "home_and_design",
+      "mental_health"
+    ],
+    "n_niches": 5,
+    "account_types": [
+      "brand_or_service",
+      "creator",
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED",
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 0,
+    "within_account_contradicting": 2,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "static_image",
+    "dimension": "cover_visual.visual_complexity",
+    "value": "low",
+    "classification": "confounded",
+    "direction": "high",
+    "rate_high": 0.385,
+    "rate_low": 0.263,
+    "lift": 0.121,
+    "lift_mature": 0.048,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 5,
+    "n_low_with": 5,
+    "accounts": 3,
+    "niches": [
+      "education_and_culture",
+      "home_and_design"
+    ],
+    "n_niches": 2,
+    "account_types": [
+      "brand_or_service",
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED",
+      "LEVA2"
+    ],
+    "within_account_supporting": 0,
+    "within_account_contradicting": 1,
+    "feature_reliable": false,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "static_image",
+    "dimension": "cover_visual.logo_prominence",
+    "value": "subtle",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.308,
+    "rate_low": 0.421,
+    "lift": -0.113,
+    "lift_mature": -0.095,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 4,
+    "n_low_with": 8,
+    "accounts": 3,
+    "niches": [
+      "home_and_design",
+      "sports_and_global_brand",
+      "technology_and_saas"
+    ],
+    "n_niches": 3,
+    "account_types": [
+      "brand_or_service",
+      "global_control",
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED",
+      "LEVA2"
+    ],
+    "within_account_supporting": 0,
+    "within_account_contradicting": 1,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.25,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "video_cover_only",
+    "dimension": "copy.question_count",
+    "value": "1-2",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.167,
+    "rate_low": 0.278,
+    "lift": -0.111,
+    "lift_mature": -0.241,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 3,
+    "n_low_with": 5,
+    "accounts": 3,
+    "niches": [
+      "creator_lifestyle",
+      "home_and_design",
+      "mental_health"
+    ],
+    "n_niches": 3,
+    "account_types": [
+      "brand_or_service",
+      "creator"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 1,
+    "within_account_contradicting": 3,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.33,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "video_cover_only",
+    "dimension": "copy.tone",
+    "value": "promotional",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.111,
+    "rate_low": 0.222,
+    "lift": -0.111,
+    "lift_mature": -0.179,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 2,
+    "n_low_with": 4,
+    "accounts": 2,
+    "niches": [
+      "home_and_design",
+      "insurance"
+    ],
+    "n_niches": 2,
+    "account_types": [
+      "brand_or_service"
+    ],
+    "cohorts": [
+      "LEVA2"
+    ],
+    "within_account_supporting": 0,
+    "within_account_contradicting": 2,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "video_cover_only",
+    "dimension": "copy.word_count",
+    "value": "medium",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.278,
+    "rate_low": 0.389,
+    "lift": -0.111,
+    "lift_mature": -0.152,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 5,
+    "n_low_with": 7,
+    "accounts": 4,
+    "niches": [
+      "creator_lifestyle",
+      "home_and_design"
+    ],
+    "n_niches": 2,
+    "account_types": [
+      "brand_or_service",
+      "creator"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 2,
+    "within_account_contradicting": 3,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "video_cover_only",
+    "dimension": "cover_visual.brand_presence",
+    "value": "no",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.611,
+    "rate_low": 0.722,
+    "lift": -0.111,
+    "lift_mature": -0.107,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 11,
+    "n_low_with": 13,
+    "accounts": 6,
+    "niches": [
+      "creator_lifestyle",
+      "home_and_design"
+    ],
+    "n_niches": 2,
+    "account_types": [
+      "brand_or_service",
+      "creator"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 1,
+    "within_account_contradicting": 2,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.18,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "video_cover_only",
+    "dimension": "cover_visual.color_count",
+    "value": "medium",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.667,
+    "rate_low": 0.778,
+    "lift": -0.111,
+    "lift_mature": -0.107,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 12,
+    "n_low_with": 14,
+    "accounts": 9,
+    "niches": [
+      "creator_lifestyle",
+      "home_and_design",
+      "insurance",
+      "mental_health",
+      "technology_and_saas"
+    ],
+    "n_niches": 5,
+    "account_types": [
+      "brand_or_service",
+      "creator"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 2,
+    "within_account_contradicting": 4,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.25,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "video_cover_only",
+    "dimension": "cover_visual.face_presence",
+    "value": "yes",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.556,
+    "rate_low": 0.667,
+    "lift": -0.111,
+    "lift_mature": -0.116,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 10,
+    "n_low_with": 12,
+    "accounts": 6,
+    "niches": [
+      "creator_lifestyle",
+      "mental_health",
+      "technology_and_saas"
+    ],
+    "n_niches": 3,
+    "account_types": [
+      "brand_or_service",
+      "creator"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 1,
+    "within_account_contradicting": 4,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.3,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "video_cover_only",
+    "dimension": "cover_visual.human_presence",
+    "value": "yes",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.778,
+    "rate_low": 0.889,
+    "lift": -0.111,
+    "lift_mature": -0.089,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 14,
+    "n_low_with": 16,
+    "accounts": 7,
+    "niches": [
+      "creator_lifestyle",
+      "insurance",
+      "mental_health",
+      "technology_and_saas"
+    ],
+    "n_niches": 4,
+    "account_types": [
+      "brand_or_service",
+      "creator"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 1,
+    "within_account_contradicting": 2,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.21,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "video_cover_only",
+    "dimension": "cover_visual.logo_prominence",
+    "value": "none",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.611,
+    "rate_low": 0.722,
+    "lift": -0.111,
+    "lift_mature": -0.107,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 11,
+    "n_low_with": 13,
+    "accounts": 6,
+    "niches": [
+      "creator_lifestyle",
+      "home_and_design"
+    ],
+    "n_niches": 2,
+    "account_types": [
+      "brand_or_service",
+      "creator"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 1,
+    "within_account_contradicting": 2,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.18,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "carousel_cover_only",
+    "dimension": "copy.question_count",
+    "value": "1-2",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.083,
+    "rate_low": 0.194,
+    "lift": -0.11,
+    "lift_mature": -0.029,
+    "maturity": "weakens_in_mature_sample",
+    "n_high_with": 3,
+    "n_low_with": 6,
+    "accounts": 2,
+    "niches": [
+      "creator_lifestyle",
+      "professional_services"
+    ],
+    "n_niches": 2,
+    "account_types": [
+      "brand_or_service",
+      "creator"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 1,
+    "within_account_contradicting": 3,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "carousel_cover_only",
+    "dimension": "cover_visual.product_presence",
+    "value": "yes",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.083,
+    "rate_low": 0.194,
+    "lift": -0.11,
+    "lift_mature": -0.109,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 3,
+    "n_low_with": 6,
+    "accounts": 2,
+    "niches": [
+      "commerce_and_logistics",
+      "home_and_design"
+    ],
+    "n_niches": 2,
+    "account_types": [
+      "brand_or_service"
+    ],
+    "cohorts": [
+      "LEVA2"
+    ],
+    "within_account_supporting": 1,
+    "within_account_contradicting": 2,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "carousel_cover_only",
+    "dimension": "cover_visual.visual_complexity",
+    "value": "low",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.278,
+    "rate_low": 0.387,
+    "lift": -0.109,
+    "lift_mature": -0.127,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 10,
+    "n_low_with": 12,
+    "accounts": 7,
+    "niches": [
+      "commerce_and_logistics",
+      "creator_lifestyle",
+      "sports_and_global_brand"
+    ],
+    "n_niches": 3,
+    "account_types": [
+      "brand_or_service",
+      "creator",
+      "global_control"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 3,
+    "within_account_contradicting": 6,
+    "feature_reliable": false,
+    "extraordinary_share_in_high": 0.5,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "carousel_cover_only",
+    "dimension": "layout.whitespace_level",
+    "value": "low",
+    "classification": "confounded",
+    "direction": "high",
+    "rate_high": 0.722,
+    "rate_low": 0.613,
+    "lift": 0.109,
+    "lift_mature": 0.127,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 26,
+    "n_low_with": 19,
+    "accounts": 17,
+    "niches": [
+      "commerce_and_logistics",
+      "creator_lifestyle",
+      "education_and_culture",
+      "professional_services",
+      "sports_and_global_brand"
+    ],
+    "n_niches": 5,
+    "account_types": [
+      "brand_or_service",
+      "creator",
+      "global_control"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 5,
+    "within_account_contradicting": 3,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.5,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "static_image",
+    "dimension": "copy.word_count",
+    "value": "medium",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.154,
+    "rate_low": 0.263,
+    "lift": -0.109,
+    "lift_mature": -0.048,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 2,
+    "n_low_with": 5,
+    "accounts": 2,
+    "niches": [
+      "education_and_culture",
+      "home_and_design"
+    ],
+    "n_niches": 2,
+    "account_types": [
+      "brand_or_service",
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED",
+      "LEVA2"
+    ],
+    "within_account_supporting": 0,
+    "within_account_contradicting": 1,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "carousel_cover_only",
+    "dimension": "copy.hook_type",
+    "value": "bold_claim",
+    "classification": "confounded",
+    "direction": "high",
+    "rate_high": 0.139,
+    "rate_low": 0.032,
+    "lift": 0.107,
+    "lift_mature": 0.112,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 5,
+    "n_low_with": 1,
+    "accounts": 4,
+    "niches": [
+      "creator_lifestyle",
+      "sports_and_global_brand"
+    ],
+    "n_niches": 2,
+    "account_types": [
+      "creator",
+      "global_control"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 4,
+    "within_account_contradicting": 1,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.8,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "carousel_cover_only",
+    "dimension": "copy.word_count",
+    "value": "low",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.25,
+    "rate_low": 0.355,
+    "lift": -0.105,
+    "lift_mature": -0.127,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 9,
+    "n_low_with": 11,
+    "accounts": 8,
+    "niches": [
+      "creator_lifestyle",
+      "sports_and_global_brand"
+    ],
+    "n_niches": 2,
+    "account_types": [
+      "creator",
+      "global_control"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 3,
+    "within_account_contradicting": 7,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.67,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "full_carousel",
+    "dimension": "cover_visual.face_presence",
+    "value": "yes",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.304,
+    "rate_low": 0.409,
+    "lift": -0.105,
+    "lift_mature": -0.124,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 7,
+    "n_low_with": 9,
+    "accounts": 6,
+    "niches": [
+      "commerce_and_logistics",
+      "fashion_and_lifestyle",
+      "finance",
+      "food_and_beverage",
+      "home_and_design",
+      "technology_and_saas"
+    ],
+    "n_niches": 6,
+    "account_types": [
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED"
+    ],
+    "within_account_supporting": 1,
+    "within_account_contradicting": 5,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.14,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "full_carousel",
+    "dimension": "cover_visual.text_density_on_image",
+    "value": "high",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.304,
+    "rate_low": 0.409,
+    "lift": -0.105,
+    "lift_mature": -0.118,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 7,
+    "n_low_with": 9,
+    "accounts": 5,
+    "niches": [
+      "commerce_and_logistics",
+      "fashion_and_lifestyle",
+      "finance",
+      "technology_and_saas"
+    ],
+    "n_niches": 4,
+    "account_types": [
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED"
+    ],
+    "within_account_supporting": 1,
+    "within_account_contradicting": 3,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "full_carousel",
+    "dimension": "layout.symmetry",
+    "value": "symmetric",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.261,
+    "rate_low": 0.364,
+    "lift": -0.103,
+    "lift_mature": -0.066,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 6,
+    "n_low_with": 8,
+    "accounts": 4,
+    "niches": [
+      "commerce_and_logistics",
+      "finance",
+      "technology_and_saas"
+    ],
+    "n_niches": 3,
+    "account_types": [
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED"
+    ],
+    "within_account_supporting": 2,
+    "within_account_contradicting": 5,
+    "feature_reliable": false,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "full_carousel",
+    "dimension": "layout.whitespace_level",
+    "value": "medium",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.261,
+    "rate_low": 0.364,
+    "lift": -0.103,
+    "lift_mature": -0.118,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 6,
+    "n_low_with": 8,
+    "accounts": 5,
+    "niches": [
+      "finance",
+      "food_and_beverage"
+    ],
+    "n_niches": 2,
+    "account_types": [
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED"
+    ],
+    "within_account_supporting": 3,
+    "within_account_contradicting": 5,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.17,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "carousel_cover_only",
+    "dimension": "cover_visual.human_presence",
+    "value": "yes",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.833,
+    "rate_low": 0.935,
+    "lift": -0.102,
+    "lift_mature": -0.112,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 30,
+    "n_low_with": 29,
+    "accounts": 18,
+    "niches": [
+      "commerce_and_logistics",
+      "creator_lifestyle",
+      "education_and_culture",
+      "professional_services",
+      "sports_and_global_brand",
+      "technology_and_saas"
+    ],
+    "n_niches": 6,
+    "account_types": [
+      "brand_or_service",
+      "creator",
+      "global_control"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 0,
+    "within_account_contradicting": 4,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.43,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "full_carousel",
+    "dimension": "copy.emoji_count",
+    "value": "0",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.174,
+    "rate_low": 0.273,
+    "lift": -0.099,
+    "lift_mature": -0.058,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 4,
+    "n_low_with": 6,
+    "accounts": 3,
+    "niches": [
+      "fashion_and_lifestyle",
+      "finance",
+      "food_and_beverage"
+    ],
+    "n_niches": 3,
+    "account_types": [
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED"
+    ],
+    "within_account_supporting": 1,
+    "within_account_contradicting": 2,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "full_carousel",
+    "dimension": "copy.tone",
+    "value": "inspirational",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.13,
+    "rate_low": 0.227,
+    "lift": -0.097,
+    "lift_mature": -0.113,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 3,
+    "n_low_with": 5,
+    "accounts": 3,
+    "niches": [
+      "fashion_and_lifestyle",
+      "food_and_beverage",
+      "home_and_design"
+    ],
+    "n_niches": 3,
+    "account_types": [
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED"
+    ],
+    "within_account_supporting": 1,
+    "within_account_contradicting": 3,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.33,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "full_carousel",
+    "dimension": "copy.cta_type",
+    "value": "comment_cta",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.087,
+    "rate_low": 0.182,
+    "lift": -0.095,
+    "lift_mature": -0.058,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 2,
+    "n_low_with": 4,
+    "accounts": 1,
+    "niches": [
+      "technology_and_saas"
+    ],
+    "n_niches": 1,
+    "account_types": [
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED"
+    ],
+    "within_account_supporting": 0,
+    "within_account_contradicting": 2,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "full_carousel",
+    "dimension": "cover_visual.photo_or_illustration",
+    "value": "graphic",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.087,
+    "rate_low": 0.182,
+    "lift": -0.095,
+    "lift_mature": -0.055,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 2,
+    "n_low_with": 4,
+    "accounts": 2,
+    "niches": [
+      "commerce_and_logistics",
+      "finance"
+    ],
+    "n_niches": 2,
+    "account_types": [
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED"
+    ],
+    "within_account_supporting": 1,
+    "within_account_contradicting": 3,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "static_image",
+    "dimension": "cover_visual.brightness",
+    "value": "bright",
+    "classification": "confounded",
+    "direction": "high",
+    "rate_high": 0.462,
+    "rate_low": 0.368,
+    "lift": 0.093,
+    "lift_mature": 0.214,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 6,
+    "n_low_with": 7,
+    "accounts": 5,
+    "niches": [
+      "beauty_and_wellness",
+      "education_and_culture",
+      "food_and_beverage",
+      "home_and_design",
+      "mental_health"
+    ],
+    "n_niches": 5,
+    "account_types": [
+      "brand_or_service",
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED",
+      "LEVA2"
+    ],
+    "within_account_supporting": 0,
+    "within_account_contradicting": 3,
+    "feature_reliable": false,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "static_image",
+    "dimension": "image_text_relation",
+    "value": "complementary",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.385,
+    "rate_low": 0.474,
+    "lift": -0.089,
+    "lift_mature": -0.083,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 5,
+    "n_low_with": 9,
+    "accounts": 5,
+    "niches": [
+      "creator_lifestyle",
+      "education_and_culture",
+      "food_and_beverage",
+      "sports_and_global_brand",
+      "technology_and_saas"
+    ],
+    "n_niches": 5,
+    "account_types": [
+      "brand_or_service",
+      "creator",
+      "global_control",
+      "mixed_br_panel"
+    ],
+    "cohorts": [
+      "LEVA1_DETAILED",
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 0,
+    "within_account_contradicting": 1,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.4,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "carousel_cover_only",
+    "dimension": "cover_visual.visual_complexity",
+    "value": "high",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.139,
+    "rate_low": 0.226,
+    "lift": -0.087,
+    "lift_mature": -0.048,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 5,
+    "n_low_with": 7,
+    "accounts": 5,
+    "niches": [
+      "commerce_and_logistics",
+      "creator_lifestyle",
+      "education_and_culture"
+    ],
+    "n_niches": 3,
+    "account_types": [
+      "brand_or_service",
+      "creator"
+    ],
+    "cohorts": [
+      "LEVA2",
+      "LEVA3"
+    ],
+    "within_account_supporting": 3,
+    "within_account_contradicting": 4,
+    "feature_reliable": false,
+    "extraordinary_share_in_high": 0.4,
+    "do_not_use_as_proof": true,
+    "scores": false
+  },
+  {
+    "scope": "carousel_cover_only",
+    "dimension": "cover_visual.image_or_text_dominance",
+    "value": "balanced",
+    "classification": "confounded",
+    "direction": "low",
+    "rate_high": 0.111,
+    "rate_low": 0.194,
+    "lift": -0.082,
+    "lift_mature": -0.069,
+    "maturity": "persists_in_mature_sample",
+    "n_high_with": 4,
+    "n_low_with": 6,
+    "accounts": 3,
+    "niches": [
+      "commerce_and_logistics",
+      "education_and_culture",
+      "technology_and_saas"
+    ],
+    "n_niches": 3,
+    "account_types": [
+      "brand_or_service"
+    ],
+    "cohorts": [
+      "LEVA2"
+    ],
+    "within_account_supporting": 2,
+    "within_account_contradicting": 4,
+    "feature_reliable": true,
+    "extraordinary_share_in_high": 0.0,
+    "do_not_use_as_proof": true,
+    "scores": false
+  }
+]
